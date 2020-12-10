@@ -1,8 +1,20 @@
 ![Image of Asteroids artwork](documentation/docu_imgs/asteroids.jpg)
 
-# Asteroids! An Interactive Frontend Project
-For my second milestone project, I have deciced to put my JavaScript knowledge to the test and create my version of my version of the classic 1979 classic Atari game, Asteroids. Built using HTML5, CSS3 and JavaScript.
+# Asteroids! 
+## An Interactive Frontend Project by Michael McCann
 
+For my second milestone project, I have deciced to put my JavaScript knowledge to the test and create my version of my version of the classic 1979 classic Atari game, Asteroids. Built using HTML5, CSS3 and JavaScript. I aim to make the user experience more enjoyable for the gamer than its Daddy by giving the game an overhaul on the design.
+
+# Contents
+
+- [A Bit Of Info On The Game](#a-bit-of-info-on-the-game)
+
+- [The Strategy Plane](#the-strategy-plane)
+- [The Scope Plane](#the-scope-plane)
+- [The Structure Plane](#the-structure-plane)
+- [The Skeleton Plane](#the-skeleton-plane)
+- [User Stories](#user-stories)
+- [User Testing](#user-testing)
 
 # A Bit Of Info On The Game
 Asteroids is a space-themed multidirectional shooter arcade game designed by Lyle Rains, Ed Logg, and Dominic Walsh and released in November 1979 by Atari, Inc. The player controls a single spaceship in an asteroid field which is periodically traversed by flying saucers. The object of the game is to shoot and destroy the asteroids and saucers, while not colliding with either, or being hit by the saucers' counter-fire. The game becomes harder as the number of asteroids increases.
