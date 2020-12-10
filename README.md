@@ -1,6 +1,6 @@
 ![Image of Asteroids artwork](documentation/docu_imgs/asteroids.jpg)
 
-# Asteroids!
+# Asteroids! An Interactive Frontend Project
 For my second milestone project, I have deciced to put my JavaScript knowledge to the test and create my version of my version of the classic 1979 classic Atari game, Asteroids. Built using HTML5, CSS3 and JavaScript.
 
 
@@ -15,29 +15,91 @@ The above text is taken from [Wikipedia](https://en.wikipedia.org/wiki/Asteroids
 
 ___
 
+# The Strategy Plane
+
+What I'm aiming to achieve by building a game (my first!) is that it will give me a better insight into my currant knowledge of JavaScript. And what better way than to dive straight in and tackle this classic game, Asteroids!
+
+The use of the arrow keys to move and spacebar to fire will mean that it'll make the game a "pick-up and play" type of game, which makes it suitale for ages 6 and up. So it is ideally for anyone who has an interest in gaming with this game primarily focusing on the retro-gamer who would be very familiar siting in front of a TV (that weighed as much as a washing machine) playing it on their old Atari. Hopefully it will make people feel nostalgic about the hours they played and maybe the fights they had with their siblings over it too! The game will be playable by one person. 
+
+The game is for: 
+
+* Me, the developer to expand my knowledge of JavaScript.
+* The retro gamer, to rekindle their love of Asteroids.
+
+# The Scope Plane
+
+The features I plan to include in my design are:
+
+* A spaceship
+
+* Asteroids
+* Pressing the spacebar to shoot
+* Arrow keys to maneuver, up arrow to thrust
+* When asteroids are shot, they'll break apart into smaller asteroids
+* Scoring system
+* High score is saved
+* Sound FX and music
+* Levels
+* Lives 
+
+# The Structure Plane
+
+The information or in this case the game will be structured with an ease-of-use interface with all menu items easily accessible for the user. The game will be presented around a fun and enjoyable gameplay with the user wanting to come back for more with the aim of beating their previous high score.
+
+# The Skeleton Plane
+## Gameplay
+
+The main objective of Asteroids is to blast the oncoming asteroids and flying saucers that will occassionally appear. The player controls a triangular ship that can rotate left and right, fire shots straight forward, and thrust forward. Once the ship begins moving in a direction, it will continue in that direction for a time without player intervention unless the player applies thrust in a different direction. The ship eventually comes to a stop when not thrusting. The player can also send the ship into hyperspace, causing it to disappear and reappear in a random location on the screen, at the risk of self-destructing or appearing on top of an asteroid.
+
+Each level starts with a few large asteroids drifting in various directions on the screen. Objects wrap around screen edges – for instance, an asteroid that drifts off the top edge of the screen reappears at the bottom and continues moving in the same direction. As the player shoots asteroids, they break into smaller asteroids that move faster and are more difficult to hit. Smaller asteroids are also worth more points. Two flying saucers appear periodically on the screen; the "big saucer" shoots randomly and poorly, while the "small saucer" fires frequently at the ship. After reaching a score of 40,000, only the small saucer appears. As the player's score increases, the angle range of the shots from the small saucer diminishes until the saucer fires extremely accurately. Once the screen has been cleared of all asteroids and flying saucers, a new set of large asteroids appears, thus starting the next level. The player starts with 3 lives when the player loses all their lives, the game ends.
+
+---
+
 # User Stories
+
+## User stories for a new gamer
+
+## As a new gamer I expect :-
 
 * Asteroids target audience 6+
 
-* As a user I expect to be excited to play 
+* To be excited to play 
+* To have fun 
+* To be intrigued 
+* To find the navigation ease to use 
+* There to be gameplay instructions 
+* The game to be easily playable
+* The game to work on all devices
+* The controls to be easily accessible 
+* There to be a scoring feature
+* My high score to be saved
+* There to be contact details
+* There to be social network links 
 
-* As a user I expect to have fun 
+## User stories for a returning gamer
 
-* As a user I expect to be intrigued 
+## As a returning gamer I expect :-
 
-* As a user I expect to find the navigation ease to use 
+* To be able to jump in and immediately play
 
-* As a user I expect there to be gameplay instructions 
+* Menu items to be in the same location
+* The design to be the same
+* My highscore to be still there
+* If the developer made any updates to the game, I expect this information to be easily located 
 
-* As a user I expect the game to be easily playable 
+---
 
-* As a user I expect the controls to be easily accessible 
+# User Testing
 
-* As a user I expect there to be a scoring feature
-
-* As a user I expect my high score to be saved 
-
-
-
-
-
+TEST            | OUTCOME                          | PASS / FAIL  
+--------------- | -------------------------------- | ---------------
+Move ship with arrow keys. At the start my main opjection here is just to rotate the ship in place                           | Outcome | Pass/Fail
+Next I'd like to add more functionality for the ship. For example: to make it fly                                             | Outcome | Pass/Fail
+Making the ship shoot bullets by pressing spacebar | Outcome | Pass/Fail
+Make asteroids appear randomly in clusters         | Outcome | Pass/Fail
+Make asteroids rotate for added affects            | Outcome | Pass/Fail
+When asteroids are blasted they sperate into smaller asteroids |  Outcome | Pass/Fail
+Add thrusters to ship by pressing the UP arrow     | Outcome | Pass/Fail
+Implement a scoring system                         | Outcome | Pass/Fail
+Save players highscore                             | Outcome | Pass/Fail
+If ship hits an asteroid, ship is destroyed and player loses a life |  Outcome | Pass/Fail
