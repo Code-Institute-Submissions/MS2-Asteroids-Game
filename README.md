@@ -16,7 +16,10 @@ For my second milestone project, I have deciced to put my JavaScript knowledge t
 - [User Stories](#user-stories)
 - [User Testing](#user-testing)
 
-# A Bit Of Info On The Game
+# A Bit Of Info On The Game 
+
+- [Back To Contents](#contents)
+
 Asteroids is a space-themed multidirectional shooter arcade game designed by Lyle Rains, Ed Logg, and Dominic Walsh and released in November 1979 by Atari, Inc. The player controls a single spaceship in an asteroid field which is periodically traversed by flying saucers. The object of the game is to shoot and destroy the asteroids and saucers, while not colliding with either, or being hit by the saucers' counter-fire. The game becomes harder as the number of asteroids increases.
 
 Asteroids was one of the first major hits of the golden age of arcade games; the game sold over 70,000 arcade cabinets and proved both popular with players and influential with developers. In the 1980s it was ported to Atari's home systems, and the Atari VCS version sold over three million copies. The game was widely imitated, and it directly influenced Defender, Gravitar, and many other video games.
@@ -29,6 +32,8 @@ ___
 
 # The Strategy Plane
 
+- [Back To Contents](#contents)
+
 What I'm aiming to achieve by building a game (my first!) is that it will give me a better insight into my currant knowledge of JavaScript. And what better way than to dive straight in and tackle this classic game, Asteroids!
 
 The use of the arrow keys to move and spacebar to fire will mean that it'll make the game a "pick-up and play" type of game, which makes it suitale for ages 6 and up. So it is ideally for anyone who has an interest in gaming with this game primarily focusing on the retro-gamer who would be very familiar siting in front of a TV (that weighed as much as a washing machine) playing it on their old Atari. Hopefully it will make people feel nostalgic about the hours they played and maybe the fights they had with their siblings over it too! The game will be playable by one person. 
@@ -39,6 +44,8 @@ The game is for:
 * The retro gamer, to rekindle their love of Asteroids.
 
 # The Scope Plane
+
+- [Back To Contents](#contents)
 
 The features I plan to include in my design are:
 
@@ -56,9 +63,14 @@ The features I plan to include in my design are:
 
 # The Structure Plane
 
+- [Back To Contents](#contents)
+
 The information or in this case the game will be structured with an ease-of-use interface with all menu items easily accessible for the user. The game will be presented around a fun and enjoyable gameplay with the user wanting to come back for more with the aim of beating their previous high score.
 
 # The Skeleton Plane
+
+- [Back To Contents](#contents)
+
 ## Gameplay
 
 The main objective of Asteroids is to blast the oncoming asteroids and flying saucers that will occassionally appear. The player controls a triangular ship that can rotate left and right, fire shots straight forward, and thrust forward. Once the ship begins moving in a direction, it will continue in that direction for a time without player intervention unless the player applies thrust in a different direction. The ship eventually comes to a stop when not thrusting. The player can also send the ship into hyperspace, causing it to disappear and reappear in a random location on the screen, at the risk of self-destructing or appearing on top of an asteroid.
@@ -68,6 +80,8 @@ Each level starts with a few large asteroids drifting in various directions on t
 ---
 
 # User Stories
+
+- [Back To Contents](#contents)
 
 ## User stories for a new gamer
 
@@ -102,6 +116,8 @@ Each level starts with a few large asteroids drifting in various directions on t
 ---
 
 # User Testing
+
+- [Back To Contents](#contents)
 
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
