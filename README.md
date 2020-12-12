@@ -148,16 +148,16 @@ Each level starts with a few large asteroids drifting in various directions on t
 
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
-Move ship with arrow keys. At the start my main opjection here is just to rotate the ship in place                           | Outcome | Pass/Fail
-Next I'd like to add more functionality for the ship. For example: to make it fly                                             | Outcome | Pass/Fail
-Making the ship shoot bullets by pressing spacebar | Outcome | Pass/Fail
-Make asteroids appear randomly in clusters         | Outcome | Pass/Fail
-Make asteroids rotate for added affects            | Outcome | Pass/Fail
-When asteroids are blasted they sperate into smaller asteroids |  Outcome | Pass/Fail
-Add thrusters to ship by pressing the UP arrow     | Outcome | Pass/Fail
-Implement a scoring system                         | Outcome | Pass/Fail
-Save players highscore                             | Outcome | Pass/Fail
-If ship hits an asteroid, ship is destroyed and player loses a life |  Outcome | Pass/Fail
+Move ship with arrow keys. At the start my main opjection here is just to rotate the ship in place                                                   | Outcome | Pass/Fail
+Next I'd like to add more functionality for the ship. For example: to make it fly                                                                     | Outcome | Pass/Fail
+Making the ship shoot bullets by pressing spacebar                         | Outcome | Pass/Fail
+Make asteroids appear randomly in clusters                                 | Outcome | Pass/Fail
+Make asteroids rotate for added affects                                    | Outcome | Pass/Fail
+When asteroids are blasted they sperate into smaller asteroids             | Outcome | Pass/Fail
+Add thrusters to ship by pressing the UP arrow                             | Outcome | Pass/Fail
+Implement a scoring system                                                 | Outcome | Pass/Fail
+Save players highscore                                                     | Outcome | Pass/Fail
+If ship hits an asteroid, ship is destroyed and player loses a life        | Outcome | Pass/Fail
 
 ## Web Development Testing
 
