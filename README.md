@@ -17,6 +17,7 @@ For my second milestone project, I have deciced to put my JavaScript knowledge t
 - [Wireframes](#wireframes)
 - [User Stories](#user-stories)
 - [User Testing](#user-testing)
+- [Technology Used](#technologies-used)
 
 # A Bit Of Info On The Game 
 
@@ -141,6 +142,8 @@ Each level starts with a few large asteroids drifting in various directions on t
 
 # User Testing
 
+## Game Testing Scenarios
+
 [^ Back To Contents ^](#contents)
 
 TEST            | OUTCOME                          | PASS / FAIL  
@@ -155,3 +158,33 @@ Add thrusters to ship by pressing the UP arrow     | Outcome | Pass/Fail
 Implement a scoring system                         | Outcome | Pass/Fail
 Save players highscore                             | Outcome | Pass/Fail
 If ship hits an asteroid, ship is destroyed and player loses a life |  Outcome | Pass/Fail
+
+## Web Development Testing
+
+TEST            | OUTCOME                          | PASS / FAIL  
+--------------- | -------------------------------- | ---------------
+Test responsiveness of website on all screen sizes on Chrome browser       | Outcome | Pass/Fail
+Test responsiveness of website on all screen sizes on Safari browser       | Outcome | Pass/Fail
+Test responsiveness of website on all screen sizes on Firefox browse       | Outcome | Pass/Fail
+Test responsiveness of website on all screen sizes on Edge browser         | Outcome | Pass/Fail
+Ensure header and menu are fixed to top of screens                         | Outcome | Pass/Fail
+Ensure the website contains instructions on how to interact with the game, win the game and lose the game                                             | Outcome | Pass/Fail
+Ensure there's an about section, containing a brief history on the game    | Outcome | Pass/Fail
+Ensure the contact form is fully functional                                | Outcome | Pass/Fail
+Ensure there's a 404 error page                                            | Outcome | Pass/Fail
+Ensure design is consistant across all devices and browsers                | Outcome | Pass/Fail
+Ensure Play Again button is displayed when the game has ended and it starts a new game when clicked                                             | Outcome | Pass/Fail
+
+---
+
+# Technologies Used
+
+## Languages 
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+
+[^ Back To Contents ^](#contents)
+
+---
