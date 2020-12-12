@@ -1,6 +1,7 @@
-![Image of Asteroids artwork](documentation/docu_imgs/asteroids.jpg)
+
 
 # Asteroids! 
+
 ## An Interactive Frontend Project by Michael McCann
 
 For my second milestone project, I have deciced to put my JavaScript knowledge to the test and create my version of my version of the classic 1979 classic Atari game, Asteroids. Built using HTML5, CSS3 and JavaScript. I aim to make the user experience more enjoyable for the gamer than its Daddy by giving the game an overhaul on the design.
@@ -13,12 +14,13 @@ For my second milestone project, I have deciced to put my JavaScript knowledge t
 - [The Scope Plane](#the-scope-plane)
 - [The Structure Plane](#the-structure-plane)
 - [The Skeleton Plane](#the-skeleton-plane)
+- [Wireframes](#wireframes)
 - [User Stories](#user-stories)
 - [User Testing](#user-testing)
 
 # A Bit Of Info On The Game 
 
-- [Back To Contents](#contents)
+[^ Back To Contents ^](#contents)
 
 Asteroids is a space-themed multidirectional shooter arcade game designed by Lyle Rains, Ed Logg, and Dominic Walsh and released in November 1979 by Atari, Inc. The player controls a single spaceship in an asteroid field which is periodically traversed by flying saucers. The object of the game is to shoot and destroy the asteroids and saucers, while not colliding with either, or being hit by the saucers' counter-fire. The game becomes harder as the number of asteroids increases.
 
@@ -32,7 +34,7 @@ ___
 
 # The Strategy Plane
 
-- [Back To Contents](#contents)
+[^ Back To Contents ^](#contents)
 
 What I'm aiming to achieve by building a game (my first!) is that it will give me a better insight into my currant knowledge of JavaScript. And what better way than to dive straight in and tackle this classic game, Asteroids!
 
@@ -45,7 +47,7 @@ The game is for:
 
 # The Scope Plane
 
-- [Back To Contents](#contents)
+[^ Back To Contents ^](#contents)
 
 The features I plan to include in my design are:
 
@@ -63,13 +65,13 @@ The features I plan to include in my design are:
 
 # The Structure Plane
 
-- [Back To Contents](#contents)
+[^ Back To Contents ^](#contents)
 
 The information or in this case the game will be structured with an ease-of-use interface with all menu items easily accessible for the user. The game will be presented around a fun and enjoyable gameplay with the user wanting to come back for more with the aim of beating their previous high score.
 
 # The Skeleton Plane
 
-- [Back To Contents](#contents)
+[^ Back To Contents ^](#contents)
 
 ## Gameplay
 
@@ -77,11 +79,29 @@ The main objective of Asteroids is to blast the oncoming asteroids and flying sa
 
 Each level starts with a few large asteroids drifting in various directions on the screen. Objects wrap around screen edges – for instance, an asteroid that drifts off the top edge of the screen reappears at the bottom and continues moving in the same direction. As the player shoots asteroids, they break into smaller asteroids that move faster and are more difficult to hit. Smaller asteroids are also worth more points. Two flying saucers appear periodically on the screen; the "big saucer" shoots randomly and poorly, while the "small saucer" fires frequently at the ship. After reaching a score of 40,000, only the small saucer appears. As the player's score increases, the angle range of the shots from the small saucer diminishes until the saucer fires extremely accurately. Once the screen has been cleared of all asteroids and flying saucers, a new set of large asteroids appears, thus starting the next level. The player starts with 3 lives when the player loses all their lives, the game ends.
 
+# Wireframes
+
+## Tablet and larger screen view
+
+- [Asteroids wireframes image 1](assets/wireframes/asteroid_wireframe_1.png)
+
+- [Asteroids wireframes image 2](assets/wireframes/asteroid_wireframe_2.png)
+
+- [Asteroids wireframes image 3](assets/wireframes/asteroid_wireframe_3.png)
+
+- [Asteroids wireframes image 4](assets/wireframes/asteroid_wireframe_4.png)
+
+## Mobile view:
+
+- [Asteroids wireframes image 5](assets/wireframes/asteroid_wireframe_5.png)
+
+[^ Back To Contents ^](#contents)
+
 ---
 
 # User Stories
 
-- [Back To Contents](#contents)
+[^ Back To Contents ^](#contents)
 
 ## User stories for a new gamer
 
@@ -117,7 +137,7 @@ Each level starts with a few large asteroids drifting in various directions on t
 
 # User Testing
 
-- [Back To Contents](#contents)
+[^ Back To Contents ^](#contents)
 
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
