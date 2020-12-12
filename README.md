@@ -1,6 +1,6 @@
+![Asteroids promotional image](assets/readme_imgs/asteroids.jpg)
 
-
-# Asteroids! 
+# Asteroids!
 
 ## An Interactive Frontend Project by Michael McCann
 
@@ -91,9 +91,13 @@ Each level starts with a few large asteroids drifting in various directions on t
 
 - [Asteroids wireframes image 4](assets/wireframes/asteroid_wireframe_4.png)
 
-## Mobile view:
+## Mobile view
 
 - [Asteroids wireframes image 5](assets/wireframes/asteroid_wireframe_5.png)
+
+## Rough sketch
+
+- [Rough wireframe sketch](assets/wireframes/rough_wireframe.JPG)
 
 [^ Back To Contents ^](#contents)
 
