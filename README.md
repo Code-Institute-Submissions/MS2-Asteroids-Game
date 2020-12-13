@@ -1,4 +1,4 @@
-![Asteroids promotional image](assets/readme_imgs/asteroids.jpg)
+![Asteroids promotional image](wireframes/asteroids.jpg)
 
 # Asteroids!
 
@@ -84,21 +84,21 @@ Each level starts with a few large asteroids drifting in various directions on t
 
 ## Tablet and larger screen view
 
-- [Asteroids wireframes image 1](assets/wireframes/asteroid_wireframe_1.png)
+- [Asteroids wireframes image 1](wireframes/asteroid_wireframe_1.png)
 
-- [Asteroids wireframes image 2](assets/wireframes/asteroid_wireframe_2.png)
+- [Asteroids wireframes image 2](wireframes/asteroid_wireframe_2.png)
 
-- [Asteroids wireframes image 3](assets/wireframes/asteroid_wireframe_3.png)
+- [Asteroids wireframes image 3](wireframes/asteroid_wireframe_3.png)
 
-- [Asteroids wireframes image 4](assets/wireframes/asteroid_wireframe_4.png)
+- [Asteroids wireframes image 4](wireframes/asteroid_wireframe_4.png)
 
 ## Mobile view
 
-- [Asteroids wireframes image 5](assets/wireframes/asteroid_wireframe_5.png)
+- [Asteroids wireframes image 5](wireframes/asteroid_wireframe_5.png)
 
 ## Rough sketch
 
-- [Rough wireframe sketch](assets/wireframes/rough_wireframe.JPG)
+- [Rough wireframe sketch](wireframes/rough_wireframe.jpg)
 
 [^ Back To Contents ^](#contents)
 
@@ -110,33 +110,29 @@ Each level starts with a few large asteroids drifting in various directions on t
 
 ## User stories for a new gamer
 
-## As a new gamer I expect :-
+* As a new gamer I expect, want or to see: who the game is suitable for 
 
-* Asteroids target audience 6+
-
-* To be excited to play 
-* To have fun 
-* To be intrigued 
-* To find the navigation ease to use 
-* There to be gameplay instructions 
-* The game to be easily playable
-* The game to work on all devices
-* The controls to be easily accessible 
-* There to be a scoring feature
-* My high score to be saved
-* There to be contact details
-* There to be social network links 
+* As a new gamer I expect, want or to see: to be excited to play 
+* As a new gamer I expect, want or to see: to have fun 
+* As a new gamer I expect, want or to see: to be intrigued 
+* As a new gamer I expect, want or to see: to find the navigation ease to use 
+* As a new gamer I expect, want or to see: there to be gameplay instructions 
+* As a new gamer I expect, want or to see: the game to be easily playable
+* As a new gamer I expect, want or to see: the game to work on all devices
+* As a new gamer I expect, want or to see: the controls to be easily accessible 
+* As a new gamer I expect, want or to see: there to be a scoring feature
+* As a new gamer I expect, want or to see: my high score to be saved
+* As a new gamer I expect, want or to see: there to be contact details
+* As a new gamer I expect, want or to see: there to be social network links 
 
 ## User stories for a returning gamer
 
-## As a returning gamer I expect :-
+* As a returning gamer I expect, want or to see: to be able to jump in and immediately play
 
-* To be able to jump in and immediately play
-
-* Menu items to be in the same location
-* The design to be the same
-* My highscore to be still there
-* If the developer made any updates to the game, I expect this information to be easily located 
+* As a returning gamer I expect, want or to see: menu items to be in the same location
+* As a returning gamer I expect, want or to see: the design to be the same
+* As a returning gamer I expect, want or to see: my highscore to be still there
+* As a returning gamer I expect, want or to see:: if the developer made any updates to the game, I expect this information to be easily located 
 
 ---
 
