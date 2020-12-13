@@ -6,6 +6,8 @@
 
 For my second milestone project, I have deciced to put my JavaScript knowledge to the test and create my version of my version of the classic 1979 classic Atari game, Asteroids. Built using HTML5, CSS3 and JavaScript. I aim to make the user experience more enjoyable for the gamer than its Daddy by giving the game an overhaul on the design.
 
+For ages 6+
+
 # Contents
 
 - [A Bit Of Info On The Game](#a-bit-of-info-on-the-game)
@@ -14,6 +16,7 @@ For my second milestone project, I have deciced to put my JavaScript knowledge t
 - [The Scope Plane](#the-scope-plane)
 - [The Structure Plane](#the-structure-plane)
 - [The Skeleton Plane](#the-skeleton-plane)
+- [Design](#design)
 - [Wireframes](#wireframes)
 - [User Stories](#user-stories)
 - [User Testing](#user-testing)
@@ -80,9 +83,33 @@ The main objective of Asteroids is to blast the oncoming asteroids and flying sa
 
 Each level starts with a few large asteroids drifting in various directions on the screen. Objects wrap around screen edges – for instance, an asteroid that drifts off the top edge of the screen reappears at the bottom and continues moving in the same direction. As the player shoots asteroids, they break into smaller asteroids that move faster and are more difficult to hit. Smaller asteroids are also worth more points. Two flying saucers appear periodically on the screen; the "big saucer" shoots randomly and poorly, while the "small saucer" fires frequently at the ship. After reaching a score of 40,000, only the small saucer appears. As the player's score increases, the angle range of the shots from the small saucer diminishes until the saucer fires extremely accurately. Once the screen has been cleared of all asteroids and flying saucers, a new set of large asteroids appears, thus starting the next level. The player starts with 3 lives when the player loses all their lives, the game ends.
 
+---
+
+# Design
+
+[^ Back To Contents ^](#contents)
+
+As you can see from this orginal Asteroids in-game design, the developers at the time would have been limited to making the overall look of the game look good as the game is just white vector drawings on a black background. Where I feel the game achieved its success was in the adective gameplay, the need to be the best and to beat your own highscore was what made it a success.
+
+![Orginal Asteroids in-game design](wireframes/og_asteroids.jpeg)
+
+With my version of Asteroids, the gameplay will largely be the same but with the advances in web technologies such as JavaScript, I aim to add more artistic flare to the game design and features. 
+
+Fonts will be in keeping with the style of the retro game so while it's not yet deciced, they'll be in line of [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono).
+
+I aim to have an image of some far-away galaxy as the background image. Such as this: ![Galaxy background](wireframes/galaxy_bg.jpeg)
+
+Asteroids will be floating around the screen in different colours
+
+The spaceship, I'm aiming to build something a bit better than the plain triangular spaceship version of the orginal game. I'll achieve my spaceship by using the Canvas feature of JavaScript.
+
+---
+
 # Wireframes
 
 ## Tablet and larger screen view
+
+[^ Back To Contents ^](#contents)
 
 - [Asteroids wireframes image 1](wireframes/asteroid_wireframe_1.png)
 
@@ -132,7 +159,7 @@ Each level starts with a few large asteroids drifting in various directions on t
 * As a returning gamer I expect, want or to see: menu items to be in the same location
 * As a returning gamer I expect, want or to see: the design to be the same
 * As a returning gamer I expect, want or to see: my highscore to be still there
-* As a returning gamer I expect, want or to see:: if the developer made any updates to the game, I expect this information to be easily located 
+* As a returning gamer I expect, want or to see: if the developer made any updates to the game, I expect this information to be easily located 
 
 ---
 
