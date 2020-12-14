@@ -186,6 +186,7 @@ If ship hits an asteroid, ship is destroyed and player loses a life        | Out
 
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
+Test CANVAS element is working with the HTML document | The CANVAS element is working with the HTML document. Please see the attached screenshots. [Canvas Testing Img 1](wireframes/canvas_testing.png) [Canvas Testing Img 2](wireframes/canvas_testing_output.png)| Pass
 Test responsiveness of website on all screen sizes on Chrome browser       | Outcome | Pass/Fail
 Test responsiveness of website on all screen sizes on Safari browser       | Outcome | Pass/Fail
 Test responsiveness of website on all screen sizes on Firefox browse       | Outcome | Pass/Fail
