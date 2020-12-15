@@ -4,7 +4,7 @@
 
 ## An Interactive Frontend Project by Michael McCann
 
-For my second milestone project, I have deciced to put my JavaScript knowledge to the test and create my version of my version of the classic 1979 classic Atari game, Asteroids. Built using HTML5, CSS3 and JavaScript. I aim to make the user experience more enjoyable for the gamer than its Daddy by giving the game an overhaul on the design.
+For my second milestone project, I have deciced to put my JavaScript knowledge to the test and create my version of the classic 1979 classic Atari game, Asteroids. Built using HTML5, CSS3 and JavaScript. I aim to make the user experience more enjoyable for the gamer than its Daddy by giving the game an overhaul on the design.
 
 For ages 6+
 
@@ -186,7 +186,8 @@ If ship hits an asteroid, ship is destroyed and player loses a life        | Out
 
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
-Test CANVAS element is working with the HTML document | The CANVAS element is working with the HTML document. Please see the attached screenshots. [Canvas Testing Img 1](wireframes/canvas_testing.png) [Canvas Testing Img 2](wireframes/canvas_testing_output.png)| Pass
+Test CANVAS element is working with the HTML document | The CANVAS element is working with the HTML document. Please see the attached screenshots. <br>[Canvas testing 1](wireframes/canvas_testing.png) <br>[Canvas testing 2](wireframes/canvas_testing_output.png)| Pass
+Test CANVAS element is filling up the whole of the browser window | CANVAS element is filling up the whole of the browser window. <br>[Canvas testing 3](wireframes/canvas_testing3.png) | Pass
 Test responsiveness of website on all screen sizes on Chrome browser       | Outcome | Pass/Fail
 Test responsiveness of website on all screen sizes on Safari browser       | Outcome | Pass/Fail
 Test responsiveness of website on all screen sizes on Firefox browse       | Outcome | Pass/Fail
