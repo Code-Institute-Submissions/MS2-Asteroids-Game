@@ -1,7 +1,13 @@
 body {
-    margin: 0;
+    background-color: black;
 }
 
-canvas {
-    border: 1px solid black;
+#container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+#asteroid-canvas {
+    background-color: black;
+    border: 1px solid white;
 }

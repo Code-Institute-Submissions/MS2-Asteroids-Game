@@ -1,53 +1,45 @@
-let canvas = document.querySelector('canvas');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+let canvas;
+let ctx;
+let canvasWidth = 1400;
+let canvasHeight = 1000;
+let keys = [];
 
-//c variable stands for context
-let c = canvas.getContext('2d');
+document.addEventListener('DOMContentLoaded', SetupCanvas);
 
-c.fillStyle = 'rgba(255, 0, 0, .4)';
-c.fillRect(100, 100, 100, 100);
-c.fillStyle = 'rgba(255, 0, 255, .4)';
-c.fillRect(400, 20, 100, 100);
-c.fillStyle = 'rgba(0, 255, 0, .4)';
-c.fillRect(100, 300, 100, 100);
-c.fillRect(800, 100, 100, 500);
-
-//Draw a line
-c.beginPath();
-c.moveTo(50, 300);
-c.lineTo(300, 100);
-c.lineTo(400, 300);
-c.strokeStyle = 'red';
-c.stroke();
-
-c.beginPath();
-c.moveTo(100, 300);
-c.lineTo(300, 100);
-c.lineTo(100, 50);
-c.strokeStyle = 'black';
-c.stroke();
-
-c.beginPath();
-c.moveTo(500, 50);
-c.lineTo(40, 100);
-c.lineTo(100, 100);
-c.strokeStyle = 'orange';
-c.stroke();
-
-//Draw a circle
-/*c.beginPath();
-c.arc(300, 300, 30, 0, Math.PI * 2, false);
-c.strokeStyle = 'blue'
-c.stroke();*/
-
-for (let i = 0; i < 5; i++) {
-    let x = Math.random() * window.innerWidth;
-    let y = Math.random() * window.innerHeight;
-    c.beginPath();
-    c.arc(x, y, 30, 0, Math.PI * 2, false);
-    c.strokeStyle = 'blue'
-    c.stroke();
+function SetupCanvas() {
+    canvas = document.getElementById('asteroid-canvas');
+    ctx = canvas.getContext('2d');
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+    ctx.fillStyle = 'black';
+    ctx.fillRect = (0, 0, canvas.width, canvas.height);
+    document.body.addEventListener('keydown', function(e){
+        keys[e.keyCode] = true; 
+    });
+    document.body.addEventListener('keyup', function(e){
+        keys[e.keyCode] = false; 
+    });
+    Render();
+}
+//Properties for the spaceship
+class Spaceship {
+    constructor() {
+        //Sometimes I want the spaceship to be visible and sometimes I do not. E.g. at the start of the game 
+        this.visible = true;
+        //Makes spaceship appear in centre of screen
+        this.x = canvasWidth / 2;
+        this.y = canvasHeight / 2;
+        this.movingForward = false;
+        this.speed = 0.1;
+        this.velocityX = 0;
+        this.velocityY = 0;
+        this.rotateSpeed = 0.001
+    }
 }
 
-console.log(canvas);
+//Creates a new ship object
+let spaceship = new Spaceship();
+
+function Render() {
+
+};
