@@ -2,13 +2,8 @@ body {
     background-color: black;
 }
 
-#container {
-    margin: 0 auto;
-}
-
 #asteroid-canvas {
     width: 1200px;
     height: 600px;
     border: 1px solid white;
-    margin: auto;
 }
