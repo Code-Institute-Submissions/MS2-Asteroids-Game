@@ -202,16 +202,27 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
 
 ---
 
+# Frameworks, Libraries & Programs Used
+
+- Used [Adobe Color Wheel](https://color.adobe.com/create/color-wheel) for website colours
+
+- Used Preview on Mac to resize images
+
+---
+
 # Bugs
 
 ## Date: Thursday, 17th December, 2020
 With the CANVAS background image, it is not displaying its intended resoultion. Will try to resolve this issue. 
+Stroke line not appearing on the CANVAS. It appears very briefly when I refresh. Will try to resolve this issue.
 
 ---
 
 # Credits
 
-Thanks to ![Nathan Anderson](https://unsplash.com/@nathananderson) for the use of his image of space that was uploaded to ![Unsplash](https://unsplash.com/)
+Thanks to [Nathan Anderson](https://unsplash.com/@nathananderson) for the use of his image of space that was uploaded to [Unsplash](https://unsplash.com/)
+
+Used [Stack Overflow](https://stackoverflow.com/) to figure out how to place a background image into a canvas element
 
 # Technologies Used
 
