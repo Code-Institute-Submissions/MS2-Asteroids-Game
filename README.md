@@ -202,6 +202,17 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
 
 ---
 
+# Bugs
+
+## Date: Thursday, 17th December, 2020
+With the CANVAS background image, it is not displaying its intended resoultion. Will try to resolve this issue. 
+
+---
+
+# Credits
+
+Thanks to ![Nathan Anderson](https://unsplash.com/@nathananderson) for the use of his image of space that was uploaded to ![Unsplash](https://unsplash.com/)
+
 # Technologies Used
 
 ## Languages 
