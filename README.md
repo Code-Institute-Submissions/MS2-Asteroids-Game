@@ -213,8 +213,18 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
 # Bugs
 
 ## Date: Thursday, 17th December, 2020
-With the CANVAS background image, it is not displaying its intended resoultion. Will try to resolve this issue. 
-Stroke line not appearing on the CANVAS. It appears very briefly when I refresh. Will try to resolve this issue.
+
+- With the CANVAS background image, it is not displaying its intended resoultion.
+    - Fixed this issue by setting the background image as inline style.
+
+- Stroke line not appearing on the CANVAS. It appears very briefly when I refresh.
+    - Fixed this issue by using function init() and window.requestAnimationFrame(draw).
+
+## Date: Friday, 18th December, 2020
+
+- Stroke line appearing pixelated.
+
+    - Fixed this issue by setting the CANVAS width and height as inline style.
 
 ---
 
