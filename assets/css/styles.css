@@ -3,7 +3,5 @@ body {
 }
 
 #asteroid-canvas {
-    width: 1200px;
-    height: 600px;
     border: 1px solid white;
 }
