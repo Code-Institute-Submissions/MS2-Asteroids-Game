@@ -171,6 +171,7 @@ The spaceship, I'm aiming to build something a bit better than the plain triangu
 
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
+Manual testing the ships rotation functions | The ship rotates by manually inputting values. <br>[Ship code at 90 degrees.](wireframes/shipcode_at90.png) <br>[Ship image at 90 degrees.](wireframes/shipimg_at90.png) <br>[Ship code at 45 degrees](wireframes/shipcode_at45.png) <br>[Ship image at 45 degrees](wireframes/shipimg_at45.png) | Pass
 Move ship with arrow keys. At the start my main opjection here is just to rotate the ship in place                                                   | Outcome | Pass/Fail
 Next I'd like to add more functionality for the ship. For example: to make it fly                                                                     | Outcome | Pass/Fail
 Making the ship shoot bullets by pressing spacebar                         | Outcome | Pass/Fail
