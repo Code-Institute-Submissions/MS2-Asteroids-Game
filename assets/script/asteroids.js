@@ -4,6 +4,7 @@ const FPS = 30; // frames per second
 const SHIP_SIZE = 25; // ship height in pixels
 const TURN_SPEED = 360; // turn speed in degrees per second
 const SHIP_THRUST = 5; // ship acceleration speed
+const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
 
 /** @type {HTMLCanvasElement} */
 let canv = document.getElementById("asteroid-canvas");
@@ -64,6 +65,9 @@ function update() {
     if (ship.thrusting) {
         ship.thrust.x += SHIP_THRUST * Math.cos(ship.a) / FPS;
         ship.thrust.y -= SHIP_THRUST * Math.sin(ship.a) / FPS;
+    } else { // otherwise they're not pushing the thrust button
+        ship.thrust.x -= FRICTION * ship.thrust.x / FPS;
+        ship.thrust.y -= FRICTION * ship.thrust.y / FPS; 
     }
 
     // draw the triangular ship
