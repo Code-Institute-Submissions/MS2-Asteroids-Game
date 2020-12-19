@@ -3,6 +3,7 @@
 const FPS = 30; // frames per second
 const SHIP_SIZE = 25; // ship height in pixels
 const TURN_SPEED = 360; // turn speed in degrees per second
+const SHIP_THRUST = 5; // ship acceleration speed
 
 /** @type {HTMLCanvasElement} */
 let canv = document.getElementById("asteroid-canvas");
@@ -15,6 +16,8 @@ let ship = {
     r: SHIP_SIZE / 2,
     a: 90 / 180 * Math.PI, // convert to radians
     rot: 0,
+    thrusting: false,
+        thrust: { x: 0, y: 0 }
 }
 
 // set up event handlers
@@ -30,7 +33,7 @@ function keyDown(/** @type {KeyboardEvent} */ ev) {
             ship.rot = TURN_SPEED / 180 * Math.PI / FPS;
             break;
         case 38: // up arrow (thrust the ship forward)
-
+            ship.thrusting = true;
             break;
         case 39: // right arrow (rotate ship right)
             ship.rot = -TURN_SPEED / 180 * Math.PI / FPS;
@@ -44,7 +47,7 @@ function keyUp(/** @type {KeyboardEvent} */ ev) {
             ship.rot = 0;
             break;
         case 38: // up arrow (stop thrusting)
-
+            ship.thrusting = false;
             break;
         case 39: // right arrow (stop rotating right)
             ship.rot = 0;
@@ -58,6 +61,10 @@ function update() {
     ctx.fillRect(0, 0, canv.width, canv.height);
 
     // thrust the ship
+    if (ship.thrusting) {
+        ship.thrust.x += SHIP_THRUST * Math.cos(ship.a) / FPS;
+        ship.thrust.y -= SHIP_THRUST * Math.sin(ship.a) / FPS;
+    }
 
     // draw the triangular ship
     ctx.strokeStyle = "magenta";
@@ -82,5 +89,7 @@ function update() {
     ship.a += ship.rot;
 
     // move the ship
+    ship.x += ship.thrust.x;
+    ship.y += ship.thrust.y;
 
 }
