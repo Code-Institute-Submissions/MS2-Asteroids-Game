@@ -172,7 +172,7 @@ The spaceship, I'm aiming to build something a bit better than the plain triangu
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Manual testing the ships rotation functions | The ship rotates by manually inputting values. <br>[Ship code at 90 degrees.](wireframes/shipcode_at90.png) <br>[Ship image at 90 degrees.](wireframes/shipimg_at90.png) <br>[Ship code at 45 degrees](wireframes/shipcode_at45.png) <br>[Ship image at 45 degrees](wireframes/shipimg_at45.png) | Pass
-Move ship with arrow keys. At the start my main opjection here is just to rotate the ship in place                                                   | Outcome | Pass/Fail
+Move ship with arrow keys. At the start my main opjection here is just to rotate the ship in place | When left arrow is pressed, spaceship rotates left. When right arrow is pressed, spaceship rotates right. | Pass
 Next I'd like to add more functionality for the ship. For example: to make it fly                                                                     | Outcome | Pass/Fail
 Making the ship shoot bullets by pressing spacebar                         | Outcome | Pass/Fail
 Make asteroids appear randomly in clusters                                 | Outcome | Pass/Fail
@@ -226,6 +226,12 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
 - Stroke line appearing pixelated.
 
     - Fixed this issue by setting the CANVAS width and height as inline style.
+
+## Date: Saturday, 19th December, 2020
+
+- When I use the arrow keys to rotate the ship, the ship duplicates. See attached image [rotation glitch](wireframes/rotate_glitch.png). Works as intended without the galaxy background image. Will continue with development and will try to find a fix later on.
+
+    - Yet to be resolved.
 
 ---
 
