@@ -2,6 +2,7 @@
 
 const FPS = 30; // frames per second
 const SHIP_SIZE = 25; // ship height in pixels
+const INNER_SHIP = 10;
 const TURN_SPEED = 360; // turn speed in degrees per second
 const SHIP_THRUST = 5; // ship acceleration speed
 const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
@@ -72,7 +73,7 @@ function update() {
 
     // draw the triangular ship
     ctx.strokeStyle = "magenta";
-    ctx.lineWidth = SHIP_SIZE / 20;
+    ctx.lineWidth = SHIP_SIZE / 5;
     ctx.beginPath();
     ctx.moveTo( // nose of the ship
         ship.x + 4 / 3 * ship.r * Math.cos(ship.a),
@@ -95,5 +96,18 @@ function update() {
     // move the ship
     ship.x += ship.thrust.x;
     ship.y += ship.thrust.y;
+
+    // handle edge of screen 
+    if (ship.x < 0 - ship.r) {
+        ship.x = canv.width + ship.r;
+    } else if (ship > canv.width + ship.r) {
+        ship.x = 0 - ship.r
+    }
+
+    if (ship.y < 0 - ship.r) {
+        ship.y = canv.height + ship.r;
+    } else if (ship > canv.height + ship.r) {
+        ship.y = 0 - ship.r
+    }
 
 }
