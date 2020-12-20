@@ -73,16 +73,16 @@ function update() {
     ctx.lineWidth = SHIP_SIZE / 15;
     ctx.beginPath();
     ctx.moveTo( // rear left
-        ship.x - ship.r * (2 / 3 * Math.cos(ship.a) + Math.sin(ship.a)),
-        ship.y + ship.r * (2 / 3 * Math.sin(ship.a) - Math.cos(ship.a))
+        ship.x - ship.r * (2 / 3 * Math.cos(ship.a) + 0.5 * Math.sin(ship.a)),
+        ship.y + ship.r * (2 / 3 * Math.sin(ship.a) - 0.5 * Math.cos(ship.a))
     );
-    ctx.lineTo( // rear centre behind the ship
+    ctx.lineTo( // rear centr   e behind the ship
         ship.x - ship.r * 5 / 3 * Math.cos(ship.a),
         ship.y + ship.r * 5 / 3 * Math.sin(ship.a)
     );
     ctx.lineTo( // rear right
-        ship.x - ship.r * (2 / 3 * Math.cos(ship.a) - Math.sin(ship.a)),
-        ship.y + ship.r * (2 / 3 * Math.sin(ship.a) + Math.cos(ship.a))
+        ship.x - ship.r * (2 / 3 * Math.cos(ship.a) - 0.5 * Math.sin(ship.a)),
+        ship.y + ship.r * (2 / 3 * Math.sin(ship.a) + 0.5 * Math.cos(ship.a))
     );
     ctx.closePath();
     ctx.fill();
