@@ -85,9 +85,11 @@ Each level starts with a few large asteroids drifting in various directions on t
 
 ---
 
-# UX Design
+# User Experience
 
 - With a "friction control" of sorts on the spaceship, this brings the ship to a gradual stop, without it, the ship just kept on moving and the gameplay would have been a far more hectic experience.
+
+- With a feature that handles the edge of screen enables the ship to reappear if it flies off the screen. This makes for a much more enjoyable experience for the gamer rather than being frustrated trying to find their spaceship everytime it disappears off screen.
 
 ---
 
@@ -180,7 +182,7 @@ TEST            | OUTCOME                          | PASS / FAIL
 Manual testing the ships rotation functions | The ship rotates by manually inputting values. <br>[Ship code at 90 degrees.](wireframes/shipcode_at90.png) <br>[Ship image at 90 degrees.](wireframes/shipimg_at90.png) <br>[Ship code at 45 degrees](wireframes/shipcode_at45.png) <br>[Ship image at 45 degrees](wireframes/shipimg_at45.png) | Pass
 Move ship with arrow keys. At the start my main opjection here is just to rotate the ship in place | When left arrow is pressed, spaceship rotates left. When right arrow is pressed, spaceship rotates right. | Pass
 Next I'd like to add more functionality for the ship. For example: to make it fly | When up arrow is pressed, spaceship thrusts forward enabling it to fly around the screen. | Pass
-Ensure when ship flies off screen that it reappears | Outcome | Pass/Fail
+Ensure when ship flies off screen that it reappears | When the ship flies off the top of the screen it now appears on the bottom. Also, if the ship flies off the right, it'll appear on the left | Pass
 Ensure there's some sort of a "traction control" on the ship | "Traction control" has been added, which brings the ship to a gradual stop | Pass
 Making the ship shoot bullets by pressing spacebar                         | Outcome | Pass/Fail
 Make asteroids appear randomly in clusters                                 | Outcome | Pass/Fail
