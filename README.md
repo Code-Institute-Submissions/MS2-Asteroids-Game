@@ -91,6 +91,8 @@ Each level starts with a few large asteroids drifting in various directions on t
 
 - With a feature that handles the edge of screen enables the ship to reappear if it flies off the screen. This makes for a much more enjoyable experience for the gamer rather than being frustrated trying to find their spaceship everytime it disappears off screen.
 
+- Added in a graphical element to the thruster, which gives the user visual feedback that something happened when they hold down the UP arrow. This with the increase in the ship's speed provides an all-round good user experience for the potential gamer.
+
 ---
 
 # Design
@@ -110,6 +112,13 @@ I aim to have an image of some far-away galaxy as the background image. Such as 
 Asteroids will be floating around the screen in different colours
 
 The spaceship, I'm aiming to build something a bit better than the plain triangular spaceship version of the orginal game. I'll achieve my spaceship by using the Canvas feature of JavaScript.
+
+### Spaceship Colour
+- Magenta 
+
+### Thruster Colours:
+- #15F00A - Neon green
+- Cyan
 
 ---
 
