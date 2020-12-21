@@ -89,7 +89,7 @@ function newAsteroid(x, y) {
 
 function update() {
     // draw space
-    ctx.fillStyle = "orange";
+    ctx.fillStyle = "yellow";
     ctx.fillRect(0, 0, canv.width, canv.height);
 
     // thrust the ship
@@ -125,7 +125,7 @@ function update() {
 
     // draw the asteroids
     ctx.strokeStyle = "#FA00DB"; // neon pink colour
-    ctx.lineWidth = SHIP_SIZE / 20;
+    ctx.lineWidth = SHIP_SIZE / 2;
     let x, y, r, a, vert;
     for (let i = 0; i < roids.length; i++) {
         
