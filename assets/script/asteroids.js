@@ -5,7 +5,7 @@ const SHIP_SIZE = 25; // ship height in pixels
 const ROIDS_SIZE = 100; // starting size of asteroids
 const ROIDS_SPD = 50; // starting speed of asteroids
 const ROIDS_VERT = 10; // average number of vertices on asteroids
-const ROIDS_NUM = 3; // starting number of asteroids
+const ROIDS_NUM = 300; // starting number of asteroids
 const TURN_SPEED = 360; // turn speed in degrees per second
 const SHIP_THRUST = 5; // ship acceleration speed
 const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
@@ -40,11 +40,17 @@ function createAsteroidBelt() {
     roids = [];
     let x, y;
     for (let i = 0; i < ROIDS_NUM; i++) {
-        x = Math.floor(Math.random() * canv.width);
-        y = Math.floor(Math.random() * canv.height);
+        do {
+            x = Math.floor(Math.random() * canv.width);
+            y = Math.floor(Math.random() * canv.height);
+        } while (distanceBetweenPoints(ship.x, ship.y, x, y) < ROIDS_SIZE * 2 + ship.r);
         roids.push(newAsteroid(x, y));
     }
-};
+}
+
+function distanceBetweenPoints(x1, y1, x2, y2) {
+    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+}
 
 function keyDown(/** @type {KeyboardEvent} */ ev) {
     switch (ev.keyCode) {
