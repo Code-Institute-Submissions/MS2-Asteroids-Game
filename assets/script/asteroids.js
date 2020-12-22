@@ -5,7 +5,7 @@ const SHIP_SIZE = 25; // ship height in pixels
 const ROIDS_SIZE = 100; // starting size of asteroids
 const ROIDS_SPD = 50; // starting speed of asteroids
 const ROIDS_VERT = 10; // average number of vertices on asteroids
-const ROIDS_NUM = 300; // starting number of asteroids
+const ROIDS_NUM = 3; // starting number of asteroids
 const TURN_SPEED = 360; // turn speed in degrees per second
 const SHIP_THRUST = 5; // ship acceleration speed
 const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
@@ -160,6 +160,8 @@ function update() {
         ctx.stroke();
 
         // move the asteroids
+        roids[i].x += roids[i].xv;
+        roids[i].y += roids[i].yv;
 
 
         // handle edge of screen
