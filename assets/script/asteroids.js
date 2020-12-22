@@ -8,6 +8,7 @@ const ROIDS_VERT = 10; // average number of vertices on asteroids
 const ROIDS_NUM = 3; // starting number of asteroids
 const TURN_SPEED = 360; // turn speed in degrees per second
 const SHIP_THRUST = 5; // ship acceleration speed
+const SHOW_BOUNDING = true; // show or hide collision bounding
 const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
 
 /** @type {HTMLCanvasElement} */
@@ -174,7 +175,7 @@ function update() {
         } else if (roids[i].y > canv.height + roids[i].r){
             roids[i].y = 0 - roids[i].r
         }
-    }
+    };
 
     // draw the triangular ship
     ctx.strokeStyle = "magenta";
@@ -194,6 +195,13 @@ function update() {
     );
     ctx.closePath();
     ctx.stroke();
+
+    if (SHOW_BOUNDING) {
+        ctx.strokeStyle = "cyan";
+        ctx.beginPath();
+        ctx.arc(ship.x, ship.y, ship.r, 0, Math.PI * 2, false);
+        ctx.stroke();
+    }
 
     // rotate the ship
     ship.a += ship.rot;
