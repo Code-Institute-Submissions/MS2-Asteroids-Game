@@ -23,7 +23,7 @@ let ship = {
     a: 90 / 180 * Math.PI, // convert to radians
     rot: 0,
     thrusting: false,
-        thrust: { x: 0, y: 0 }
+    thrust: { x: 0, y: 0 }
 }
 
 // set up asteroids
@@ -104,30 +104,30 @@ function update() {
         ship.thrust.x += SHIP_THRUST * Math.cos(ship.a) / FPS;
         ship.thrust.y -= SHIP_THRUST * Math.sin(ship.a) / FPS;
 
-    // draw the thrusters
-    ctx.fillStyle = "#15F00A"; // neon green
-    ctx.strokeStyle = "cyan";
-    ctx.lineWidth = SHIP_SIZE / 15;
-    ctx.beginPath();
-    ctx.moveTo( // rear left
-        ship.x - ship.r * (2 / 3 * Math.cos(ship.a) + 0.5 * Math.sin(ship.a)),
-        ship.y + ship.r * (2 / 3 * Math.sin(ship.a) - 0.5 * Math.cos(ship.a))
-    );
-    ctx.lineTo( // rear centre behind the ship
-        ship.x - ship.r * 5 / 3 * Math.cos(ship.a),
-        ship.y + ship.r * 5 / 3 * Math.sin(ship.a)
-    );
-    ctx.lineTo( // rear right
-        ship.x - ship.r * (2 / 3 * Math.cos(ship.a) - 0.5 * Math.sin(ship.a)),
-        ship.y + ship.r * (2 / 3 * Math.sin(ship.a) + 0.5 * Math.cos(ship.a))
-    );
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
+        // draw the thrusters
+        ctx.fillStyle = "#15F00A"; // neon green
+        ctx.strokeStyle = "cyan";
+        ctx.lineWidth = SHIP_SIZE / 15;
+        ctx.beginPath();
+        ctx.moveTo( // rear left
+            ship.x - ship.r * (2 / 3 * Math.cos(ship.a) + 0.5 * Math.sin(ship.a)),
+            ship.y + ship.r * (2 / 3 * Math.sin(ship.a) - 0.5 * Math.cos(ship.a))
+        );
+        ctx.lineTo( // rear centre behind the ship
+            ship.x - ship.r * 5 / 3 * Math.cos(ship.a),
+            ship.y + ship.r * 5 / 3 * Math.sin(ship.a)
+        );
+        ctx.lineTo( // rear right
+            ship.x - ship.r * (2 / 3 * Math.cos(ship.a) - 0.5 * Math.sin(ship.a)),
+            ship.y + ship.r * (2 / 3 * Math.sin(ship.a) + 0.5 * Math.cos(ship.a))
+        );
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
 
     } else { // otherwise they're not pushing the thrust button
         ship.thrust.x -= FRICTION * ship.thrust.x / FPS;
-        ship.thrust.y -= FRICTION * ship.thrust.y / FPS; 
+        ship.thrust.y -= FRICTION * ship.thrust.y / FPS;
     }
 
     // draw the asteroids
@@ -135,7 +135,7 @@ function update() {
     ctx.lineWidth = SHIP_SIZE / 2;
     let x, y, r, a, vert;
     for (let i = 0; i < roids.length; i++) {
-        
+
         // asteroids properties
         x = roids[i].x;
         y = roids[i].y;
@@ -148,7 +148,7 @@ function update() {
         ctx.moveTo(
             x + r * Math.cos(a),
             y + r * Math.sin(a)
-        ); 
+        );
 
         // draw the polygon
         for (let j = 0; j < vert; j++) {
@@ -160,6 +160,13 @@ function update() {
         ctx.closePath();
         ctx.stroke();
 
+        if (SHOW_BOUNDING) {
+            ctx.strokeStyle = "cyan";
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, Math.PI * 2, false);
+            ctx.stroke();
+        }
+
         // move the asteroids
         roids[i].x += roids[i].xv;
         roids[i].y += roids[i].yv;
@@ -167,12 +174,12 @@ function update() {
         // handle edge of screen
         if (roids[i].x < 0 - roids[i].r) {
             roids[i].x = canv.width + roids[i].r;
-        } else if (roids[i].x > canv.width + roids[i].r){
+        } else if (roids[i].x > canv.width + roids[i].r) {
             roids[i].x = 0 - roids[i].r
         }
         if (roids[i].y < 0 - roids[i].r) {
             roids[i].y = canv.height + roids[i].r;
-        } else if (roids[i].y > canv.height + roids[i].r){
+        } else if (roids[i].y > canv.height + roids[i].r) {
             roids[i].y = 0 - roids[i].r
         }
     };
