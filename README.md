@@ -196,6 +196,7 @@ Next I'd like to add more functionality for the ship. For example: to make it fl
 Ensure when ship flies off screen that it reappears | When the ship flies off the top of the screen it now appears on the bottom. Also, if the ship flies off the right, it'll appear on the left | Pass
 Ensure when asteroids fly off screen that they reappear | When asteroids fly off the top of the screen they now appear on the bottom. Also, if they fly off the right, they'll appear on the left | Pass
 Ensure there's some sort of a "traction control" on the ship | "Traction control" has been added, which brings the ship to a gradual stop | Pass
+Create a bounding box for the ship for collision detecting purposes | A circle was created to act as a bounding box for testing collision. <br> [Ship with bounding box](wireframes/ship_bounding_box.png) | Pass
 Making the ship shoot bullets by pressing spacebar                         | Outcome | Pass/Fail
 Make asteroids appear randomly in clusters                                 | Outcome | Pass/Fail
 Make asteroids rotate for added affects                                    | Outcome | Pass/Fail
