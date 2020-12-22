@@ -8,7 +8,7 @@ const ROIDS_VERT = 10; // average number of vertices on asteroids
 const ROIDS_NUM = 3; // starting number of asteroids
 const TURN_SPEED = 360; // turn speed in degrees per second
 const SHIP_THRUST = 5; // ship acceleration speed
-const SHOW_BOUNDING = true; // show or hide collision bounding
+const SHOW_BOUNDING = false; // show or hide collision bounding
 const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
 
 /** @type {HTMLCanvasElement} */
@@ -95,9 +95,10 @@ function newAsteroid(x, y) {
 }
 
 function update() {
+    document.getElementById("asteroid-canvas").style.background = "url('assets/images/galaxy_image.jpg')";
     // draw space
-    ctx.fillStyle = "yellow";
-    ctx.fillRect(0, 0, canv.width, canv.height);
+    //ctx.fillStyle = "yellow";
+    //ctx.fillRect(0, 0, canv.width, canv.height);
 
     // thrust the ship
     if (ship.thrusting) {
