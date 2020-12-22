@@ -163,9 +163,17 @@ function update() {
         roids[i].x += roids[i].xv;
         roids[i].y += roids[i].yv;
 
-
         // handle edge of screen
-
+        if (roids[i].x < 0 - roids[i].r) {
+            roids[i].x = canv.width + roids[i].r;
+        } else if (roids[i].x > canv.width + roids[i].r){
+            roids[i].x = 0 - roids[i].r
+        }
+        if (roids[i].y < 0 - roids[i].r) {
+            roids[i].y = canv.height + roids[i].r;
+        } else if (roids[i].y > canv.height + roids[i].r){
+            roids[i].y = 0 - roids[i].r
+        }
     }
 
     // draw the triangular ship
