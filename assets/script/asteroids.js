@@ -96,6 +96,8 @@ function newAsteroid(x, y) {
 
 function update() {
     document.getElementById("asteroid-canvas").style.background = "url('assets/images/galaxy_image.jpg')";
+    ctx.clearRect(0, 0, canv.width, canv.height);
+
     // draw space
     //ctx.fillStyle = "yellow";
     //ctx.fillRect(0, 0, canv.width, canv.height);

@@ -255,7 +255,7 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
 
 - When I use the arrow keys to rotate the ship, the ship duplicates. See attached image [rotation glitch](wireframes/rotate_glitch.png). Works as intended without the galaxy background image. Will continue with development and will try to find a fix later on.
 
-    - Yet to be resolved.
+    - Fix this issue by using: ctx.clearRect(0, 0, canv.width, canv.height);.
 
 ---
 
