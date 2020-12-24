@@ -198,6 +198,7 @@ Ensure when asteroids fly off screen that they reappear | When asteroids fly off
 Ensure there's some sort of a "traction control" on the ship | "Traction control" has been added, which brings the ship to a gradual stop | Pass
 Create a bounding box for the ship for collision detecting purposes | A circle was created to act as a bounding box for testing collision. <br> [Ship with bounding box](wireframes/ship_bounding_box.png) | Pass
 Create a bounding box for the asteroids for collision detecting purposes | A circle was created to act as a bounding box for testing collision. <br> [Ship with bounding box](wireframes/asteroids_bounding_box.png) | Pass
+Create a collision detecting function to test asteroids and ship colliding | A collision detecting function has been added. At this point, when ship and asteroids collide, the game freezes but it is working. <br> (Collision detecting test)[wireframes/collision_detect_test.png] | Pass
 Making the ship shoot bullets by pressing spacebar                         | Outcome | Pass/Fail
 Make asteroids appear randomly in clusters                                 | Outcome | Pass/Fail
 Make asteroids rotate for added affects                                    | Outcome | Pass/Fail
@@ -244,6 +245,7 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
 
 - Stroke line not appearing on the CANVAS. It appears very briefly when I refresh.
     - Fixed this issue by using function init() and window.requestAnimationFrame(draw).
+        - Code is working as intended without using the above code.
 
 ## Date: Friday, 18th December, 2020
 
