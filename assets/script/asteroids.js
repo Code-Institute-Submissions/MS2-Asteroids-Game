@@ -8,7 +8,7 @@ const ROIDS_VERT = 10; // average number of vertices on asteroids
 const ROIDS_NUM = 3; // starting number of asteroids
 const TURN_SPEED = 360; // turn speed in degrees per second
 const SHIP_THRUST = 5; // ship acceleration speed
-const SHOW_BOUNDING = false; // show or hide collision bounding
+const SHOW_BOUNDING = true; // show or hide collision bounding
 const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
 
 /** @type {HTMLCanvasElement} */
@@ -51,6 +51,15 @@ function createAsteroidBelt() {
 
 function distanceBetweenPoints(x1, y1, x2, y2) {
     return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+}
+
+function explodeShip() {
+        ctx.fillStyle = "cyan";
+        ctx.fillStyle = "cyan";
+        ctx.beginPath();
+        ctx.arc(ship.x, ship.y, ship.r, 0, Math.PI * 2, false);
+        ctx.fill();
+        ctx.stroke();
 }
 
 function keyDown(/** @type {KeyboardEvent} */ ev) {
