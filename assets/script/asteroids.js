@@ -8,7 +8,7 @@ const ROIDS_VERT = 10; // average number of vertices on asteroids
 const ROIDS_NUM = 3; // starting number of asteroids
 const TURN_SPEED = 360; // turn speed in degrees per second
 const SHIP_THRUST = 5; // ship acceleration speed
-const SHOW_BOUNDING = false; // show or hide collision bounding
+const SHOW_BOUNDING = true; // show or hide collision bounding
 const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
 
 /** @type {HTMLCanvasElement} */
@@ -168,22 +168,6 @@ function update() {
             ctx.arc(x, y, r, 0, Math.PI * 2, false);
             ctx.stroke();
         }
-
-        // move the asteroids
-        roids[i].x += roids[i].xv;
-        roids[i].y += roids[i].yv;
-
-        // handle edge of screen
-        if (roids[i].x < 0 - roids[i].r) {
-            roids[i].x = canv.width + roids[i].r;
-        } else if (roids[i].x > canv.width + roids[i].r) {
-            roids[i].x = 0 - roids[i].r
-        }
-        if (roids[i].y < 0 - roids[i].r) {
-            roids[i].y = canv.height + roids[i].r;
-        } else if (roids[i].y > canv.height + roids[i].r) {
-            roids[i].y = 0 - roids[i].r
-        }
     };
 
     // draw the triangular ship
@@ -212,6 +196,13 @@ function update() {
         ctx.stroke();
     }
 
+    // check for asteroids collisions
+    for (let i = 0; i < roids.length; i++) {
+        if(distanceBetweenPoints(ship.x, ship.y, roids[i].x, roids[i].y) < ship.r + roids[i].r) {
+            explodeShip();
+        }
+    }
+
     // rotate the ship
     ship.a += ship.rot;
 
@@ -226,10 +217,28 @@ function update() {
         ship.x = 0 - ship.r
     }
 
-    if (ship.y < 0 - ship.r) {
-        ship.y = canv.height + ship.r;
-    } else if (ship > canv.height + ship.r) {
-        ship.y = 0 - ship.r
+        // move the asteroids
+        for (let i = 0; i < roids.length; i++) {
+        roids[i].x += roids[i].xv;
+        roids[i].y += roids[i].yv;
+
+        // handle edge of screen
+        if (roids[i].x < 0 - roids[i].r) {
+            roids[i].x = canv.width + roids[i].r;
+        } else if (roids[i].x > canv.width + roids[i].r) {
+            roids[i].x = 0 - roids[i].r
+        }
+        if (roids[i].y < 0 - roids[i].r) {
+            roids[i].y = canv.height + roids[i].r;
+        } else if (roids[i].y > canv.height + roids[i].r) {
+            roids[i].y = 0 - roids[i].r
+        }
+
+        if (ship.y < 0 - ship.r) {
+            ship.y = canv.height + ship.r;
+        } else if (ship > canv.height + ship.r) {
+            ship.y = 0 - ship.r
+        }
     }
 
 }
