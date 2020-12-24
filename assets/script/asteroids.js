@@ -97,7 +97,6 @@ function newAsteroid(x, y) {
 function update() {
     document.getElementById("asteroid-canvas").style.background = "url('assets/images/galaxy_image.jpg')";
     ctx.clearRect(0, 0, canv.width, canv.height);
-
     // draw space
     //ctx.fillStyle = "yellow";
     //ctx.fillRect(0, 0, canv.width, canv.height);
@@ -108,7 +107,7 @@ function update() {
         ship.thrust.y -= SHIP_THRUST * Math.sin(ship.a) / FPS;
 
         // draw the thrusters
-        ctx.fillStyle = "#15F00A"; // neon green
+        ctx.fillStyle = "#F6D838"; // yellow colour
         ctx.strokeStyle = "cyan";
         ctx.lineWidth = SHIP_SIZE / 15;
         ctx.beginPath();
@@ -134,7 +133,7 @@ function update() {
     }
 
     // draw the asteroids
-    ctx.strokeStyle = "#FA00DB"; // neon pink colour
+    ctx.strokeStyle = "#15F00A"; // neon green
     ctx.lineWidth = SHIP_SIZE / 2;
     let x, y, r, a, vert;
     for (let i = 0; i < roids.length; i++) {
