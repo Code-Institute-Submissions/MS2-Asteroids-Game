@@ -199,6 +199,7 @@ Ensure there's some sort of a "traction control" on the ship | "Traction control
 Create a bounding box for the ship for collision detecting purposes | A circle was created to act as a bounding box for testing collision. <br> [Ship with bounding box](wireframes/ship_bounding_box.png) | Pass
 Create a bounding box for the asteroids for collision detecting purposes | A circle was created to act as a bounding box for testing collision. <br> [Ship with bounding box](wireframes/asteroids_bounding_box.png) | Pass
 Create a collision detecting function to test asteroids and ship colliding | A collision detecting function has been added. At this point, when ship and asteroids collide, the game freezes but it is working. <br> (Collision detecting test)[wireframes/collision_detect_test.png] | Pass
+Create a explosion detecting function | Explosion detecting function has been tested. <br> (Explosion detecting test)[wireframes/collision_detect_test1.png] <br> (Explosion detecting test)[wireframes/collision_detect_test2.png] | Pass
 Making the ship shoot bullets by pressing spacebar                         | Outcome | Pass/Fail
 Make asteroids appear randomly in clusters                                 | Outcome | Pass/Fail
 Make asteroids rotate for added affects                                    | Outcome | Pass/Fail
