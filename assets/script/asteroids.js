@@ -251,11 +251,13 @@ function update() {
 
     // check for asteroids collisions
     if (!exploing) {
+        if (ship.blinkNum == 0) {
         for (let i = 0; i < roids.length; i++) {
             if (distanceBetweenPoints(ship.x, ship.y, roids[i].x, roids[i].y) < ship.r + roids[i].r) {
                 explodeShip();
             }
         }
+    }
 
         // rotate the ship
         ship.a += ship.rot;
