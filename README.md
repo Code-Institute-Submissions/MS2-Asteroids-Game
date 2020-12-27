@@ -116,9 +116,18 @@ The spaceship, I'm aiming to build something a bit better than the plain triangu
 ### Spaceship Colour
 - Magenta 
 
+### Asteroid Colour
+- #15F00A - Neon green
+
 ### Thruster Colours:
 - #15F00A - Neon green
 - Cyan
+
+### Explosion Colours
+- #F61638 - Red colour
+- #F68738 - Orange colour
+- #F6D438 - Yellow colour
+- White
 
 ---
 
