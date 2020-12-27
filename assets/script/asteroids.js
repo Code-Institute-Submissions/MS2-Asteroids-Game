@@ -114,26 +114,27 @@ function update() {
         ship.thrust.y -= SHIP_THRUST * Math.sin(ship.a) / FPS;
 
         // draw the thrusters
-        ctx.fillStyle = "#F6D838"; // yellow colour
-        ctx.strokeStyle = "cyan";
-        ctx.lineWidth = SHIP_SIZE / 15;
-        ctx.beginPath();
-        ctx.moveTo( // rear left
-            ship.x - ship.r * (2 / 3 * Math.cos(ship.a) + 0.5 * Math.sin(ship.a)),
-            ship.y + ship.r * (2 / 3 * Math.sin(ship.a) - 0.5 * Math.cos(ship.a))
-        );
-        ctx.lineTo( // rear centre behind the ship
-            ship.x - ship.r * 5 / 3 * Math.cos(ship.a),
-            ship.y + ship.r * 5 / 3 * Math.sin(ship.a)
-        );
-        ctx.lineTo( // rear right
-            ship.x - ship.r * (2 / 3 * Math.cos(ship.a) - 0.5 * Math.sin(ship.a)),
-            ship.y + ship.r * (2 / 3 * Math.sin(ship.a) + 0.5 * Math.cos(ship.a))
-        );
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
-
+        if (!exploing) {
+            ctx.fillStyle = "#F6D838"; // yellow colour
+            ctx.strokeStyle = "cyan";
+            ctx.lineWidth = SHIP_SIZE / 15;
+            ctx.beginPath();
+            ctx.moveTo( // rear left
+                ship.x - ship.r * (2 / 3 * Math.cos(ship.a) + 0.5 * Math.sin(ship.a)),
+                ship.y + ship.r * (2 / 3 * Math.sin(ship.a) - 0.5 * Math.cos(ship.a))
+            );
+            ctx.lineTo( // rear centre behind the ship
+                ship.x - ship.r * 5 / 3 * Math.cos(ship.a),
+                ship.y + ship.r * 5 / 3 * Math.sin(ship.a)
+            );
+            ctx.lineTo( // rear right
+                ship.x - ship.r * (2 / 3 * Math.cos(ship.a) - 0.5 * Math.sin(ship.a)),
+                ship.y + ship.r * (2 / 3 * Math.sin(ship.a) + 0.5 * Math.cos(ship.a))
+            );
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+        }
     } else { // otherwise they're not pushing the thrust button
         ship.thrust.x -= FRICTION * ship.thrust.x / FPS;
         ship.thrust.y -= FRICTION * ship.thrust.y / FPS;
