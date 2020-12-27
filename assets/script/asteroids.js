@@ -17,16 +17,7 @@ let canv = document.getElementById("asteroid-canvas");
 let ctx = canv.getContext("2d");
 
 // set up the spaceship object
-let ship = {
-    x: canv.width / 2,
-    y: canv.height / 2,
-    r: SHIP_SIZE / 2,
-    a: 90 / 180 * Math.PI, // convert to radians
-    explodeTime: 0,
-    rot: 0,
-    thrusting: false,
-    thrust: { x: 0, y: 0 }
-}
+let ship = newShip();
 
 // set up asteroids
 let roids = [];
@@ -98,6 +89,19 @@ function newAsteroid(x, y) {
         vert: Math.floor(Math.random() * (ROIDS_VERT + 1) + ROIDS_VERT / 2)
     };
     return roid;
+}
+
+function newShip() {
+    return {
+        x: canv.width / 2,
+        y: canv.height / 2,
+        r: SHIP_SIZE / 2,
+        a: 90 / 180 * Math.PI, // convert to radians
+        explodeTime: 0,
+        rot: 0,
+        thrusting: false,
+        thrust: { x: 0, y: 0 }
+    }
 }
 
 function update() {
@@ -238,6 +242,12 @@ function update() {
         // move the ship
         ship.x += ship.thrust.x;
         ship.y += ship.thrust.y;
+    } else {
+        ship.explodeTime--;
+
+        if (ship.explodeTime == 0) {
+            ship = newShip();
+        }
     }
 
     // handle edge of screen 
