@@ -212,6 +212,7 @@ Create a explosion detecting function | Explosion detecting function has been te
 Ensure ship explodes when ship collides with asteroid | Ship explodes when contact is made with an asteroid. <br> [Ship explode test 1](wireframes/ship_explosion1.png) <br> [Ship explode test 2](wireframes/ship_explosion2.png) | Pass
 Ensure ship does not move when it explodes. | Ship does not move when ship explodes | Pass
 Ensure ship reappears in centre of screen when collision is made. | Ship reappears in centre of screen when collision has been made. | Pass
+Ensure ship is invincible for a brief couple of seconds if ship is destroyed. | Ship blinks for a couple of seconds when it hits an asteroid and is invincible. | Pass 
 Making the ship shoot bullets by pressing spacebar                         | Outcome | Pass/Fail
 Make asteroids appear randomly in clusters                                 | Outcome | Pass/Fail
 Make asteroids rotate for added affects                                    | Outcome | Pass/Fail
