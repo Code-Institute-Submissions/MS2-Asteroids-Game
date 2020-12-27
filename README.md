@@ -211,6 +211,7 @@ Create a collision detecting function to test asteroids and ship colliding | A c
 Create a explosion detecting function | Explosion detecting function has been tested. <br> [Explosion detecting test](wireframes/collision_detect_test1.png) <br> [Explosion detecting test](wireframes/collision_detect_test2.png) | Pass
 Ensure ship explodes when ship collides with asteroid | Ship explodes when contact is made with an asteroid. <br> [Ship explode test 1](wireframes/ship_explosion1.png) <br> [Ship explode test 2](wireframes/ship_explosion2.png) | Pass
 Ensure ship does not move when it explodes. | Ship does not move when ship explodes | Pass
+Ensure ship reappears in centre of screen when collision is made. | Ship reappears in centre of screen when collision has been made. | Pass
 Making the ship shoot bullets by pressing spacebar                         | Outcome | Pass/Fail
 Make asteroids appear randomly in clusters                                 | Outcome | Pass/Fail
 Make asteroids rotate for added affects                                    | Outcome | Pass/Fail
