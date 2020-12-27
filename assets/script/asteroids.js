@@ -225,18 +225,20 @@ function update() {
     }
 
     // check for asteroids collisions
-    for (let i = 0; i < roids.length; i++) {
-        if(distanceBetweenPoints(ship.x, ship.y, roids[i].x, roids[i].y) < ship.r + roids[i].r) {
-            explodeShip();
+    if (!exploing) {
+        for (let i = 0; i < roids.length; i++) {
+            if(distanceBetweenPoints(ship.x, ship.y, roids[i].x, roids[i].y) < ship.r + roids[i].r) {
+                explodeShip();
+            }
         }
+
+        // rotate the ship
+        ship.a += ship.rot;
+
+        // move the ship
+        ship.x += ship.thrust.x;
+        ship.y += ship.thrust.y;
     }
-
-    // rotate the ship
-    ship.a += ship.rot;
-
-    // move the ship
-    ship.x += ship.thrust.x;
-    ship.y += ship.thrust.y;
 
     // handle edge of screen 
     if (ship.x < 0 - ship.r) {
