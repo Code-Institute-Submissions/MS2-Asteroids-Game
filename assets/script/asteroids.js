@@ -6,9 +6,10 @@ const ROIDS_SIZE = 100; // starting size of asteroids
 const ROIDS_SPD = 50; // starting speed of asteroids
 const ROIDS_VERT = 10; // average number of vertices on asteroids
 const ROIDS_NUM = 3; // starting number of asteroids
+const SHIP_EXPLODE_DUR = 0.3; // duration of ship's explosion 
 const TURN_SPEED = 360; // turn speed in degrees per second
 const SHIP_THRUST = 5; // ship acceleration speed
-const SHOW_BOUNDING = true; // show or hide collision bounding
+const SHOW_BOUNDING = false; // show or hide collision bounding
 const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
 
 /** @type {HTMLCanvasElement} */
@@ -21,6 +22,7 @@ let ship = {
     y: canv.height / 2,
     r: SHIP_SIZE / 2,
     a: 90 / 180 * Math.PI, // convert to radians
+    explodeTime: 0,
     rot: 0,
     thrusting: false,
     thrust: { x: 0, y: 0 }
@@ -54,12 +56,7 @@ function distanceBetweenPoints(x1, y1, x2, y2) {
 }
 
 function explodeShip() {
-        ctx.fillStyle = "cyan";
-        ctx.fillStyle = "cyan";
-        ctx.beginPath();
-        ctx.arc(ship.x, ship.y, ship.r, 0, Math.PI * 2, false);
-        ctx.fill();
-        ctx.stroke();
+    ship.explodeTime = Math.ceil(SHIP_EXPLODE_DUR * FPS);
 }
 
 function keyDown(/** @type {KeyboardEvent} */ ev) {
@@ -104,6 +101,7 @@ function newAsteroid(x, y) {
 }
 
 function update() {
+    let exploing = ship.explodeTime > 0;
     document.getElementById("asteroid-canvas").style.background = "url('assets/images/galaxy_image.jpg')";
     ctx.clearRect(0, 0, canv.width, canv.height);
     // draw space
@@ -180,23 +178,43 @@ function update() {
     };
 
     // draw the triangular ship
-    ctx.strokeStyle = "magenta";
-    ctx.lineWidth = SHIP_SIZE / 5;
-    ctx.beginPath();
-    ctx.moveTo( // nose of the ship
-        ship.x + 4 / 3 * ship.r * Math.cos(ship.a),
-        ship.y - 4 / 3 * ship.r * Math.sin(ship.a)
-    );
-    ctx.lineTo( // rear left
-        ship.x - ship.r * (2 / 3 * Math.cos(ship.a) + Math.sin(ship.a)),
-        ship.y + ship.r * (2 / 3 * Math.sin(ship.a) - Math.cos(ship.a))
-    );
-    ctx.lineTo( // rear right
-        ship.x - ship.r * (2 / 3 * Math.cos(ship.a) - Math.sin(ship.a)),
-        ship.y + ship.r * (2 / 3 * Math.sin(ship.a) + Math.cos(ship.a))
-    );
-    ctx.closePath();
-    ctx.stroke();
+    if (!exploing) {
+        ctx.strokeStyle = "magenta";
+        ctx.lineWidth = SHIP_SIZE / 5;
+        ctx.beginPath();
+        ctx.moveTo( // nose of the ship
+            ship.x + 4 / 3 * ship.r * Math.cos(ship.a),
+            ship.y - 4 / 3 * ship.r * Math.sin(ship.a)
+        );
+        ctx.lineTo( // rear left
+            ship.x - ship.r * (2 / 3 * Math.cos(ship.a) + Math.sin(ship.a)),
+            ship.y + ship.r * (2 / 3 * Math.sin(ship.a) - Math.cos(ship.a))
+        );
+        ctx.lineTo( // rear right
+            ship.x - ship.r * (2 / 3 * Math.cos(ship.a) - Math.sin(ship.a)),
+            ship.y + ship.r * (2 / 3 * Math.sin(ship.a) + Math.cos(ship.a))
+        );
+        ctx.closePath();
+        ctx.stroke();
+    } else {
+        // draw the explosion 
+        ctx.fillStyle = "#F61638"; // red colour
+        ctx.beginPath();
+        ctx.arc(ship.x, ship.y, ship.r * 1.5, 0, Math.PI * 2, false);
+        ctx.fill();
+        ctx.fillStyle = "#F68738"; // orange colour
+        ctx.beginPath();
+        ctx.arc(ship.x, ship.y, ship.r * 1.2, 0, Math.PI * 2, false);
+        ctx.fill();
+        ctx.fillStyle = "#F6D438"; // yellow colour
+        ctx.beginPath();
+        ctx.arc(ship.x, ship.y, ship.r * 0.9, 0, Math.PI * 2, false);
+        ctx.fill();
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(ship.x, ship.y, ship.r * 0.6, 0, Math.PI * 2, false);
+        ctx.fill();
+    }
 
     if (SHOW_BOUNDING) {
         ctx.strokeStyle = "cyan";
