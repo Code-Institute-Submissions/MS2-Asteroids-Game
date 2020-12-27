@@ -123,7 +123,7 @@ function update() {
         ship.thrust.y -= SHIP_THRUST * Math.sin(ship.a) / FPS;
 
         // draw the thrusters
-        if (!exploing) {
+        if (!exploing && blinkOn) {
             ctx.fillStyle = "#F6D838"; // yellow colour
             ctx.strokeStyle = "cyan";
             ctx.lineWidth = SHIP_SIZE / 15;
