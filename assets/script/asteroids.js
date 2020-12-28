@@ -276,7 +276,9 @@ function update() {
 
     // draw the lasers
     for (let i = 0; i < ship.lasers.length; i++) {
-        
+        ctx.fillStyle = "yellow";
+        ctx.beginPath();
+        ctx.arc(ship.lasers[i].x, ship.lasers[i].y, SHIP_SIZE / 15, 0, Math.PI * 2, false)
     }
 
     // check for asteroids collisions
