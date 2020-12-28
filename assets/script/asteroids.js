@@ -274,6 +274,11 @@ function update() {
         ctx.stroke();
     }
 
+    // draw the lasers
+    for (let i = 0; i < ship.lasers.length; i++) {
+        
+    }
+
     // check for asteroids collisions
     if (!exploing) {
         if (ship.blinkNum == 0) {
