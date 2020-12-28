@@ -123,6 +123,7 @@ function shootLaser() {
 
 
     // prevent the laser from further shooting
+    ship.canShoot = false;
 }
 
 function update() {
