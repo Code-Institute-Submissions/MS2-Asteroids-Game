@@ -320,6 +320,9 @@ function update() {
         ship.lasers[i].x += ship.lasers[i].xv;
         ship.lasers[i].y += ship.lasers[i].yv;
 
+        // calculate distance lasers travel
+        ship.lasers[i].dist += Math.sqrt(Math.pow(ship.lasers[i].xv, 2) + Math.pow(ship.lasers[i].yv, 2));
+
         // handle edge of screen for lasers
         if (ship.lasers[i].x < 0) {
             ship.lasers[i].x = canv.width
