@@ -73,8 +73,8 @@ function keyDown(/** @type {KeyboardEvent} */ ev) {
 
 function keyUp(/** @type {KeyboardEvent} */ ev) {
     switch (ev.keyCode) {
-        case 32: // spacebar (shoots the laser)
-            shootLaser();
+        case 32: // spacebar (allow shooting again)
+            ship.canShoot = true;
             break;
         case 37: // left arrow (stop rotating left)
             ship.rot = 0;
@@ -110,6 +110,7 @@ function newShip() {
         explodeTime: 0,
         blinkTime: Math.ceil(SHIP_INV_DUR / SHIP_BLINK_DUR),
         blinkNum: Math.ceil(SHIP_BLINK_DUR * FPS),
+        canShoot: true,
         rot: 0,
         thrusting: false,
         thrust: { x: 0, y: 0 }
