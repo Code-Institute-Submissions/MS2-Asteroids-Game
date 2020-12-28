@@ -73,6 +73,9 @@ function keyDown(/** @type {KeyboardEvent} */ ev) {
 
 function keyUp(/** @type {KeyboardEvent} */ ev) {
     switch (ev.keyCode) {
+        case 32: // spacebar (shoots the laser)
+            shootLaser();
+            break;
         case 37: // left arrow (stop rotating left)
             ship.rot = 0;
             break;
