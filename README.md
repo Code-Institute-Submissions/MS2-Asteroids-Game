@@ -113,21 +113,24 @@ Asteroids will be floating around the screen in different colours
 
 The spaceship, I'm aiming to build something a bit better than the plain triangular spaceship version of the orginal game. I'll achieve my spaceship by using the Canvas feature of JavaScript.
 
-### Spaceship Colour
+### Spaceship Colour:
 - Magenta 
 
-### Asteroid Colour
+### Asteroid Colour:
 - #15F00A - Neon green
 
 ### Thruster Colours:
 - #15F00A - Neon green
 - Cyan
 
-### Explosion Colours
+### Explosion Colours:
 - #F61638 - Red colour
 - #F68738 - Orange colour
 - #F6D438 - Yellow colour
 - White
+
+### Laser Colour:
+- #F6FF38 - Yellow colour
 
 ---
 
