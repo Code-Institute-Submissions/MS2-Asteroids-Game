@@ -279,6 +279,7 @@ function update() {
         ctx.fillStyle = "yellow";
         ctx.beginPath();
         ctx.arc(ship.lasers[i].x, ship.lasers[i].y, SHIP_SIZE / 15, 0, Math.PI * 2, false)
+        ctx.fill();
     }
 
     // check for asteroids collisions

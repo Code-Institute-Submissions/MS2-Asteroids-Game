@@ -213,9 +213,8 @@ Ensure ship explodes when ship collides with asteroid | Ship explodes when conta
 Ensure ship does not move when it explodes. | Ship does not move when ship explodes | Pass
 Ensure ship reappears in centre of screen when collision is made. | Ship reappears in centre of screen when collision has been made. | Pass
 Ensure ship is invincible for a brief couple of seconds if ship is destroyed. | Ship blinks for a couple of seconds when it hits an asteroid and is invincible. | Pass 
-Making the ship shoot bullets by pressing spacebar                         | Outcome | Pass/Fail
-Make asteroids appear randomly in clusters                                 | Outcome | Pass/Fail
-Make asteroids rotate for added affects                                    | Outcome | Pass/Fail
+Ensure the ship shoots lasers by pressing spacebar | Ship shoots its lasers by pressing the spacebar. NOTE: Lasers at this point are yet to be animated. <br> [Laser test 1](wireframes/laser_test1.png) <br> [Laser test 2](wireframes/laser_test2.png) | Pass
+Make asteroids appear randomly in clusters. | Asteroids appear in random locations, different shapes and different speeds. | Pass
 When asteroids are blasted they sperate into smaller asteroids             | Outcome | Pass/Fail
 Add thrusters to ship by pressing the UP arrow                             | Outcome | Pass/Fail
 Implement a scoring system                                                 | Outcome | Pass/Fail
