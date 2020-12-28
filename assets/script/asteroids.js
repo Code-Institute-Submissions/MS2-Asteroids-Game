@@ -125,7 +125,7 @@ function shootLaser() {
             x: ship.x + 4 / 3 * ship.r * Math.cos(ship.a),
             y: ship.y - 4 / 3 * ship.r * Math.sin(ship.a),
             xv: LASER_SPD * Math.cos(ship.a) / FPS,
-            yv: LASER_SPD * Math.sin(ship.a) / FPS
+            yv: - LASER_SPD * Math.sin(ship.a) / FPS
         });
     } 
 
@@ -276,7 +276,7 @@ function update() {
 
     // draw the lasers
     for (let i = 0; i < ship.lasers.length; i++) {
-        ctx.fillStyle = "yellow";
+        ctx.fillStyle = "#F6FF38"; // yellow colour
         ctx.beginPath();
         ctx.arc(ship.lasers[i].x, ship.lasers[i].y, SHIP_SIZE / 15, 0, Math.PI * 2, false)
         ctx.fill();
@@ -311,6 +311,12 @@ function update() {
         ship.x = canv.width + ship.r;
     } else if (ship > canv.width + ship.r) {
         ship.x = 0 - ship.r
+    }
+
+    // move the lasers
+    for (let i = 0; i < ship.lasers.length; i++) {
+        ship.lasers[i].x += ship.lasers[i].xv;
+        ship.lasers[i].y += ship.lasers[i].yv;
     }
 
     // move the asteroids
