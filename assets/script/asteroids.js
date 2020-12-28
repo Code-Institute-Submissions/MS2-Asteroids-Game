@@ -111,10 +111,18 @@ function newShip() {
         blinkTime: Math.ceil(SHIP_INV_DUR / SHIP_BLINK_DUR),
         blinkNum: Math.ceil(SHIP_BLINK_DUR * FPS),
         canShoot: true,
+        lasers: [],
         rot: 0,
         thrusting: false,
         thrust: { x: 0, y: 0 }
     }
+}
+
+function shootLaser() {
+    // create the laser object
+
+
+    // prevent the laser from further shooting
 }
 
 function update() {
