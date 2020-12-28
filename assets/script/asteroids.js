@@ -123,7 +123,9 @@ function shootLaser() {
     if (ship.canShoot && ship.lasers.length < LASER_MAX) {
         ship.lasers.push({ // shoot from the nose of the ship
             x: ship.x + 4 / 3 * ship.r * Math.cos(ship.a),
-            y: ship.y - 4 / 3 * ship.r * Math.sin(ship.a)
+            y: ship.y - 4 / 3 * ship.r * Math.sin(ship.a),
+            xv: LASER_SPD * Math.cos(ship.a) / FPS,
+            yv: LASER_SPD * Math.sin(ship.a) / FPS,
         });
     } 
 
