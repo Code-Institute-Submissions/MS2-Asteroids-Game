@@ -324,6 +324,11 @@ function update() {
         } else if (ship.lasers[i].x > canv.width) {
             ship.lasers[i].x = 0;
         }
+        if (ship.lasers[i].y < 0) {
+            ship.lasers[i].y = canv.height
+        } else if (ship.lasers[i].y > canv.height) {
+            ship.lasers[i].y = 0;
+        }
     }
 
     // move the asteroids
