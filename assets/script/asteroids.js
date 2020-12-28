@@ -120,7 +120,12 @@ function newShip() {
 
 function shootLaser() {
     // create the laser object
-
+    if (ship.canShoot && ship.lasers.length < LASER_MAX) {
+        ship.lasers.push({ // shoot from the nose of the ship
+            x: ship.x + 4 / 3 * ship.r * Math.cos(ship.a),
+            y: ship.y - 4 / 3 * ship.r * Math.sin(ship.a)
+        });
+    } 
 
     // prevent the laser from further shooting
     ship.canShoot = false;
