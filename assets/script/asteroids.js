@@ -8,7 +8,7 @@ const SHIP_SIZE = 25; // ship height in pixels
 const ROIDS_SIZE = 100; // starting size of asteroids
 const ROIDS_SPD = 50; // starting speed of asteroids
 const ROIDS_VERT = 10; // average number of vertices on asteroids
-const ROIDS_NUM = 3; // starting number of asteroids
+const ROIDS_NUM = 50; // starting number of asteroids
 const SHIP_EXPLODE_DUR = 0.3; // duration of ship's explosion 
 const SHIP_BLINK_DUR = 0.3; // duration of ship's blinking during invisibility 
 const SHIP_INV_DUR = 3.0; // duration of the ship's invisibility in seconds
@@ -43,8 +43,14 @@ function createAsteroidBelt() {
             x = Math.floor(Math.random() * canv.width);
             y = Math.floor(Math.random() * canv.height);
         } while (distanceBetweenPoints(ship.x, ship.y, x, y) < ROIDS_SIZE * 2 + ship.r);
-        roids.push(newAsteroid(x, y));
+        roids.push(newAsteroid(x, y, Math.ceil(ROIDS_SIZE / 2)));
     }
+}
+
+function destroyAsteroid(index) {
+    let x = roids[index].x;
+    let y = roids[index].y;
+    let r = roids[index].r;
 }
 
 function distanceBetweenPoints(x1, y1, x2, y2) {
@@ -89,13 +95,13 @@ function keyUp(/** @type {KeyboardEvent} */ ev) {
     }
 }
 
-function newAsteroid(x, y) {
+function newAsteroid(x, y, r) {
     let roid = {
         x: x,
         y: y,
         xv: Math.random() * ROIDS_SPD / FPS * (Math.random() < 0.5 ? 1 : -1),
         yv: Math.random() * ROIDS_SPD / FPS * (Math.random() < 0.5 ? 1 : -1),
-        r: ROIDS_SIZE / 2,
+        r: r,
         a: Math.random() * Math.PI * 2, // radians
         vert: Math.floor(Math.random() * (ROIDS_VERT + 1) + ROIDS_VERT / 2)
     };
@@ -308,7 +314,7 @@ function update() {
                 ship.lasers.splice(j, 1);
 
                 // remove the asteroid
-                roids.splice(i, 1);
+                destroyAsteroid(i);
 
                 break;
             }
