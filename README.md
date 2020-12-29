@@ -219,6 +219,7 @@ Ensure ship is invincible for a brief couple of seconds if ship is destroyed. | 
 Ensure the ship shoots lasers by pressing spacebar | Ship shoots its lasers by pressing the spacebar. NOTE: Lasers at this point are yet to be animated. <br> [Laser test 1](wireframes/laser_test1.png) <br> [Laser test 2](wireframes/laser_test2.png) | Pass
 Ensure lasers move when spacebar is pressed | Lasers now move when spacebar is pressed. | Pass
 Ensure lasers reappear if shot off the screen | Lasers reappear if shot off screen. <br> [Laser test 3](wireframes/laser_test3.png) | Pass
+Ensure when lasers reappear that are shot off the screen they eventually disappear because otherwise the screen will be filled with lasers. | When lasers reappear that are shot off the screen they eventually disappear. | Pass
 Make asteroids appear randomly in clusters. | Asteroids appear in random locations, different shapes and different speeds. | Pass
 When asteroids are blasted they sperate into smaller asteroids             | Outcome | Pass/Fail
 Add thrusters to ship by pressing the UP arrow                             | Outcome | Pass/Fail
