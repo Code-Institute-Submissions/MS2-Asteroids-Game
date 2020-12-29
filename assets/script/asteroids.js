@@ -51,6 +51,17 @@ function destroyAsteroid(index) {
     let x = roids[index].x;
     let y = roids[index].y;
     let r = roids[index].r;
+
+    // split asteroids in 2 if necessary
+    if (r == Math.ceil(ROIDS_SIZE / 2)) {
+        roids.push(newAsteroid(x, y, Math.ceil(ROIDS_SIZE / 4)));
+        roids.push(newAsteroid(x, y, Math.ceil(ROIDS_SIZE / 4)));
+    } else if (r == Math.ceil(ROIDS_SIZE / 4)) {
+        roids.push(newAsteroid(x, y, Math.ceil(ROIDS_SIZE / 8)));
+        roids.push(newAsteroid(x, y, Math.ceil(ROIDS_SIZE / 8)));
+    }
+
+    // destroy the asteroid
 }
 
 function distanceBetweenPoints(x1, y1, x2, y2) {
