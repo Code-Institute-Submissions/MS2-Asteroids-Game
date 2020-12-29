@@ -305,6 +305,12 @@ function update() {
             if (distanceBetweenPoints(ax, ay, lx, ly) < ar) {
 
                 // remove laser
+                ship.lasers.splice(j, 1);
+
+                // remove the asteroid
+                roids.splice(i, 1);
+
+                break;
             }
         }
     }
