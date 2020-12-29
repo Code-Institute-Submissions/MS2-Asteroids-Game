@@ -298,7 +298,8 @@ function update() {
         for (let j = ship.lasers.length - 1; j >= 0; j--) {
 
             // laser properties
-            
+            lx = ship.lasers[j].x;
+            ly = ship.lasers[j].y;
         }
     }
 
