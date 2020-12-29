@@ -220,6 +220,7 @@ Ensure the ship shoots lasers by pressing spacebar | Ship shoots its lasers by p
 Ensure lasers move when spacebar is pressed | Lasers now move when spacebar is pressed. | Pass
 Ensure lasers reappear if shot off the screen | Lasers reappear if shot off screen. <br> [Laser test 3](wireframes/laser_test3.png) | Pass
 Ensure when lasers reappear that are shot off the screen they eventually disappear because otherwise the screen will be filled with lasers. | When lasers reappear that are shot off the screen they eventually disappear. | Pass
+Ensure ship can shoot an unlimited amount of lasers. | Ship can now shoot an unlimited amount of lasers. | Pass
 Make asteroids appear randomly in clusters. | Asteroids appear in random locations, different shapes and different speeds. | Pass
 When asteroids are blasted they sperate into smaller asteroids             | Outcome | Pass/Fail
 Add thrusters to ship by pressing the UP arrow                             | Outcome | Pass/Fail
