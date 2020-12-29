@@ -300,6 +300,12 @@ function update() {
             // laser properties
             lx = ship.lasers[j].x;
             ly = ship.lasers[j].y;
+
+            // detect hits
+            if (distanceBetweenPoints(ax, ay, lx, ly) < ar) {
+
+                // remove laser
+            }
         }
     }
 
