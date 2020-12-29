@@ -293,6 +293,13 @@ function update() {
         ax = roids[i].x;
         ay = roids[i].y;
         ar = roids[i].r;
+
+        // loop over the lasers
+        for (let j = ship.lasers.length - 1; j >= 0; j--) {
+
+            // laser properties
+            
+        }
     }
 
     // check for asteroids collisions
