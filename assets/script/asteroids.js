@@ -2,7 +2,7 @@
 
 const FPS = 30; // frames per second
 const LASER_MAX = 10; // maximun number of lasers on screen at once
-const LASER_DIST = 0.2; // laser distance in fractions
+const LASER_DIST = 0.6; // laser distance in fractions
 const LASER_SPD = 500; // speed of lasers in pixels per second
 const SHIP_SIZE = 25; // ship height in pixels
 const ROIDS_SIZE = 100; // starting size of asteroids
