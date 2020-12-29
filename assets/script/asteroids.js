@@ -316,7 +316,14 @@ function update() {
     }
 
     // move the lasers
-    for (let i = 0; i < ship.lasers.length; i++) {
+    for (let i = ship.lasers.length - 1; i >= 0; i--) {
+        //check distance travelled
+        if (ship.lasers[i].dist > LASER_DIST * canv.width) {
+            ship.lasers.splice(i, 1);
+            continue;
+        }
+
+        // move the lasers
         ship.lasers[i].x += ship.lasers[i].xv;
         ship.lasers[i].y += ship.lasers[i].yv;
 
