@@ -284,6 +284,9 @@ function update() {
         ctx.fill();
     }
 
+    // detect laser hits asteroid
+    let ax, ay, ar, lx, ly;
+
     // check for asteroids collisions
     if (!exploing) {
         if (ship.blinkNum == 0) {
