@@ -285,7 +285,15 @@ function update() {
     }
 
     // detect laser hits asteroid
-    let ax, ay, ar, lx, ly;
+    let ax, ay, ar, lx, ly; // ax = asteroids x, ay = asteroids y, lx = lasers x, ly = lasers y
+
+    for (let i = roids.length - 1; i >= 0; i--) {
+
+        // asteroid properties
+        ax = roids[i].x;
+        ay = roids[i].y;
+        ar = roids[i].r;
+    }
 
     // check for asteroids collisions
     if (!exploing) {
