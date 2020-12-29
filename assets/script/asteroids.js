@@ -8,7 +8,7 @@ const SHIP_SIZE = 25; // ship height in pixels
 const ROIDS_SIZE = 100; // starting size of asteroids
 const ROIDS_SPD = 50; // starting speed of asteroids
 const ROIDS_VERT = 10; // average number of vertices on asteroids
-const ROIDS_NUM = 50; // starting number of asteroids
+const ROIDS_NUM = 3; // starting number of asteroids
 const SHIP_EXPLODE_DUR = 0.3; // duration of ship's explosion 
 const SHIP_BLINK_DUR = 0.3; // duration of ship's blinking during invisibility 
 const SHIP_INV_DUR = 3.0; // duration of the ship's invisibility in seconds
@@ -62,6 +62,7 @@ function destroyAsteroid(index) {
     }
 
     // destroy the asteroid
+    roids.splice(index, 1);
 }
 
 function distanceBetweenPoints(x1, y1, x2, y2) {
@@ -338,6 +339,7 @@ function update() {
         for (let i = 0; i < roids.length; i++) {
             if (distanceBetweenPoints(ship.x, ship.y, roids[i].x, roids[i].y) < ship.r + roids[i].r) {
                 explodeShip();
+                destroyAsteroid(i);
             }
         }
     }
