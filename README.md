@@ -223,7 +223,7 @@ Ensure when lasers reappear that are shot off the screen they eventually disappe
 Ensure ship can shoot an unlimited amount of lasers. | Ship can now shoot an unlimited amount of lasers. | Pass
 Make asteroids appear randomly in clusters. | Asteroids appear in random locations, different shapes and different speeds. | Pass
 Ensure when asteroids are shot they disappear. | When asteroids are shot they disappear. | Pass
-When asteroids are blasted they sperate into smaller asteroids             | Outcome | Pass/Fail
+Ensure when asteroids are blasted they sperate into smaller asteroids. | When asteroids are blasted they sperate into smaller asteroids. <br> [Destroy asteroid test 1](wireframes/destroy_asteroid1) <br> [Destroy asteroid test 2](wireframes/destroy_asteroid2) | Pass
 Add thrusters to ship by pressing the UP arrow                             | Outcome | Pass/Fail
 Implement a scoring system                                                 | Outcome | Pass/Fail
 Save players highscore                                                     | Outcome | Pass/Fail
