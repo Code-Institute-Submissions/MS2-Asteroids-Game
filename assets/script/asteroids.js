@@ -36,7 +36,7 @@ setInterval(update, 1000 / FPS);
 function createAsteroidBelt() {
     roids = [];
     let x, y;
-    for (let i = 0; i < ROIDS_NUM; i++) {
+    for (let i = 0; i < ROIDS_NUM + level; i++) {
         do {
             x = Math.floor(Math.random() * canv.width);
             y = Math.floor(Math.random() * canv.height);
