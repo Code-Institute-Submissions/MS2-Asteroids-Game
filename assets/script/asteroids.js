@@ -2,6 +2,7 @@
 
 const FPS = 30; // frames per second
 const LASER_MAX = 10; // maximun number of lasers on screen at once
+const LASER_EXPLODE_DUR = 0.1; // duration of lasers' explosion in seconds
 const LASER_DIST = 0.6; // laser distance in fractions
 const LASER_SPD = 500; // speed of lasers in pixels per second
 const SHIP_SIZE = 25; // ship height in pixels
@@ -145,7 +146,8 @@ function shootLaser() {
             y: ship.y - 4 / 3 * ship.r * Math.sin(ship.a),
             xv: LASER_SPD * Math.cos(ship.a) / FPS,
             yv: - LASER_SPD * Math.sin(ship.a) / FPS,
-            dist: 0
+            dist: 0,
+            explodeTime: 0
         });
     } 
 
@@ -340,6 +342,8 @@ function update() {
             if (distanceBetweenPoints(ship.x, ship.y, roids[i].x, roids[i].y) < ship.r + roids[i].r) {
                 explodeShip();
                 destroyAsteroid(i);
+
+                break;
             }
         }
     }
