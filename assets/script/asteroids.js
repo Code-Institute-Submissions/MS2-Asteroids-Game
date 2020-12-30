@@ -6,7 +6,7 @@ const LASER_EXPLODE_DUR = 0.1; // duration of lasers' explosion in seconds
 const LASER_DIST = 0.6; // laser distance in fractions
 const LASER_SPD = 500; // speed of lasers in pixels per second
 const SHIP_SIZE = 25; // ship height in pixels
-const ROIDS_SIZE = 100; // starting size of asteroids
+const ROIDS_SIZE = 90; // starting size of asteroids
 const ROIDS_SPD = 50; // starting speed of asteroids
 const ROIDS_VERT = 10; // average number of vertices on asteroids
 const ROIDS_NUM = 3; // starting number of asteroids
@@ -21,6 +21,10 @@ const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of 
 /** @type {HTMLCanvasElement} */
 let canv = document.getElementById("asteroid-canvas");
 let ctx = canv.getContext("2d");
+
+// set up game paramaters
+let level, roids, ship
+newGame();
 
 // set up the spaceship object
 let ship = newShip();
