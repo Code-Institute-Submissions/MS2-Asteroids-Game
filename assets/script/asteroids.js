@@ -120,7 +120,10 @@ function newAsteroid(x, y, r) {
 
 function newGame() {
     ship = newShip();
+    newLevel();
+}
 
+function newLevel() {
     createAsteroidBelt();
 }
 
