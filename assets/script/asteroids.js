@@ -303,6 +303,20 @@ function update() {
             ctx.beginPath();
             ctx.arc(ship.lasers[i].x, ship.lasers[i].y, SHIP_SIZE / 15, 0, Math.PI * 2, false)
             ctx.fill();
+        } else {
+            // draw the explosion
+            ctx.fillStyle = "#F70A49"; // red colour
+            ctx.beginPath();
+            ctx.arc(ship.lasers[i].x, ship.lasers[i].y, ship.r * 0.75, 0, Math.PI * 2, false)
+            ctx.fill();
+            ctx.fillStyle = "#F77349"; // orange colour
+            ctx.beginPath();
+            ctx.arc(ship.lasers[i].x, ship.lasers[i].y, ship.r * 0.5, 0, Math.PI * 2, false)
+            ctx.fill();
+            ctx.fillStyle = "#F7CA49"; // yellow colour
+            ctx.beginPath();
+            ctx.arc(ship.lasers[i].x, ship.lasers[i].y, ship.r * 0.25, 0, Math.PI * 2, false)
+            ctx.fill();
         }
     }
 
