@@ -106,11 +106,12 @@ function keyUp(/** @type {KeyboardEvent} */ ev) {
 }
 
 function newAsteroid(x, y, r) {
+    let lvlMult = 1 + 0.1 * level; 
     let roid = {
         x: x,
         y: y,
-        xv: Math.random() * ROIDS_SPD / FPS * (Math.random() < 0.5 ? 1 : -1),
-        yv: Math.random() * ROIDS_SPD / FPS * (Math.random() < 0.5 ? 1 : -1),
+        xv: Math.random() * ROIDS_SPD * lvlMult / FPS * (Math.random() < 0.5 ? 1 : -1),
+        yv: Math.random() * ROIDS_SPD * lvlMult / FPS * (Math.random() < 0.5 ? 1 : -1),
         r: r,
         a: Math.random() * Math.PI * 2, // radians
         vert: Math.floor(Math.random() * (ROIDS_VERT + 1) + ROIDS_VERT / 2)
