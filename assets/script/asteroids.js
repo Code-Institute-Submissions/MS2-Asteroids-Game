@@ -385,18 +385,31 @@ function update() {
 
     // move the lasers
     for (let i = ship.lasers.length - 1; i >= 0; i--) {
+        
         //check distance travelled
         if (ship.lasers[i].dist > LASER_DIST * canv.width) {
             ship.lasers.splice(i, 1);
             continue;
         }
 
-        // move the lasers
-        ship.lasers[i].x += ship.lasers[i].xv;
-        ship.lasers[i].y += ship.lasers[i].yv;
+        // handle the explosion
+        if (ship.lasers[i].explodeTime > 0) {
+            ship.lasers[i].explodeTime --;
 
-        // calculate distance lasers travel
-        ship.lasers[i].dist += Math.sqrt(Math.pow(ship.lasers[i].xv, 2) + Math.pow(ship.lasers[i].yv, 2));
+        } else {
+            // move the lasers
+            ship.lasers[i].x += ship.lasers[i].xv;
+            ship.lasers[i].y += ship.lasers[i].yv;
+
+            // destroy the laser after the duration is up
+            if (ship.lasers[i].explodeTime == 0) {
+                ship.lasers.splice(i, 1);
+                continue; // stops from going over the remaining code
+            }
+
+            // calculate distance lasers travel
+            ship.lasers[i].dist += Math.sqrt(Math.pow(ship.lasers[i].xv, 2) + Math.pow(ship.lasers[i].yv, 2));
+        }
 
         // handle edge of screen for lasers
         if (ship.lasers[i].x < 0) {
