@@ -338,13 +338,11 @@ function update() {
             ly = ship.lasers[j].y;
 
             // detect hits
-            if (distanceBetweenPoints(ax, ay, lx, ly) < ar) {
+            if (ship.lasers[j].explodeTime == 0 && distanceBetweenPoints(ax, ay, lx, ly) < ar) {
 
-                // remove laser
-                ship.lasers.splice(j, 1);
-
-                // remove the asteroid
+                // destroy asteroid and activate laser explosion
                 destroyAsteroid(i);
+                ship.lasers[j].explodeTime = Math.ceil(LASER_EXPLODE_DUR * FPS);
 
                 break;
             }
