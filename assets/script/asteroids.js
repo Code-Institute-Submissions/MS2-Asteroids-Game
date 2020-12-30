@@ -396,16 +396,16 @@ function update() {
         if (ship.lasers[i].explodeTime > 0) {
             ship.lasers[i].explodeTime --;
 
-        } else {
-            // move the lasers
-            ship.lasers[i].x += ship.lasers[i].xv;
-            ship.lasers[i].y += ship.lasers[i].yv;
-
-            // destroy the laser after the duration is up
+        // destroy the laser after the duration is up
             if (ship.lasers[i].explodeTime == 0) {
                 ship.lasers.splice(i, 1);
                 continue; // stops from going over the remaining code
             }
+
+        } else {
+            // move the lasers
+            ship.lasers[i].x += ship.lasers[i].xv;
+            ship.lasers[i].y += ship.lasers[i].yv;
 
             // calculate distance lasers travel
             ship.lasers[i].dist += Math.sqrt(Math.pow(ship.lasers[i].xv, 2) + Math.pow(ship.lasers[i].yv, 2));
