@@ -26,13 +26,6 @@ let ctx = canv.getContext("2d");
 let level, roids, ship
 newGame();
 
-// set up the spaceship object
-let ship = newShip();
-
-// set up asteroids
-let roids = [];
-createAsteroidBelt();
-
 // set up event handlers
 document.addEventListener("keydown", keyDown);
 document.addEventListener("keyup", keyUp);
@@ -125,6 +118,10 @@ function newAsteroid(x, y, r) {
     return roid;
 }
 
+function newGame() {
+    
+}
+
 function newShip() {
     return {
         x: canv.width / 2,
@@ -153,7 +150,7 @@ function shootLaser() {
             dist: 0,
             explodeTime: 0
         });
-    } 
+    }
 
     // prevent the laser from further shooting
     ship.canShoot = false;
@@ -302,7 +299,7 @@ function update() {
 
     // draw the lasers
     for (let i = 0; i < ship.lasers.length; i++) {
-        if(ship.lasers[i].explodeTime == 0) {
+        if (ship.lasers[i].explodeTime == 0) {
             ctx.fillStyle = "#F6FF38"; // yellow colour
             ctx.beginPath();
             ctx.arc(ship.lasers[i].x, ship.lasers[i].y, SHIP_SIZE / 15, 0, Math.PI * 2, false)
@@ -356,15 +353,15 @@ function update() {
     // check for asteroids collisions
     if (!exploing) {
         if (ship.blinkNum == 0) {
-        for (let i = 0; i < roids.length; i++) {
-            if (distanceBetweenPoints(ship.x, ship.y, roids[i].x, roids[i].y) < ship.r + roids[i].r) {
-                explodeShip();
-                destroyAsteroid(i);
+            for (let i = 0; i < roids.length; i++) {
+                if (distanceBetweenPoints(ship.x, ship.y, roids[i].x, roids[i].y) < ship.r + roids[i].r) {
+                    explodeShip();
+                    destroyAsteroid(i);
 
-                break;
+                    break;
+                }
             }
         }
-    }
 
         // rotate the ship
         ship.a += ship.rot;
@@ -389,7 +386,7 @@ function update() {
 
     // move the lasers
     for (let i = ship.lasers.length - 1; i >= 0; i--) {
-        
+
         //check distance travelled
         if (ship.lasers[i].dist > LASER_DIST * canv.width) {
             ship.lasers.splice(i, 1);
@@ -398,9 +395,9 @@ function update() {
 
         // handle the explosion
         if (ship.lasers[i].explodeTime > 0) {
-            ship.lasers[i].explodeTime --;
+            ship.lasers[i].explodeTime--;
 
-        // destroy the laser after the duration is up
+            // destroy the laser after the duration is up
             if (ship.lasers[i].explodeTime == 0) {
                 ship.lasers.splice(i, 1);
                 continue; // stops from going over the remaining code
