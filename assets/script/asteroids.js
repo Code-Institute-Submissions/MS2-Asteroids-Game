@@ -119,7 +119,9 @@ function newAsteroid(x, y, r) {
 }
 
 function newGame() {
-    
+    ship = newShip();
+
+    createAsteroidBelt();
 }
 
 function newShip() {
