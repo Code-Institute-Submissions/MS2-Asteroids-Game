@@ -123,11 +123,16 @@ The spaceship, I'm aiming to build something a bit better than the plain triangu
 - #15F00A - Neon green
 - Cyan
 
-### Explosion Colours:
+### Explosion Ship Colours:
 - #F61638 - Red colour
 - #F68738 - Orange colour
 - #F6D438 - Yellow colour
 - White
+
+### Explosion Asteroid Colours:
+- #F70A49 - Red colour
+- #F77349 - Orange colour
+- #F7CA49 - Yellow colour
 
 ### Laser Colour:
 - #F6FF38 - Yellow colour
