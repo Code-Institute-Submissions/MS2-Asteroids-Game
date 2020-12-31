@@ -257,23 +257,7 @@ function update() {
     // draw the triangular ship
     if (!exploing) {
         if (blinkOn) {
-            ctx.strokeStyle = "magenta";
-            ctx.lineWidth = SHIP_SIZE / 5;
-            ctx.beginPath();
-            ctx.moveTo( // nose of the ship
-                ship.x + 4 / 3 * ship.r * Math.cos(ship.a),
-                ship.y - 4 / 3 * ship.r * Math.sin(ship.a)
-            );
-            ctx.lineTo( // rear left
-                ship.x - ship.r * (2 / 3 * Math.cos(ship.a) + Math.sin(ship.a)),
-                ship.y + ship.r * (2 / 3 * Math.sin(ship.a) - Math.cos(ship.a))
-            );
-            ctx.lineTo( // rear right
-                ship.x - ship.r * (2 / 3 * Math.cos(ship.a) - Math.sin(ship.a)),
-                ship.y + ship.r * (2 / 3 * Math.sin(ship.a) + Math.cos(ship.a))
-            );
-            ctx.closePath();
-            ctx.stroke();
+            drawShip(ship.x, ship.y, ship.a);
         }
 
         // handle blinking
@@ -352,7 +336,7 @@ function update() {
 
     // draw the lives
     for (let i = 0; i < lives; i++) {
-        
+        drawShip();
     }
 
     // detect laser hits asteroid
