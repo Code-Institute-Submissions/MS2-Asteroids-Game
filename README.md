@@ -240,6 +240,7 @@ Ensure when asteroids are shot they disappear. | When asteroids are shot they di
 Ensure when asteroids are blasted they sperate into smaller asteroids. | When asteroids are blasted they sperate into smaller asteroids. <br> [Destroy asteroid test 1](wireframes/destroy_asteroid1.png) <br> [Destroy asteroid test 2](wireframes/destroy_asteroid2.png) | Pass
 Ensure when last asteroid is destroyed, game continues with an extra asteroid and increased speed in game. |  When the last asteroid is destroyed, game continues with an extra asteroid and speed in game is increased. | Pass
 Ensure user has a visual represntation of what level they are currently on | User has a visual represntation of the level they are on. <br> [Level text test](wireframes/level_test.png) | Pass
+Ensure game starts off with three lives and are visible | Game starts off with three lives that are easily visible in the top left corner of screen. <br> [Three lives test](wireframes/three_lives_test.png)
 Implement a scoring system                                                 | Outcome | Pass/Fail
 Save players highscore                                                     | Outcome | Pass/Fail
 If ship hits an asteroid, ship is destroyed and player loses a life        | Outcome | Pass/Fail
@@ -294,6 +295,12 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
 - When I use the arrow keys to rotate the ship, the ship duplicates. See attached image [rotation glitch](wireframes/rotate_glitch.png). Works as intended without the galaxy background image. Will continue with development and will try to find a fix later on.
 
     - Fix this issue by using: ctx.clearRect(0, 0, canv.width, canv.height);.
+
+## Date: Thursday, 31st December, 2020
+
+- When I use the arrow keys to rotate the ship, the lives in the top corner are also rotating.
+
+    - Yet to be resolved
 
 ---
 
