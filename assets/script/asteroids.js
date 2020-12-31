@@ -76,6 +76,26 @@ function distanceBetweenPoints(x1, y1, x2, y2) {
     return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 }
 
+function drawShip(x, y, a) {
+    ctx.strokeStyle = "magenta";
+            ctx.lineWidth = SHIP_SIZE / 5;
+            ctx.beginPath();
+            ctx.moveTo( // nose of the ship
+                ship.x + 4 / 3 * ship.r * Math.cos(ship.a),
+                ship.y - 4 / 3 * ship.r * Math.sin(ship.a)
+            );
+            ctx.lineTo( // rear left
+                ship.x - ship.r * (2 / 3 * Math.cos(ship.a) + Math.sin(ship.a)),
+                ship.y + ship.r * (2 / 3 * Math.sin(ship.a) - Math.cos(ship.a))
+            );
+            ctx.lineTo( // rear right
+                ship.x - ship.r * (2 / 3 * Math.cos(ship.a) - Math.sin(ship.a)),
+                ship.y + ship.r * (2 / 3 * Math.sin(ship.a) + Math.cos(ship.a))
+            );
+            ctx.closePath();
+            ctx.stroke();
+};
+
 function explodeShip() {
     ship.explodeTime = Math.ceil(SHIP_EXPLODE_DUR * FPS);
 }
