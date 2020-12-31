@@ -229,6 +229,7 @@ Ensure ship can shoot an unlimited amount of lasers. | Ship can now shoot an unl
 Make asteroids appear randomly in clusters. | Asteroids appear in random locations, different shapes and different speeds. | Pass
 Ensure when asteroids are shot they disappear. | When asteroids are shot they disappear. | Pass
 Ensure when asteroids are blasted they sperate into smaller asteroids. | When asteroids are blasted they sperate into smaller asteroids. <br> [Destroy asteroid test 1](wireframes/destroy_asteroid1.png) <br> [Destroy asteroid test 2](wireframes/destroy_asteroid2.png) | Pass
+Ensure when last asteroid is destroyed, game continues with an extra asteroid and increased speed in game. |  When the last asteroid is destroyed, game continues with an extra asteroid and speed in game is increased. | Pass
 Implement a scoring system                                                 | Outcome | Pass/Fail
 Save players highscore                                                     | Outcome | Pass/Fail
 If ship hits an asteroid, ship is destroyed and player loses a life        | Outcome | Pass/Fail
