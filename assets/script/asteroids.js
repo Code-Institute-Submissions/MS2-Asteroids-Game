@@ -61,6 +61,12 @@ function destroyAsteroid(index) {
 
     // destroy the asteroid
     roids.splice(index, 1);
+
+    // new level for no more asteroids
+    if (roids.length == 0) {
+        level ++;
+        newLevel();
+    }
 }
 
 function distanceBetweenPoints(x1, y1, x2, y2) {
