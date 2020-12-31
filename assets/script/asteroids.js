@@ -67,7 +67,7 @@ function destroyAsteroid(index) {
 
     // new level for no more asteroids
     if (roids.length == 0) {
-        level ++;
+        level++;
         newLevel();
     }
 }
@@ -78,22 +78,22 @@ function distanceBetweenPoints(x1, y1, x2, y2) {
 
 function drawShip(x, y, a) {
     ctx.strokeStyle = "magenta";
-            ctx.lineWidth = SHIP_SIZE / 5;
-            ctx.beginPath();
-            ctx.moveTo( // nose of the ship
-                ship.x + 4 / 3 * ship.r * Math.cos(ship.a),
-                ship.y - 4 / 3 * ship.r * Math.sin(ship.a)
-            );
-            ctx.lineTo( // rear left
-                ship.x - ship.r * (2 / 3 * Math.cos(ship.a) + Math.sin(ship.a)),
-                ship.y + ship.r * (2 / 3 * Math.sin(ship.a) - Math.cos(ship.a))
-            );
-            ctx.lineTo( // rear right
-                ship.x - ship.r * (2 / 3 * Math.cos(ship.a) - Math.sin(ship.a)),
-                ship.y + ship.r * (2 / 3 * Math.sin(ship.a) + Math.cos(ship.a))
-            );
-            ctx.closePath();
-            ctx.stroke();
+    ctx.lineWidth = SHIP_SIZE / 5;
+    ctx.beginPath();
+    ctx.moveTo( // nose of the ship
+        x + 4 / 3 * ship.r * Math.cos(a),
+        y - 4 / 3 * ship.r * Math.sin(a)
+    );
+    ctx.lineTo( // rear left
+        x - ship.r * (2 / 3 * Math.cos(ship.a) + Math.sin(a)),
+        y + ship.r * (2 / 3 * Math.sin(ship.a) - Math.cos(a))
+    );
+    ctx.lineTo( // rear right
+        x - ship.r * (2 / 3 * Math.cos(ship.a) - Math.sin(a)),
+        y + ship.r * (2 / 3 * Math.sin(ship.a) + Math.cos(a))
+    );
+    ctx.closePath();
+    ctx.stroke();
 };
 
 function explodeShip() {
@@ -135,7 +135,7 @@ function keyUp(/** @type {KeyboardEvent} */ ev) {
 }
 
 function newAsteroid(x, y, r) {
-    let lvlMult = 1 + 0.1 * level; 
+    let lvlMult = 1 + 0.1 * level;
     let roid = {
         x: x,
         y: y,
@@ -356,7 +356,7 @@ function update() {
 
     // draw the lives
     for (let i = 0; i < lives; i++) {
-        drawShip();
+        drawShip(SHIP_SIZE + i * SHIP_SIZE * 1.5, SHIP_SIZE, 0.5 * Math.PI);
     }
 
     // detect laser hits asteroid
