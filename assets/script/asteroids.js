@@ -18,7 +18,7 @@ const SHIP_THRUST = 5; // ship acceleration speed
 const SHOW_BOUNDING = false; // show or hide collision bounding
 const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
 const TEXT_FADE_TIME = 2.5; // text fade time in seconds
-const TEXT_SIZE = 40; // text font size in pixels
+const TEXT_SIZE = 90; // text font size in pixels
 
 /** @type {HTMLCanvasElement} */
 let canv = document.getElementById("asteroid-canvas");
@@ -340,7 +340,12 @@ function update() {
 
     // draw the game text
     if (textAlpha >= 0) {
-        ctx.fillStyle = "rgba(255, 255, 255, " + textAlpha + ")"
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = "rgba(247, 243, 15, " + textAlpha + ")"; // 247, 243, 15 = Yellow colour
+        ctx.font = "small-caps " + TEXT_SIZE + "px impact";
+        ctx.fillText(text, canv.width / 2, canv.height * 0.75);
+        textAlpha -= (1.0 / TEXT_FADE_TIME / FPS);
     }
 
     // detect laser hits asteroid
