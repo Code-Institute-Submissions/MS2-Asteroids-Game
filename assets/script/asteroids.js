@@ -85,12 +85,12 @@ function drawShip(x, y, a) {
         y - 4 / 3 * ship.r * Math.sin(a)
     );
     ctx.lineTo( // rear left
-        x - ship.r * (2 / 3 * Math.cos(ship.a) + Math.sin(a)),
-        y + ship.r * (2 / 3 * Math.sin(ship.a) - Math.cos(a))
+        x - ship.r * (2 / 3 * Math.cos(a) + Math.sin(a)),
+        y + ship.r * (2 / 3 * Math.sin(a) - Math.cos(a))
     );
     ctx.lineTo( // rear right
-        x - ship.r * (2 / 3 * Math.cos(ship.a) - Math.sin(a)),
-        y + ship.r * (2 / 3 * Math.sin(ship.a) + Math.cos(a))
+        x - ship.r * (2 / 3 * Math.cos(a) - Math.sin(a)),
+        y + ship.r * (2 / 3 * Math.sin(a) + Math.cos(a))
     );
     ctx.closePath();
     ctx.stroke();
