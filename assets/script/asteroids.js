@@ -350,6 +350,11 @@ function update() {
         textAlpha -= (1.0 / TEXT_FADE_TIME / FPS);
     }
 
+    // draw the lives
+    for (let i = 0; i < lives; i++) {
+        
+    }
+
     // detect laser hits asteroid
     let ax, ay, ar, lx, ly; // ax = asteroids x, ay = asteroids y, lx = lasers x, ly = lasers y
 
