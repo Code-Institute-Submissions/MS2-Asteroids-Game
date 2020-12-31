@@ -91,7 +91,11 @@ Each level starts with a few large asteroids drifting in various directions on t
 
 - With a feature that handles the edge of screen enables the ship to reappear if it flies off the screen. This makes for a much more enjoyable experience for the gamer rather than being frustrated trying to find their spaceship everytime it disappears off screen.
 
+    - The above feature has also been added to the asteroids.
+
 - Added in a graphical element to the thruster, which gives the user visual feedback that something happened when they hold down the UP arrow. This with the increase in the ship's speed provides an all-round good user experience for the potential gamer.
+
+- When the last asteroid is destroyed, game continues with an extra asteroid and increased speed in game. The gradual increased difficulty in the game will get the user excited.
 
 ---
 
