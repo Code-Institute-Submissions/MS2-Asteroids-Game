@@ -1,5 +1,6 @@
 //Asteroids game code
 
+const GAME_LIVES = 3; // starting number of lives
 const FPS = 30; // frames per second
 const LASER_MAX = 10; // maximun number of lasers on screen at once
 const LASER_EXPLODE_DUR = 0.1; // duration of lasers' explosion in seconds
