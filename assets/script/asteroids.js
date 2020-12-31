@@ -23,7 +23,7 @@ let canv = document.getElementById("asteroid-canvas");
 let ctx = canv.getContext("2d");
 
 // set up game paramaters
-let level, roids, ship
+let level, roids, ship, text, textAlpha;
 newGame();
 
 // set up event handlers
