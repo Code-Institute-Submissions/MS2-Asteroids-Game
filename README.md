@@ -95,7 +95,7 @@ Each level starts with a few large asteroids drifting in various directions on t
 
 - Added in a graphical element to the thruster, which gives the user visual feedback that something happened when they hold down the UP arrow. This with the increase in the ship's speed provides an all-round good user experience for the potential gamer.
 
-- When the last asteroid is destroyed, game continues with an extra asteroid and increased speed in game. The gradual increased difficulty in the game will get the user excited.
+- When the last asteroid is destroyed, game continues with an extra asteroid and increased speed in game. The gradual increased difficulty in the game will get the user excited. A visual reputation of the level they are on will give them bragging rights amoungst their friends!
 
 ---
 
@@ -140,6 +140,11 @@ The spaceship, I'm aiming to build something a bit better than the plain triangu
 
 ### Laser Colour:
 - #F6FF38 - Yellow colour
+
+### In-Game Text:
+- Font - Impact
+- Font size - 90px
+- Font colour - 247, 243, 15 - Yellow colour
 
 ---
 
@@ -234,6 +239,7 @@ Make asteroids appear randomly in clusters. | Asteroids appear in random locatio
 Ensure when asteroids are shot they disappear. | When asteroids are shot they disappear. | Pass
 Ensure when asteroids are blasted they sperate into smaller asteroids. | When asteroids are blasted they sperate into smaller asteroids. <br> [Destroy asteroid test 1](wireframes/destroy_asteroid1.png) <br> [Destroy asteroid test 2](wireframes/destroy_asteroid2.png) | Pass
 Ensure when last asteroid is destroyed, game continues with an extra asteroid and increased speed in game. |  When the last asteroid is destroyed, game continues with an extra asteroid and speed in game is increased. | Pass
+Ensure user has a visual represntation of what level they are currently on | User has a visual represntation of the level they are on. <br> [Level text test](wireframes/level_test.png) | Pass
 Implement a scoring system                                                 | Outcome | Pass/Fail
 Save players highscore                                                     | Outcome | Pass/Fail
 If ship hits an asteroid, ship is destroyed and player loses a life        | Outcome | Pass/Fail
