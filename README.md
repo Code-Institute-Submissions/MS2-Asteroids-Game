@@ -300,7 +300,7 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
 
 - When I use the arrow keys to rotate the ship, the lives in the top corner are also rotating.
 
-    - Yet to be resolved
+    - Fixed this issue by revising my code. Forgot to remove ship.a from function drawShip.
 
 ---
 
