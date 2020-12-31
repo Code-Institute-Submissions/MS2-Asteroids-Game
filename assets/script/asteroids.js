@@ -338,6 +338,11 @@ function update() {
         }
     }
 
+    // draw the game text
+    if (textAlpha >= 0) {
+        ctx.fillStyle = "rgba(255, 255, 255, " + textAlpha + ")"
+    }
+
     // detect laser hits asteroid
     let ax, ay, ar, lx, ly; // ax = asteroids x, ay = asteroids y, lx = lasers x, ly = lasers y
 
