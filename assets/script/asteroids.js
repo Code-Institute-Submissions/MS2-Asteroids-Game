@@ -129,6 +129,7 @@ function newAsteroid(x, y, r) {
 }
 
 function newGame() {
+    lives = GAME_LIVES;
     level = 0;
     ship = newShip();
     newLevel();
