@@ -181,9 +181,16 @@ function newAsteroid(x, y, r) {
 function newGame() {
     lives = GAME_LIVES;
     score = 0;
-    scoreHigh = localStorage.getItem(SAVE_KEY_SCORE);
     level = 0;
     ship = newShip();
+
+    // retreive the highscore from local storage 
+    let scoreStr = localStorage.getItem(SAVE_KEY_SCORE);
+    if (scoreStr == null) {
+        scoreHigh = 0;
+    } else {
+        scoreHigh = parseInt(scoreStr);
+    }
     newLevel();
 }
 
