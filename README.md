@@ -254,9 +254,8 @@ Ensure when player loses a life, the life lost flashes a different colour before
 Ensure when all three lives are lost, Game Over, is displayed on screen. | When all three lives are lost, Game Over, is displayed on screen. <br> [Game Over screen](wireframes/game_over_screen.png) | Pass
 Ensure when all three lives are lost, game is no longer playable. | When all three lives are lost, game is no longer playable. | Pass
 Ensure when all three lives are lost, game restarts at level 1 no matter, which level you were on previously. | When all three lives are lost, game restarts at level 1 no matter, which level you were on previously. | Pass
-Implement a scoring system                                                 | Outcome | Pass/Fail
-Save players highscore                                                     | Outcome | Pass/Fail
-If ship hits an asteroid, ship is destroyed and player loses a life        | Outcome | Pass/Fail
+Implement a scoring system. | A scoring system has been implemented. large asteroids = 20 points, medium asteroids = 50 points, small asteroids = 100 points. <br> [Scoring test](wireframes/scoring_test.png) | Pass
+Save players highscore | Outcome | Pass/Fail
 
 ## Web Development Testing
 
