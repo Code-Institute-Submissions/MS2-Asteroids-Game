@@ -74,6 +74,7 @@ function destroyAsteroid(index) {
     // check high score 
     if (score > scoreHigh) {
         scoreHigh = score;
+        localStorage.setItem(SAVE_KEY_SCORE, scoreHigh);
     }
 
     // destroy the asteroid
