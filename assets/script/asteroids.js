@@ -23,6 +23,7 @@ const SHOW_BOUNDING = false; // show or hide collision bounding
 const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
 const TEXT_FADE_TIME = 2.5; // text fade time in seconds
 const TEXT_SIZE = 90; // text font size in pixels
+const SCORE_SIZE = 30; // score size in pixels
 
 /** @type {HTMLCanvasElement} */
 let canv = document.getElementById("asteroid-canvas");
@@ -114,7 +115,7 @@ function gameOver() {
 }
 
 function keyDown(/** @type {KeyboardEvent} */ ev) {
-    
+
     if (ship.dead) {
         return;
     }
@@ -137,7 +138,7 @@ function keyDown(/** @type {KeyboardEvent} */ ev) {
 
 function keyUp(/** @type {KeyboardEvent} */ ev) {
 
-        if (ship.dead) {
+    if (ship.dead) {
         return;
     }
 
@@ -384,9 +385,16 @@ function update() {
     // draw the lives
     let lifeColour;
     for (let i = 0; i < lives; i++) {
-    lifeColour = exploing && i == lives - 1 ? "cyan" : "magenta";
+        lifeColour = exploing && i == lives - 1 ? "cyan" : "magenta";
         drawShip(SHIP_SIZE + i * SHIP_SIZE * 1.5, SHIP_SIZE, 0.5 * Math.PI, lifeColour);
     }
+
+    // draw the score
+    ctx.textAlign = "right";
+    ctx.textBaseline = "middle";
+    ctx.fillStyle = "white"; // 247, 243, 15 = Yellow colour
+    ctx.font = SCORE_SIZE + "px impact";
+    ctx.fillText(score, canv.width - SHIP_SIZE / 2, SHIP_SIZE);
 
     // detect laser hits asteroid
     let ax, ay, ar, lx, ly; // ax = asteroids x, ay = asteroids y, lx = lasers x, ly = lasers y
@@ -440,7 +448,7 @@ function update() {
         ship.explodeTime--;
 
         if (ship.explodeTime == 0) {
-            lives --;
+            lives--;
             if (lives == 0) {
                 gameOver();
             } else {
