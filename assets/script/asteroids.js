@@ -133,7 +133,7 @@ function keyUp(/** @type {KeyboardEvent} */ ev) {
         if (ship.dead) {
         return;
     }
-    
+
     switch (ev.keyCode) {
         case 32: // spacebar (allow shooting again)
             ship.canShoot = true;
@@ -222,7 +222,7 @@ function update() {
     //ctx.fillRect(0, 0, canv.width, canv.height);
 
     // thrust the ship
-    if (ship.thrusting) {
+    if (ship.thrusting && !ship.dead) {
         ship.thrust.x += SHIP_THRUST * Math.cos(ship.a) / FPS;
         ship.thrust.y -= SHIP_THRUST * Math.sin(ship.a) / FPS;
 
@@ -293,7 +293,7 @@ function update() {
 
     // draw the triangular ship
     if (!exploing) {
-        if (blinkOn) {
+        if (blinkOn && !ship.dead) {
             drawShip(ship.x, ship.y, ship.a);
         }
 
@@ -409,7 +409,7 @@ function update() {
 
     // check for asteroids collisions
     if (!exploing) {
-        if (ship.blinkNum == 0) {
+        if (ship.blinkNum == 0 && !ship.dead) {
             for (let i = 0; i < roids.length; i++) {
                 if (distanceBetweenPoints(ship.x, ship.y, roids[i].x, roids[i].y) < ship.r + roids[i].r) {
                     explodeShip();
