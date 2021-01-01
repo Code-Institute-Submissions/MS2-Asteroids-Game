@@ -100,6 +100,10 @@ function explodeShip() {
     ship.explodeTime = Math.ceil(SHIP_EXPLODE_DUR * FPS);
 }
 
+function gameOver() {
+    // TODO game over
+}
+
 function keyDown(/** @type {KeyboardEvent} */ ev) {
     switch (ev.keyCode) {
         case 32: // spacebar (shoots the laser)
@@ -355,7 +359,9 @@ function update() {
     }
 
     // draw the lives
+    let lifeColour;
     for (let i = 0; i < lives; i++) {
+    lifeColour = exploing && i == lives - 1 ? "cyan" : "magenta";
         drawShip(SHIP_SIZE + i * SHIP_SIZE * 1.5, SHIP_SIZE, 0.5 * Math.PI);
     }
 
