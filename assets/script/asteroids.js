@@ -398,9 +398,16 @@ function update() {
     // draw the score
     ctx.textAlign = "right";
     ctx.textBaseline = "middle";
-    ctx.fillStyle = "white"; // 247, 243, 15 = Yellow colour
+    ctx.fillStyle = "white";
     ctx.font = SCORE_SIZE + "px Impact";
-    ctx.fillText(score, canv.width - SHIP_SIZE / 2, SHIP_SIZE);
+    ctx.fillText("Score: " + score, canv.width - SHIP_SIZE / 2, SHIP_SIZE);
+
+    // draw the high score
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillStyle = "white";
+    ctx.font = SCORE_SIZE + "px Impact";
+    ctx.fillText("High: " + scoreHigh, canv.width / 2, SHIP_SIZE);
 
     // detect laser hits asteroid
     let ax, ay, ar, lx, ly; // ax = asteroids x, ay = asteroids y, lx = lasers x, ly = lasers y
