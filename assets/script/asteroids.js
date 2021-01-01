@@ -76,8 +76,8 @@ function distanceBetweenPoints(x1, y1, x2, y2) {
     return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 }
 
-function drawShip(x, y, a) {
-    ctx.strokeStyle = "magenta";
+function drawShip(x, y, a, colour = "magenta") {
+    ctx.strokeStyle = colour;
     ctx.lineWidth = SHIP_SIZE / 5;
     ctx.beginPath();
     ctx.moveTo( // nose of the ship
@@ -362,7 +362,7 @@ function update() {
     let lifeColour;
     for (let i = 0; i < lives; i++) {
     lifeColour = exploing && i == lives - 1 ? "cyan" : "magenta";
-        drawShip(SHIP_SIZE + i * SHIP_SIZE * 1.5, SHIP_SIZE, 0.5 * Math.PI);
+        drawShip(SHIP_SIZE + i * SHIP_SIZE * 1.5, SHIP_SIZE, 0.5 * Math.PI, lifeColour);
     }
 
     // detect laser hits asteroid
