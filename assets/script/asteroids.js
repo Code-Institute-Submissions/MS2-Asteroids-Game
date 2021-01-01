@@ -101,7 +101,9 @@ function explodeShip() {
 }
 
 function gameOver() {
-    // TODO game over
+    ship.dead = true;
+    text = "Game Over!";
+    textAlpha = 1.0;
 }
 
 function keyDown(/** @type {KeyboardEvent} */ ev) {
