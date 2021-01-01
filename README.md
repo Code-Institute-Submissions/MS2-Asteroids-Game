@@ -253,6 +253,7 @@ Ensure when the ship crashes into an asteroid one of the three lives are lost. |
 Ensure when player loses a life, the life lost flashes a different colour before disappearing. | When player loses a life, the life lost flashes a different colour before disappearing (Unable to get a screenshot as I'm not fast enough!). | Pass
 Ensure when all three lives are lost, Game Over, is displayed on screen. | When all three lives are lost, Game Over, is displayed on screen. <br> [Game Over screen](wireframes/game_over_screen.png) | Pass
 Ensure when all three lives are lost, game is no longer playable. | When all three lives are lost, game is no longer playable. | Pass
+Ensure when all three lives are lost, game restarts at level 1 no matter, which level you were on previously. | When all three lives are lost, game restarts at level 1 no matter, which level you were on previously. | Pass
 Implement a scoring system                                                 | Outcome | Pass/Fail
 Save players highscore                                                     | Outcome | Pass/Fail
 If ship hits an asteroid, ship is destroyed and player loses a life        | Outcome | Pass/Fail
