@@ -251,6 +251,7 @@ Ensure user has a visual represntation of what level they are currently on | Use
 Ensure game starts off with three lives and are visible | Game starts off with three lives that are easily visible in the top left corner of screen. <br> [Three lives test](wireframes/three_lives_test.png)
 Ensure when the ship crashes into an asteroid one of the three lives are lost. |When the ship crashes into an asteroid one of the three lives are lost. <br> [Two lives remaining](wireframes/two_lives_left.png) | Pass
 Ensure when player loses a life, the life lost flashes a different colour before disappearing. | When player loses a life, the life lost flashes a different colour before disappearing (Unable to get a screenshot as I'm not fast enough!). | Pass
+Ensure when all three lives are lost, Game Over, is displayed on screen. | When all three lives are lost, Game Over, is displayed on screen. <br> [Game Over screen](wireframes/game_over_screen.png) | Pass
 Implement a scoring system                                                 | Outcome | Pass/Fail
 Save players highscore                                                     | Outcome | Pass/Fail
 If ship hits an asteroid, ship is destroyed and player loses a life        | Outcome | Pass/Fail
