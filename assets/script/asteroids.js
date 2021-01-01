@@ -24,6 +24,7 @@ const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of 
 const TEXT_FADE_TIME = 2.5; // text fade time in seconds
 const TEXT_SIZE = 90; // text font size in pixels
 const SCORE_SIZE = 30; // score size in pixels
+const SAVE_KEY_SCORE = "highscore"; // save key for local storage of highscores
 
 /** @type {HTMLCanvasElement} */
 let canv = document.getElementById("asteroid-canvas");
@@ -180,7 +181,7 @@ function newAsteroid(x, y, r) {
 function newGame() {
     lives = GAME_LIVES;
     score = 0;
-    scoreHigh = 100;
+    scoreHigh = localStorage.getItem(SAVE_KEY_SCORE);
     level = 0;
     ship = newShip();
     newLevel();
@@ -400,14 +401,14 @@ function update() {
     ctx.textBaseline = "middle";
     ctx.fillStyle = "white";
     ctx.font = SCORE_SIZE + "px Impact";
-    ctx.fillText("Score: " + score, canv.width - SHIP_SIZE / 2, SHIP_SIZE);
+    ctx.fillText("Score:    " + score, canv.width - SHIP_SIZE / 2, SHIP_SIZE);
 
     // draw the high score
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillStyle = "white";
     ctx.font = SCORE_SIZE + "px Impact";
-    ctx.fillText("High: " + scoreHigh, canv.width / 2, SHIP_SIZE);
+    ctx.fillText("High:    " + scoreHigh, canv.width / 2, SHIP_SIZE);
 
     // detect laser hits asteroid
     let ax, ay, ar, lx, ly; // ax = asteroids x, ay = asteroids y, lx = lasers x, ly = lasers y
