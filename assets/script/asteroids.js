@@ -107,6 +107,11 @@ function gameOver() {
 }
 
 function keyDown(/** @type {KeyboardEvent} */ ev) {
+    
+    if (ship.dead) {
+        return;
+    }
+
     switch (ev.keyCode) {
         case 32: // spacebar (shoots the laser)
             shootLaser();
@@ -124,6 +129,11 @@ function keyDown(/** @type {KeyboardEvent} */ ev) {
 }
 
 function keyUp(/** @type {KeyboardEvent} */ ev) {
+
+        if (ship.dead) {
+        return;
+    }
+    
     switch (ev.keyCode) {
         case 32: // spacebar (allow shooting again)
             ship.canShoot = true;
