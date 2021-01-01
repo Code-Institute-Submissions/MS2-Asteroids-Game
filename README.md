@@ -255,7 +255,7 @@ Ensure when all three lives are lost, Game Over, is displayed on screen. | When 
 Ensure when all three lives are lost, game is no longer playable. | When all three lives are lost, game is no longer playable. | Pass
 Ensure when all three lives are lost, game restarts at level 1 no matter, which level you were on previously. | When all three lives are lost, game restarts at level 1 no matter, which level you were on previously. | Pass
 Implement a scoring system. | A scoring system has been implemented. large asteroids = 20 points, medium asteroids = 50 points, small asteroids = 100 points. <br> [Scoring test](wireframes/scoring_test.png) | Pass
-Save players highscore | Outcome | Pass/Fail
+Ensure players highest score is saved locally. | Players highest score is saved locally. <br> [High score test](wireframes/high_score_test.png) | Pass/Fail
 
 ## Web Development Testing
 
