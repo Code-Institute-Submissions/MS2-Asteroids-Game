@@ -411,7 +411,12 @@ function update() {
         ship.explodeTime--;
 
         if (ship.explodeTime == 0) {
-            ship = newShip();
+            lives --;
+            if (lives == 0) {
+                gameOver();
+            } else {
+                ship = newShip();
+            }
         }
     }
 
