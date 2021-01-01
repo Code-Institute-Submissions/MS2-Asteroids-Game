@@ -97,6 +97,8 @@ Each level starts with a few large asteroids drifting in various directions on t
 
 - When the last asteroid is destroyed, game continues with an extra asteroid and increased speed in game. The gradual increased difficulty in the game will get the user excited. A visual reputation of the level they are on will give them bragging rights amoungst their friends!
 
+- As part of the UX, when the player loses a life, the life flashes a different colour (Cyan) and then disappears.
+
 ---
 
 # Design
@@ -146,6 +148,10 @@ The spaceship, I'm aiming to build something a bit better than the plain triangu
 - Font size - 90px
 - Font colour - 247, 243, 15 - Yellow colour
 
+### In-Game Lives Colours:
+- Magenta 
+- Flashes Cyan when player loses a life
+
 ---
 
 # Wireframes
@@ -192,6 +198,8 @@ The spaceship, I'm aiming to build something a bit better than the plain triangu
 * As a new gamer I expect, want or to see: the controls to be easily accessible 
 * As a new gamer I expect, want or to see: there to be a scoring feature
 * As a new gamer I expect, want or to see: my high score to be saved
+* As a new gamer I expect, want or to see: the current level I'm on
+* As a new gamer I expect, want or to see: how many lives I have
 * As a new gamer I expect, want or to see: there to be contact details
 * As a new gamer I expect, want or to see: there to be social network links 
 
@@ -241,6 +249,8 @@ Ensure when asteroids are blasted they sperate into smaller asteroids. | When as
 Ensure when last asteroid is destroyed, game continues with an extra asteroid and increased speed in game. |  When the last asteroid is destroyed, game continues with an extra asteroid and speed in game is increased. | Pass
 Ensure user has a visual represntation of what level they are currently on | User has a visual represntation of the level they are on. <br> [Level text test](wireframes/level_test.png) | Pass
 Ensure game starts off with three lives and are visible | Game starts off with three lives that are easily visible in the top left corner of screen. <br> [Three lives test](wireframes/three_lives_test.png)
+Ensure when the ship crashes into an asteroid one of the three lives are lost. |When the ship crashes into an asteroid one of the three lives are lost. <br> [Two lives remaining](wireframes/two_lives_left.png) | Pass
+Ensure when player loses a life, the life lost flashes a different colour before disappearing. | When player loses a life, the life lost flashes a different colour before disappearing (Unable to get a screenshot as I'm not fast enough!). | Pass
 Implement a scoring system                                                 | Outcome | Pass/Fail
 Save players highscore                                                     | Outcome | Pass/Fail
 If ship hits an asteroid, ship is destroyed and player loses a life        | Outcome | Pass/Fail
