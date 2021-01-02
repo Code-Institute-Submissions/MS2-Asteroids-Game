@@ -37,6 +37,9 @@ let fxExplode = new Sound("assets/sounds/explode.m4a");
 let fxHit = new Sound("assets/sounds/hit.m4a", 5);
 let fxThrust = new Sound("assets/sounds/thrust.m4a");
 
+// set up the in-game music
+let music = new Music("assets/sounds/music-high.m4a", "assets/sounds/music-low.m4a")
+
 // set up game paramaters
 let level, lives, roids, score, scoreHigh, ship, text, textAlpha;
 newGame();
@@ -244,6 +247,10 @@ function shootLaser() {
 
     // prevent the laser from further shooting
     ship.canShoot = false;
+}
+
+function Music(srcLow, srcHigh) {
+    
 }
 
 function Sound(src, maxStream = 1, vol = 1.0) {
