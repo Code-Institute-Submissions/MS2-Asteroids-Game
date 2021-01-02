@@ -32,8 +32,8 @@ let canv = document.getElementById("asteroid-canvas");
 let ctx = canv.getContext("2d");
 
 // in-game sound fx
-let fxLaser = new Sound("assets/sounds/laser.mp3");
-let fxExplode = new Sound("assets/sounds/explode.m4a", 5, 0.5);
+let fxLaser = new Sound("assets/sounds/laser.mp3", 7, 0.5);
+let fxExplode = new Sound("assets/sounds/explode.m4a");
 let fxHit = new Sound("assets/sounds/hit.m4a", 5);
 let fxThrust = new Sound("assets/sounds/thrust.m4a");
 
@@ -258,6 +258,10 @@ function Sound(src, maxStream = 1, vol = 1.0) {
             this.streamNum = (this.streamNum + 1) % maxStream;
             this.streams[this.streamNum].play();
         }
+    }
+    this.stop = function() {
+        this.streams[this.streamNum].pause();
+        this.streams[this.streamNum].currentTime = 0;
     }
 }
 
