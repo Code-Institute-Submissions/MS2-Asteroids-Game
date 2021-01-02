@@ -96,7 +96,7 @@ function destroyAsteroid(index) {
 
     // remaining asteroids to determine music tempo
     roidsLeft --;
-    music.setAsteroidRatio(roidsLeft == 0 ? 1 : roidsLeft / roidsTotal)
+    music.setAsteroidRatio(roidsLeft == 0 ? 1 : roidsLeft / roidsTotal);
 
     // new level for no more asteroids
     if (roids.length == 0) {
@@ -270,6 +270,10 @@ function Music(srcLow, srcHigh) {
             this.soundHigh.play();
         }
         this.low = !this.low;
+    }
+
+    this.setAsteroidRatio = function(ratio) {
+        this.tempo = 1.0 - 0.75 * (1.0 - ratio);
     }
 
     this.tick = function() {
