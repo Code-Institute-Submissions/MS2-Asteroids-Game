@@ -94,6 +94,10 @@ function destroyAsteroid(index) {
     roids.splice(index, 1);
     fxHit.play();
 
+    // remaining asteroids to determine music tempo
+    roidsLeft --;
+    music.setAsteroidRatio(roidsLeft == 0 ? 1 : roidsLeft / roidsTotal)
+
     // new level for no more asteroids
     if (roids.length == 0) {
         level++;
