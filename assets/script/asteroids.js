@@ -31,7 +31,8 @@ let canv = document.getElementById("asteroid-canvas");
 let ctx = canv.getContext("2d");
 
 // in-game sound fx
-let fxLaser = new Sound("assets/sounds/laser.mp3", 5, 0.5);
+let fxLaser = new Sound("assets/sounds/laser.mp3");
+let fxExplode = new Sound("assets/sounds/explode.m4a", 5, 0.5);
 
 // set up game paramaters
 let level, lives, roids, score, scoreHigh, ship, text, textAlpha;
@@ -116,6 +117,7 @@ function drawShip(x, y, a, colour = "magenta") {
 
 function explodeShip() {
     ship.explodeTime = Math.ceil(SHIP_EXPLODE_DUR * FPS);
+    fxExplode.play();
 }
 
 function gameOver() {
