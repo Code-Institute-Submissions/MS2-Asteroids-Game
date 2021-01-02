@@ -21,7 +21,7 @@ const TURN_SPEED = 360; // turn speed in degrees per second
 const SHIP_THRUST = 5; // ship acceleration speed
 const SHOW_BOUNDING = false; // show or hide collision bounding
 const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
-const SOUND_ON = false; // 
+const SOUND_ON = true; // 
 const TEXT_FADE_TIME = 2.5; // text fade time in seconds
 const TEXT_SIZE = 90; // text font size in pixels
 const SCORE_SIZE = 30; // score size in pixels
@@ -274,6 +274,7 @@ function update() {
     if (ship.thrusting && !ship.dead) {
         ship.thrust.x += SHIP_THRUST * Math.cos(ship.a) / FPS;
         ship.thrust.y -= SHIP_THRUST * Math.sin(ship.a) / FPS;
+        fxThrust.play();
 
         // draw the thrusters
         if (!exploing && blinkOn) {
@@ -300,6 +301,7 @@ function update() {
     } else { // otherwise they're not pushing the thrust button
         ship.thrust.x -= FRICTION * ship.thrust.x / FPS;
         ship.thrust.y -= FRICTION * ship.thrust.y / FPS;
+        fxThrust.stop();
     }
 
     // draw the asteroids
