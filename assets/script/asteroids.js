@@ -21,6 +21,7 @@ const TURN_SPEED = 360; // turn speed in degrees per second
 const SHIP_THRUST = 5; // ship acceleration speed
 const SHOW_BOUNDING = false; // show or hide collision bounding
 const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
+const SOUND_ON = false; // 
 const TEXT_FADE_TIME = 2.5; // text fade time in seconds
 const TEXT_SIZE = 90; // text font size in pixels
 const SCORE_SIZE = 30; // score size in pixels
@@ -34,6 +35,7 @@ let ctx = canv.getContext("2d");
 let fxLaser = new Sound("assets/sounds/laser.mp3");
 let fxExplode = new Sound("assets/sounds/explode.m4a", 5, 0.5);
 let fxHit = new Sound("assets/sounds/hit.m4a", 5);
+let fxThrust = new Sound("assets/sounds/thrust.m4a");
 
 // set up game paramaters
 let level, lives, roids, score, scoreHigh, ship, text, textAlpha;
@@ -252,8 +254,10 @@ function Sound(src, maxStream = 1, vol = 1.0) {
         this.streams[i].volume = vol;
     }
     this.play = function() {
-        this.streamNum = (this.streamNum + 1) % maxStream;
-        this.streams[this.streamNum].play();
+        if (SOUND_ON) {
+            this.streamNum = (this.streamNum + 1) % maxStream;
+            this.streams[this.streamNum].play();
+        }
     }
 }
 
