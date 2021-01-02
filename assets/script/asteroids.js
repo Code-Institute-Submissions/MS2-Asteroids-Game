@@ -264,6 +264,15 @@ function Music(srcLow, srcHigh) {
         }
         this.low = !this.low;
     }
+
+    this.tick = function() {
+        if (this.beatTime == 0) {
+            this.play();
+            this.beatTime = Math.ceil(this.tempo * FPS);
+        } else {
+            this.beatTime --;
+        }
+    }
 }
 
 function Sound(src, maxStream = 1, vol = 1.0) {
