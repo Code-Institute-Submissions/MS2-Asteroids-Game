@@ -38,7 +38,7 @@ let fxHit = new Sound("assets/sounds/hit.m4a", 5);
 let fxThrust = new Sound("assets/sounds/thrust.m4a");
 
 // set up the in-game music
-let music = new Music("assets/sounds/music-high.m4a", "assets/sounds/music-low.m4a")
+let music = new Music("assets/sounds/music-high.m4a", "assets/sounds/music-low.m4a");
 
 // set up game paramaters
 let level, lives, roids, score, scoreHigh, ship, text, textAlpha;
@@ -250,7 +250,20 @@ function shootLaser() {
 }
 
 function Music(srcLow, srcHigh) {
-    
+    this.soundLow = new Audio(srcLow);
+    this.soundHigh = new Audio(srcHigh);
+    this.low = true;
+    this.tempo = 1.0; // seconds per beat
+    this.beatTime = 0; // frames until next beat
+
+    this.play = function() {
+        if (this.low) {
+            this.soundLow.play();
+        } else {
+            this.soundHigh.play();
+        }
+        this.low = !this.low;
+    }
 }
 
 function Sound(src, maxStream = 1, vol = 1.0) {
