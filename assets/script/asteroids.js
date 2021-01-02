@@ -33,7 +33,7 @@ let ctx = canv.getContext("2d");
 // in-game sound fx
 let fxLaser = new Sound("assets/sounds/laser.mp3");
 let fxExplode = new Sound("assets/sounds/explode.m4a", 5, 0.5);
-let fxHit = new Sound("assets/sounds/hit.m4a");
+let fxHit = new Sound("assets/sounds/hit.m4a", 5);
 
 // set up game paramaters
 let level, lives, roids, score, scoreHigh, ship, text, textAlpha;
@@ -84,6 +84,7 @@ function destroyAsteroid(index) {
 
     // destroy the asteroid
     roids.splice(index, 1);
+    fxHit.play();
 
     // new level for no more asteroids
     if (roids.length == 0) {
