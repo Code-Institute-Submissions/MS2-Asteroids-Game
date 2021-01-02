@@ -257,6 +257,10 @@ Ensure when all three lives are lost, game restarts at level 1 no matter, which 
 Implement a scoring system. | A scoring system has been implemented. large asteroids = 20 points, medium asteroids = 50 points, small asteroids = 100 points. <br> [Scoring test](wireframes/scoring_test.png) | Pass
 Ensure players highest score is saved locally. | Players highest score is saved locally. <br> [High score test](wireframes/high_score_test.png) | Pass
 Ensure when laser is fired, a laser FX is played. | When laser is fired, a laser FX is played. | Pass
+Ensure when ship hits an asteroid with laser, a hit FX is played. | When ship hits an asteroid with laser, a hit FX is played. | Pass
+Ensure when ship collides with an asteroid an explode FX is played. | When ship collides with an asteroid an explode FX is played. | Pass
+Ensure when UP arrow is pressed thrust FX is played and when UP arrow is released, thrust FX stops. | When UP arrow is pressed thrust FX is played and when UP arrow is released, thrust FX stops. | Pass
+
 
 ## Web Development Testing
 
