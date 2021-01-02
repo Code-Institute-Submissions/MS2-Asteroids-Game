@@ -54,6 +54,8 @@ setInterval(update, 1000 / FPS);
 
 function createAsteroidBelt() {
     roids = [];
+    roidsTotal = (ROIDS_NUM + level) * 7;
+    roidsLeft = roidsTotal;
     let x, y;
     for (let i = 0; i < ROIDS_NUM + level; i++) {
         do {
