@@ -39,6 +39,7 @@ let fxThrust = new Sound("assets/sounds/thrust.m4a");
 
 // set up the in-game music
 let music = new Music("assets/sounds/music-high.m4a", "assets/sounds/music-low.m4a");
+let roidsLeft, roidsTotal;
 
 // set up game paramaters
 let level, lives, roids, score, scoreHigh, ship, text, textAlpha;
