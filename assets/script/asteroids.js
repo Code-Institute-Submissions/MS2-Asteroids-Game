@@ -30,6 +30,9 @@ const SAVE_KEY_SCORE = "highscore"; // save key for local storage of highscores
 let canv = document.getElementById("asteroid-canvas");
 let ctx = canv.getContext("2d");
 
+// in-game sound fx
+let fxLaser = new Audio(assets/sounds/laser.m4a);
+
 // set up game paramaters
 let level, lives, roids, score, scoreHigh, ship, text, textAlpha;
 newGame();
