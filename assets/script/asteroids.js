@@ -31,7 +31,7 @@ let canv = document.getElementById("asteroid-canvas");
 let ctx = canv.getContext("2d");
 
 // in-game sound fx
-let fxLaser = new Audio("assets/sounds/laser.m4a");
+let fxLaser = new Sound("assets/sounds/laser.m4a");
 
 // set up game paramaters
 let level, lives, roids, score, scoreHigh, ship, text, textAlpha;
@@ -238,6 +238,19 @@ function shootLaser() {
 
     // prevent the laser from further shooting
     ship.canShoot = false;
+}
+
+function Sound(src, maxStream = 1, vol = 1.0) {
+    this.streamNum = 0;
+    this.streams = [];
+    for (let i = 0; i < maxStream; i++) {
+        this.streams.push(new Audio(src))
+        this.streams[i].volume = vol;
+    }
+    this.play = function() {
+        this.streamNum = (this.streamNum + 1) % maxStream;
+        this.streams[this.streamNum].play();
+    }
 }
 
 function update() {
