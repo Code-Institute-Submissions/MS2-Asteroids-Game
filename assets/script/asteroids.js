@@ -297,6 +297,10 @@ function Sound(src, maxStream = 1, vol = 1.0) {
 function update() {
     let blinkOn = ship.blinkNum % 2 == 0;
     let exploing = ship.explodeTime > 0;
+
+    // music tick
+    music.tick();
+
     document.getElementById("asteroid-canvas").style.background = "url('assets/images/galaxy_image.jpg')";
     ctx.clearRect(0, 0, canv.width, canv.height);
     // draw space
