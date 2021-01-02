@@ -33,6 +33,7 @@ let ctx = canv.getContext("2d");
 // in-game sound fx
 let fxLaser = new Sound("assets/sounds/laser.mp3");
 let fxExplode = new Sound("assets/sounds/explode.m4a", 5, 0.5);
+let fxHit = new Sound("assets/sounds/hit.m4a");
 
 // set up game paramaters
 let level, lives, roids, score, scoreHigh, ship, text, textAlpha;
