@@ -261,7 +261,7 @@ Ensure when ship hits an asteroid with laser, a hit FX is played. | When ship hi
 Ensure when ship collides with an asteroid an explode FX is played. | When ship collides with an asteroid an explode FX is played. | Pass
 Ensure when UP arrow is pressed thrust FX is played and when UP arrow is released, thrust FX stops. | When UP arrow is pressed thrust FX is played and when UP arrow is released, thrust FX stops. | Pass
 Ensure whem asteroids are destroyed the music tempo increases. | Whem asteroids are destroyed the music tempo increases. | Pass
-
+Ensure how-to-play instructions are easily located. | How-to-play instructions are easily located in the bottom left hand corner. <br> [Game controls](wireframes/game_controls.png) | Pass
 
 ## Web Development Testing
 
