@@ -2,6 +2,26 @@ body {
     background-color: black;
 }
 
+#controls {
+	color: #FFF;
+	font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+	margin: 470px 15px 0;
+    padding: 8px;
+    border: 1px solid cyan;
+	background: rgba(0, 0, 0, 0.4);
+	position: absolute;
+	z-index: 1;
+}
+
+#controls h1 {
+	font-size: 18px;
+}
+
+#controls p {
+	font-size: 11px;
+}
+
 #asteroid-canvas {
     position: absolute;
+    border: 1px cyan solid;
 }
