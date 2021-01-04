@@ -6,7 +6,13 @@ body {
    box-sizing: border-box;
 }
 
-/* game container and asteroid canvas - start */
+/* navbar styles */
+nav {
+    margin-bottom: 2em;
+    border: 1px solid cyan;
+}
+
+/* game container and asteroid canvas styles */
 #game-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -42,17 +48,16 @@ body {
     transform: translate(-50%, 0);
     z-index: -1;
 }
-/* game container and asteroid canvas - end */
 
 section {
     margin: 0 auto;
 }
 
-/* game controls - start */
+/* game controls styles */
 #controls {
 	color: #FFF;
 	font-family: Arial, Helvetica, sans-serif;
-	margin: 29.688em 2.3em 0;
+	margin: 29.688em 9.8em 0;
     padding: 0.5em;
     border: 1px solid cyan;
 	background: rgba(0, 0, 0, 0.4);
@@ -67,7 +72,6 @@ section {
 #controls p {
 	font-size: 0.668em;
 }
-/* game controls - end */
 
 /* footer styles */
 footer {
