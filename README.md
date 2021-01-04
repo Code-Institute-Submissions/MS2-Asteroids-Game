@@ -285,9 +285,19 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
 
 # Frameworks, Libraries & Programs Used
 
-- Used [Adobe Color Wheel](https://color.adobe.com/create/color-wheel) for website colours
+- Used [Adobe Color Wheel](https://color.adobe.com/create/color-wheel) for website colours.
 
-- Used Preview on Mac to resize images
+- Used Google to get RGB values.
+- Used Preview on Mac to resize images.
+- Used [nekoCalc](https://nekocalc.com/px-to-em-converter) to convert pixels to ems.
+- [Bootstrap](https://getbootstrap.com) was used to assist with the responsiveness (i.e. On mobile devices menu collapses down to a square button) and styling of the website.
+- [GitPod](https://gitpod.io/workspaces). Development environment used to build the project.
+    - Git was used for version control.
+- [GitHub](https://github.com) is used to store the projects code after being saved from GitPod and then Pushed from the terminal using Git commands.
+
+
+
+
 
 ---
 
