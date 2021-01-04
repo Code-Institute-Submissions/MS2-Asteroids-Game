@@ -37,6 +37,17 @@ let fxExplode = new Sound("assets/sounds/explode.m4a");
 let fxHit = new Sound("assets/sounds/hit.m4a", 5);
 let fxThrust = new Sound("assets/sounds/thrust.m4a");
 
+// toggle sound
+let soundCtrl = document.getElementById("myAudio")
+
+function enableMute() { 
+  soundCtrl.muted = true;
+} 
+
+function disableMute() { 
+  soundCtrl.muted = false;
+}
+
 // set up the in-game music
 let music = new Music("assets/sounds/music-high.m4a", "assets/sounds/music-low.m4a");
 let roidsLeft, roidsTotal;

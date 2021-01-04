@@ -1,16 +1,58 @@
 body {
-    margin: 0;
-    background-color: #FFF;
+   margin: 0;
+   padding: 0;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
 }
 
-#section {
+/* game container and asteroid canvas - start */
+#game-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -ms-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  text-align: center;
+}
+
+#asteroid-canvas {
+    border: 1px cyan solid;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    z-index: -1;
+}
+/* game container and asteroid canvas - end */
+
+section {
     margin: 0 auto;
 }
 
+/* game controls - start */
 #controls {
 	color: #FFF;
 	font-family: Arial, Helvetica, sans-serif;
-	margin: 470px 15px 0;
+	margin: 475px 80px 0;
     padding: 8px;
     border: 1px solid cyan;
 	background: rgba(0, 0, 0, 0.4);
@@ -25,13 +67,4 @@ body {
 #controls p {
 	font-size: 11px;
 }
-
-#asteroid-canvas {
-    position: absolute;
-    border: 1px cyan solid;
-}
-
-#footer {
-    color: #000;
-    margin-top: 680px;
-}
+/* game controls - end */
