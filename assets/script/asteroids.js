@@ -471,7 +471,7 @@ function update() {
         }
     }
 
-    // draw the game text
+    // draw the game over text
     if (textAlpha >= 0) {
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
@@ -486,7 +486,7 @@ function update() {
     // draw the lives
     let lifeColour;
     for (let i = 0; i < lives; i++) {
-        lifeColour = exploing && i == lives - 1 ? "cyan" : "magenta";
+        lifeColour = exploing && i == lives - 1 ? "cyan" : "yellow";
         drawShip(SHIP_SIZE + i * SHIP_SIZE * 1.5, SHIP_SIZE, 0.5 * Math.PI, lifeColour);
     }
 
