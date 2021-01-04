@@ -52,8 +52,8 @@ section {
 #controls {
 	color: #FFF;
 	font-family: Arial, Helvetica, sans-serif;
-	margin: 475px 80px 0;
-    padding: 8px;
+	margin: 29.688em 2.3em 0;
+    padding: 0.5em;
     border: 1px solid cyan;
 	background: rgba(0, 0, 0, 0.4);
 	position: absolute;
@@ -61,10 +61,10 @@ section {
 }
 
 #controls h1 {
-	font-size: 18px;
+	font-size: 1.125em;
 }
 
 #controls p {
-	font-size: 11px;
+	font-size: 0.668em;
 }
 /* game controls - end */
