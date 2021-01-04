@@ -295,10 +295,6 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
     - Git was used for version control.
 - [GitHub](https://github.com) is used to store the projects code after being saved from GitPod and then Pushed from the terminal using Git commands.
 
-
-
-
-
 ---
 
 # Bugs
@@ -329,6 +325,12 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
 - When I use the arrow keys to rotate the ship, the lives in the top corner are also rotating.
 
     - Fixed this issue by revising my code. Forgot to remove ship.a from function drawShip.
+
+## Date: Monday, 4th January, 2021
+
+- The scrollbar was interferring with the gameplay, especially when the spacebar was pressed to shoot. There was a bit of horizontal scroll which was making the page jump when playing. 
+
+    - Fixed this simply by removing the footer in index.html and removed width 100vh and changed it to % in #game-container.
 
 ---
 
