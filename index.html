@@ -26,37 +26,33 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="#">Play</a>
+                        <a class="nav-link active" aria-current="page" href="#">New Game</a>
                         <a class="nav-link" href="#">Pause</a>
                         <a class="nav-link" href="#">Mute Sounds</a>
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">Contact!</button>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Instructions
+            </button>
+
+            <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message-text" class="col-form-label">Message:</label>
-                                    <textarea class="form-control" id="message-text"></textarea>
-                                </div>
-                            </form>
+                            ...
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Send message</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </div>
@@ -64,19 +60,13 @@
         </nav>
     </header>
     <section>
-        <!--game controls-->
-        <div id="controls">
-            <h1>Game Controls:</h1>
-            <p>Use [&larr;] [&uarr;] [&rarr;] to MOVE</p>
-            <p>Use [SPACE] to FIRE LASER</p>
-        </div>
         <!--game container + asteroid canvas-->
         <div id="game-container">
             <canvas id="asteroid-canvas" width="1000" height="600"></canvas>
         </div>
     </section>
     <script>
-    let exampleModal = document.getElementById('exampleModal')
+        let exampleModal = document.getElementById('exampleModal')
         exampleModal.addEventListener('show.bs.modal', function (event) {
             // Button that triggered the modal
             let button = event.relatedTarget
