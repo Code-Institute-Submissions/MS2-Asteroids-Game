@@ -269,6 +269,7 @@ TEST            | OUTCOME                          | PASS / FAIL
 --------------- | -------------------------------- | ---------------
 Test CANVAS element is working with the HTML document | The CANVAS element is working with the HTML document. Please see the attached screenshots. <br>[Canvas testing 1](wireframes/canvas_testing.png) <br>[Canvas testing 2](wireframes/canvas_testing_output.png)| Pass
 Test CANVAS element is filling up the whole of the browser window | CANVAS element is filling up the whole of the browser window. <br>[Canvas testing 3](wireframes/canvas_testing3.png) | Pass
+Ensure when New Game is pressed a new game is started from level one. | When New Game is pressed a new game is started from level one. | Pass
 Test responsiveness of website on all screen sizes on Chrome browser       | Outcome | Pass/Fail
 Test responsiveness of website on all screen sizes on Safari browser       | Outcome | Pass/Fail
 Test responsiveness of website on all screen sizes on Firefox browse       | Outcome | Pass/Fail
