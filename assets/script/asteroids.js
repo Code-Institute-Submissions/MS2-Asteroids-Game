@@ -27,6 +27,25 @@ const TEXT_SIZE = 90; // text font size in pixels
 const SCORE_SIZE = 30; // score size in pixels
 const SAVE_KEY_SCORE = "highscore"; // save key for local storage of highscores
 
+
+// mute sound
+document.getElementById('mute').addEventListener('click', function (evt) {
+  if ( fxLaser.muted ) { 
+    fxLaser.muted = false
+    fxExplode.muted = false
+    fxHit.muted = false
+    fxThrust.muted = false
+    evt.target.innerHTML = 'Mute Sounds'
+  }
+  else {
+    fxLaser.muted = true
+    fxExplode.muted = true
+    fxHit.muted = true
+    fxThrust.muted = true
+    evt.target.innerHTML = 'Unmute Sounds'
+  }
+})
+
 /** @type {HTMLCanvasElement} */
 let canv = document.getElementById("asteroid-canvas");
 let ctx = canv.getContext("2d");
@@ -36,17 +55,6 @@ let fxLaser = new Sound("assets/sounds/laser.mp3", 7, 0.5);
 let fxExplode = new Sound("assets/sounds/explode.m4a");
 let fxHit = new Sound("assets/sounds/hit.m4a", 5);
 let fxThrust = new Sound("assets/sounds/thrust.m4a");
-
-// toggle sound
-let soundCtrl = document.getElementById("myAudio")
-
-function enableMute() { 
-  soundCtrl.muted = true;
-} 
-
-function disableMute() { 
-  soundCtrl.muted = false;
-}
 
 // set up the in-game music
 let music = new Music("assets/sounds/music-high.m4a", "assets/sounds/music-low.m4a");
