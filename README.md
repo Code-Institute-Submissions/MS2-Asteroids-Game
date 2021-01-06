@@ -333,6 +333,20 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
 
     - Fixed this simply by removing the footer in index.html and removed width 100vh and changed it to % in #game-container.
 
+## Date: Wednesday, 6th January, 2021
+
+- When I remove the inline style for the CANVAS element size to make the CANVAS responsive, the game disappears completely.
+
+    - Yet to be resolved.
+
+- In-game text is different on mobile devices, should be Impact, but on iPhone and iPad it's a plain serif font.
+
+    - Yet to be resolved.
+
+- No sound on mobile devices.
+
+    - Yet to be resolved.
+
 ---
 
 # Credits
