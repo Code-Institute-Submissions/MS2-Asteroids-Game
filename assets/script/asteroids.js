@@ -10,7 +10,7 @@ const SHIP_SIZE = 25; // ship height in pixels
 const ROIDS_PTS_LGE = 20; // points scored for large asteroid
 const ROIDS_PTS_MED = 50; // points scored for medium asteroid
 const ROIDS_PTS_SML = 100; // points scored for small asteroid
-const ROIDS_SIZE = 90; // starting size of asteroids
+const ROIDS_SIZE = 100; // starting size of asteroids
 const ROIDS_SPD = 50; // starting speed of asteroids
 const ROIDS_VERT = 10; // average number of vertices on asteroids
 const ROIDS_NUM = 3; // starting number of asteroids
@@ -27,6 +27,18 @@ const TEXT_SIZE = 90; // text font size in pixels
 const SCORE_SIZE = 30; // score size in pixels
 const SAVE_KEY_SCORE = "highscore"; // save key for local storage of highscores
 
+// pause the game
+function pauseGame() {
+  if (!gamePaused) {
+    setInterval = clearTimeout(setInterval);
+    gamePaused = true;
+  } else if (gamePaused) {
+    setInterval = setTimeout(update, 1000 / FPS);
+    gamePaused = false;
+  }
+}
+
+//setInterval(update, 1000 / FPS);
 
 // mute sound
 document.getElementById('mute').addEventListener('click', function (evt) {
@@ -331,11 +343,11 @@ function update() {
     // music tick
     music.tick();
 
+    // draw space
     document.getElementById("asteroid-canvas").style.background = "url('assets/images/galaxy_image.jpg')";
     ctx.clearRect(0, 0, canv.width, canv.height);
-    // draw space
-    //ctx.fillStyle = "yellow";
-    //ctx.fillRect(0, 0, canv.width, canv.height);
+    /*ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, canv.width, canv.height);*/
 
     // thrust the ship
     if (ship.thrusting && !ship.dead) {

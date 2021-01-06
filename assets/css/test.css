@@ -19,3 +19,8 @@ body {
     justify-items: center;
 }
 
+canvas {
+    border: 3px solid cyan;
+    margin: 0;
+    padding: 0;
+}

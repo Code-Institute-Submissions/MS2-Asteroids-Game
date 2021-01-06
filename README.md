@@ -349,6 +349,12 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
 
 ---
 
+# Learning Resources
+
+In order to figure out how to make the CANVAS fully responsive, I found this video to be quite useful. https://www.youtube.com/watch?v=hm7py_lZkL8&t=98s
+
+Another great video I watched for debugging, which was recommended by CI's tutoring team, Tim Nelson was this https://www.youtube.com/watch?v=AX7uybwukkk
+
 # Credits
 
 Thanks to [Nathan Anderson](https://unsplash.com/@nathananderson) for the use of his image of space that was uploaded to [Unsplash](https://unsplash.com/)

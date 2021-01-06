@@ -16,47 +16,9 @@
 <body>
     <header>
         <!--Bootstrap navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Asteroids!</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" id="newGame" onclick="newGame()">New Game</a>
-                        <a class="nav-link" href="#">Pause</a>
-                        <a class="nav-link" id="mute">Mute Sounds</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Instructions
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <nav>        
+            <h1>Asteroids!</h1>
+            || <a onclick="newGame()">Restart Game</a> || <a>Pause</a> || <a id="mute">Mute Sounds</a> ||
         </nav>
     </header>
     <section>
@@ -65,25 +27,8 @@
             <canvas id="asteroid-canvas" width="1000" height="600"></canvas>
         </div>
     </section>
-    <script>
-        let exampleModal = document.getElementById('exampleModal')
-        exampleModal.addEventListener('show.bs.modal', function (event) {
-            // Button that triggered the modal
-            let button = event.relatedTarget
-            // Extract info from data-bs-* attributes
-            let recipient = button.getAttribute('data-bs-whatever')
-            // If necessary, you could initiate an AJAX request here
-            // and then do the updating in a callback.
-            //
-            // Update the modal's content.
-            let modalTitle = exampleModal.querySelector('.modal-title')
-            let modalBodyInput = exampleModal.querySelector('.modal-body input')
 
-            modalTitle.textContent = 'New message to ' + recipient
-            modalBodyInput.value = recipient
-        })
-    </script>
-    <script src="assets/script/asteroids.js"></script>
+    <script type="text/javascript" src="assets/script/asteroids.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
