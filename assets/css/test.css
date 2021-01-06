@@ -15,18 +15,7 @@ body {
     min-height: 100%;
     width: 100%;
     display: grid;
+    align-items: center;
     justify-items: center;
 }
 
-#canvas {
-    border: 1px cyan solid;
-    position: relative;
-    top: 0;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-    -moz-transform: translate(-50%, 0);
-    -o-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-    z-index: -1;
-}
