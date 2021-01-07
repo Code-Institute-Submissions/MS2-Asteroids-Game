@@ -272,6 +272,8 @@ Test CANVAS element is filling up the whole of the browser window | CANVAS eleme
 Ensure when New Game is pressed a new game is started from level one. | When New Game is pressed a new game is started from level one. | Pass
 Ensure when Pause Game is pressed, the game pauses and when resumed, game starts again from its "frozen state". | When Pause Game is pressed, the game pauses and when resumed, game starts again from its "frozen state". | Pass
 Enuse when Mute Sounds is pressed, all sounds and music is muted. | When Mute Sounds is pressed, all sounds and music is muted. | Pass
+Ensure Buttons work on all major browsers. | Buttons were tested on Chrome, Safari, Firefox and Edge on laptop and mobile devices. No known issues. | Pass
+Enuse music and FX sounds work on all major browsers. | Music and FX sounds were tested on Chrome, Safari, Firefox and Edge on laptop and mobile devices. No known issues on laptop, however on mobile devices, including tablets, music and FX sounds don't work. | Fail
 Test responsiveness of website on all screen sizes on Chrome browser       | Outcome | Pass/Fail
 Test responsiveness of website on all screen sizes on Safari browser       | Outcome | Pass/Fail
 Test responsiveness of website on all screen sizes on Firefox browse       | Outcome | Pass/Fail
