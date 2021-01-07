@@ -26,11 +26,16 @@ const TEXT_FADE_TIME = 2.5; // text fade time in seconds
 const TEXT_SIZE = 90; // text font size in pixels
 const SCORE_SIZE = 30; // score size in pixels
 const SAVE_KEY_SCORE = "highscore"; // save key for local storage of highscores
+
 let SOUND_MUTE = false; // mutes the sounds and FX
 let GAME_PAUSED = false; // pauses the game
 
-// pause the game
+/*let hammertime = new Hammer(myElement, myOptions);
+hammertime.on('pan', function(ev) {
+	console.log(ev);
+});*/
 
+// pause the game
 document.getElementById('pausegame').addEventListener('click', function (evt) {
   if ( evt.target.innerHTML === 'Pause Game') { 
     GAME_PAUSED=true
@@ -41,7 +46,6 @@ document.getElementById('pausegame').addEventListener('click', function (evt) {
     evt.target.innerHTML = 'Pause Game'
   }
 })
-
 
 // mute sound
 document.getElementById('mute').addEventListener('click', function (evt) {
@@ -78,7 +82,6 @@ document.addEventListener("keydown", keyDown);
 document.addEventListener("keyup", keyUp);
 
 // set up the game loop
-
 setInterval(update, 1000 / FPS);
 
 function createAsteroidBelt() {

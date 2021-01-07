@@ -299,6 +299,7 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
 - [GitPod](https://gitpod.io/workspaces). Development environment used to build the project.
     - Git was used for version control.
 - [GitHub](https://github.com) is used to store the projects code after being saved from GitPod and then Pushed from the terminal using Git commands.
+- Used [Techsini](http://techsini.com/multi-mockup/index.php) to generate the mockup up image.
 
 ---
 
