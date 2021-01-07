@@ -270,6 +270,8 @@ TEST            | OUTCOME                          | PASS / FAIL
 Test CANVAS element is working with the HTML document | The CANVAS element is working with the HTML document. Please see the attached screenshots. <br>[Canvas testing 1](wireframes/canvas_testing.png) <br>[Canvas testing 2](wireframes/canvas_testing_output.png)| Pass
 Test CANVAS element is filling up the whole of the browser window | CANVAS element is filling up the whole of the browser window. <br>[Canvas testing 3](wireframes/canvas_testing3.png) | Pass
 Ensure when New Game is pressed a new game is started from level one. | When New Game is pressed a new game is started from level one. | Pass
+Ensure when Pause Game is pressed, the game pauses and when resumed, game starts again from its "frozen state". | When Pause Game is pressed, the game pauses and when resumed, game starts again from its "frozen state". | Pass
+Enuse when Mute Sounds is pressed, all sounds and music is muted. | When Mute Sounds is pressed, all sounds and music is muted. | Pass
 Test responsiveness of website on all screen sizes on Chrome browser       | Outcome | Pass/Fail
 Test responsiveness of website on all screen sizes on Safari browser       | Outcome | Pass/Fail
 Test responsiveness of website on all screen sizes on Firefox browse       | Outcome | Pass/Fail
@@ -355,20 +357,27 @@ In order to figure out how to make the CANVAS fully responsive, I found this vid
 
 Another great video I watched for debugging, which was recommended by CI's tutoring team, Tim Nelson was this https://www.youtube.com/watch?v=AX7uybwukkk
 
+Used [Stack Overflow](https://stackoverflow.com/) to figure out how to place a background image into a canvas element.
+
+Read this tutorial to learn how to pause the game. https://atomicrobotdesign.com/blog/web-development/pause-your-html5-canvas-game/
+
+
 # Credits
 
 Thanks to [Nathan Anderson](https://unsplash.com/@nathananderson) for the use of his image of space that was uploaded to [Unsplash](https://unsplash.com/)
-
-Used [Stack Overflow](https://stackoverflow.com/) to figure out how to place a background image into a canvas element
 
 # Technologies Used
 
 ## Languages 
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
+
 - [CSS3](https://en.wikipedia.org/wiki/CSS)
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
 [^ Back To Contents ^](#contents)
 
 ---
+
+# Acknowledgments
+
