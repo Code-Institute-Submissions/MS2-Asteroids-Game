@@ -26,21 +26,22 @@ const TEXT_FADE_TIME = 2.5; // text fade time in seconds
 const TEXT_SIZE = 90; // text font size in pixels
 const SCORE_SIZE = 30; // score size in pixels
 const SAVE_KEY_SCORE = "highscore"; // save key for local storage of highscores
-let SOUND_MUTE = false;
-
+let SOUND_MUTE = false; // mutes the sounds and FX
+let GAME_PAUSED = false; // pauses the game
 
 // pause the game
-function pauseGame() {
-  if (!gamePaused) {
-    setInterval = clearTimeout(setInterval);
-    gamePaused = true;
-  } else if (gamePaused) {
-    setInterval = setTimeout(update, 1000 / FPS);
-    gamePaused = false;
-  }
-}
 
-//setInterval(update, 1000 / FPS);
+document.getElementById('pausegame').addEventListener('click', function (evt) {
+  if ( evt.target.innerHTML === 'Pause Game') { 
+    GAME_PAUSED=true
+    evt.target.innerHTML = 'Resume Game'
+  }
+  else {
+    GAME_PAUSED= false
+    evt.target.innerHTML = 'Pause Game'
+  }
+})
+
 
 // mute sound
 document.getElementById('mute').addEventListener('click', function (evt) {
@@ -77,6 +78,7 @@ document.addEventListener("keydown", keyDown);
 document.addEventListener("keyup", keyUp);
 
 // set up the game loop
+
 setInterval(update, 1000 / FPS);
 
 function createAsteroidBelt() {
@@ -344,6 +346,7 @@ function Sound(src, maxStream = 1, vol = 1.0) {
 }
 
 function update() {
+    if(GAME_PAUSED==false){
     let blinkOn = ship.blinkNum % 2 == 0;
     let exploing = ship.explodeTime > 0;
 
@@ -674,5 +677,5 @@ function update() {
             ship.y = 0 - ship.r
         }
     }
-
+  }
 }
