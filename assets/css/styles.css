@@ -20,6 +20,7 @@ body {
 /* navbar styles */
 nav {
     border: 1px solid cyan;
+    text-align: center;
 }
 
 nav a {
@@ -44,7 +45,6 @@ nav a {
   -ms-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 100%;
   position: relative;
   text-align: center;
 }
@@ -52,6 +52,8 @@ nav a {
 #asteroid-canvas {
     border: 1px cyan solid;
     position: relative;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     left: 50%;
     -webkit-transform: translate(-50%, 0);
