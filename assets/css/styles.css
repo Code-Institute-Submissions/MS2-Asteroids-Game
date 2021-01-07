@@ -22,6 +22,10 @@ nav {
     border: 1px solid cyan;
 }
 
+nav a {
+    cursor: pointer;
+}
+
 /* game container and asteroid canvas styles */
 #game-container {
   display: -webkit-box;

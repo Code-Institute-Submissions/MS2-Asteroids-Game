@@ -26,6 +26,8 @@ const TEXT_FADE_TIME = 2.5; // text fade time in seconds
 const TEXT_SIZE = 90; // text font size in pixels
 const SCORE_SIZE = 30; // score size in pixels
 const SAVE_KEY_SCORE = "highscore"; // save key for local storage of highscores
+let SOUND_MUTE = false;
+
 
 // pause the game
 function pauseGame() {
@@ -42,19 +44,13 @@ function pauseGame() {
 
 // mute sound
 document.getElementById('mute').addEventListener('click', function (evt) {
-  if ( fxLaser.muted ) { 
-    fxLaser.muted = false
-    fxExplode.muted = false
-    fxHit.muted = false
-    fxThrust.muted = false
-    evt.target.innerHTML = 'Mute Sounds'
+  if ( evt.target.innerHTML === 'Mute Sounds') { 
+    SOUND_MUTE=true
+    evt.target.innerHTML = 'Unmute Sounds'
   }
   else {
-    fxLaser.muted = true
-    fxExplode.muted = true
-    fxHit.muted = true
-    fxThrust.muted = true
-    evt.target.innerHTML = 'Unmute Sounds'
+    SOUND_MUTE=false
+    evt.target.innerHTML = 'Mute Sounds'
   }
 })
 
@@ -123,7 +119,10 @@ function destroyAsteroid(index) {
 
     // destroy the asteroid
     roids.splice(index, 1);
-    fxHit.play();
+      if(SOUND_MUTE==false){
+               fxHit.play();
+        }
+ 
 
     // remaining asteroids to determine music tempo
     roidsLeft --;
@@ -162,7 +161,9 @@ function drawShip(x, y, a, colour = "magenta") {
 
 function explodeShip() {
     ship.explodeTime = Math.ceil(SHIP_EXPLODE_DUR * FPS);
-    fxExplode.play();
+       if(SOUND_MUTE==false){
+            fxExplode.play();
+        }
 }
 
 function gameOver() {
@@ -280,7 +281,9 @@ function shootLaser() {
             dist: 0,
             explodeTime: 0
         });
-        fxLaser.play();
+        if(SOUND_MUTE==false){
+            fxLaser.play();
+        }
     }
 
     // prevent the laser from further shooting
@@ -293,23 +296,27 @@ function Music(srcLow, srcHigh) {
     this.low = true;
     this.tempo = 1.0; // seconds per beat
     this.beatTime = 0; // frames until next beat
-
+     
+      
     this.play = function() {
+       
         if (this.low) {
             this.soundLow.play();
         } else {
             this.soundHigh.play();
         }
         this.low = !this.low;
-    }
 
+    }
     this.setAsteroidRatio = function(ratio) {
         this.tempo = 1.0 - 0.75 * (1.0 - ratio);
     }
 
     this.tick = function() {
         if (this.beatTime == 0) {
-            this.play();
+             if(SOUND_MUTE==false){
+                this.play();
+             }
             this.beatTime = Math.ceil(this.tempo * FPS);
         } else {
             this.beatTime --;
@@ -351,9 +358,20 @@ function update() {
 
     // thrust the ship
     if (ship.thrusting && !ship.dead) {
+        
+        if(SOUND_MUTE==false ){
+            fxThrust.play();
+        }
+        
+
         ship.thrust.x += SHIP_THRUST * Math.cos(ship.a) / FPS;
         ship.thrust.y -= SHIP_THRUST * Math.sin(ship.a) / FPS;
-        fxThrust.play();
+           
+        
+        
+                 
+    
+        
 
         // draw the thrusters
         if (!exploing && blinkOn) {
