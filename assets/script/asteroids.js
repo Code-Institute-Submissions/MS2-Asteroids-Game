@@ -30,11 +30,10 @@ const SAVE_KEY_SCORE = "highscore"; // save key for local storage of highscores
 let SOUND_MUTE = false; // mutes the sounds and FX
 let GAME_PAUSED = false; // pauses the game
 
-/*let hammertime = new Hammer(myElement, myOptions);
-hammertime.on('pan', function(ev) {
-	console.log(ev);
-});*/
+let screenWidth;
+let screenHeight;
 
+    
 // pause the game
 document.getElementById('pausegame').addEventListener('click', function (evt) {
   if ( evt.target.innerHTML === 'Pause Game') { 
@@ -368,17 +367,9 @@ function update() {
         if(SOUND_MUTE==false ){
             fxThrust.play();
         }
-        
-
         ship.thrust.x += SHIP_THRUST * Math.cos(ship.a) / FPS;
         ship.thrust.y -= SHIP_THRUST * Math.sin(ship.a) / FPS;
            
-        
-        
-                 
-    
-        
-
         // draw the thrusters
         if (!exploing && blinkOn) {
             ctx.fillStyle = "#F6D838"; // yellow colour
@@ -681,4 +672,5 @@ function update() {
         }
     }
   }
+  
 }
