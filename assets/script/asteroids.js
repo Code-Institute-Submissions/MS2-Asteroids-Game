@@ -357,6 +357,7 @@ function update() {
 
     // draw space
     document.getElementById("asteroid-canvas").style.background = "url('assets/images/galaxy_image.jpg')";
+    ctx.clearRect(0, 0, canv.width, canv.height);
     /*ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canv.width, canv.height);*/
 
