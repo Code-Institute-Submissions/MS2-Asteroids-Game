@@ -52,6 +52,21 @@ nav a {
     text-transform: uppercase;
 }
 
+nav a:hover {
+    cursor: pointer;
+    border-bottom: 6px solid yellow;
+}
+
+nav a:active {
+    cursor: pointer;
+    border-bottom: 6px solid cyan;
+}
+
+nav a:visited {
+    cursor: pointer;
+    border-bottom: 6px solid cyan;
+}
+
 #asteroid-canvas {
     border: 3px cyan solid;
     position: relative;
@@ -92,7 +107,7 @@ section {
 
 #how-to a {
     cursor: pointer;
-    font-size: 2em;
+    font-size: 1.125em;
     border-bottom: 6px solid magenta;
     text-transform: uppercase;
 }
