@@ -1,4 +1,5 @@
 //Asteroids game code
+
 // explanation on line 85 (*window.devicePixelRatio)
 const GAME_LIVES = 3; // starting number of lives
 const FPS = 30; // frames per second
@@ -6,11 +7,11 @@ const LASER_MAX = 10; // maximun number of lasers on screen at once
 const LASER_EXPLODE_DUR = 0.1; // duration of lasers' explosion in seconds
 const LASER_DIST = 0.6; // laser distance in fractions
 const LASER_SPD = 500; // speed of lasers in pixels per second
-const SHIP_SIZE = 25*window.devicePixelRatio;; // ship height in pixels
+const SHIP_SIZE = 25 * window.devicePixelRatio;; // ship height in pixels
 const ROIDS_PTS_LGE = 20; // points scored for large asteroid
 const ROIDS_PTS_MED = 50; // points scored for medium asteroid
 const ROIDS_PTS_SML = 100; // points scored for small asteroid
-const ROIDS_SIZE = 100*window.devicePixelRatio; // starting size of asteroids
+const ROIDS_SIZE = 100 * window.devicePixelRatio; // starting size of asteroids
 const ROIDS_SPD = 50; // starting speed of asteroids
 const ROIDS_VERT = 10; // average number of vertices on asteroids
 const ROIDS_NUM = 3; // starting number of asteroids
@@ -23,7 +24,7 @@ const SHOW_BOUNDING = false; // show or hide collision bounding
 const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
 const SOUND_ON = true; // 
 const TEXT_FADE_TIME = 2.5; // text fade time in seconds
-const TEXT_SIZE = 90*window.devicePixelRatio; // text font size in pixels
+const TEXT_SIZE = 90 * window.devicePixelRatio; // text font size in pixels
 const SCORE_SIZE = 30*window.devicePixelRatio; // score size in pixels
 const SAVE_KEY_SCORE = "highscore"; // save key for local storage of highscores
 
@@ -32,7 +33,6 @@ let GAME_PAUSED = false; // pauses the game
 
 //Are we playing the game? not yet
 let PLAY_GAME = false;
-
 
 //play the game 
 document.getElementById('playgame').addEventListener('click', function (evt) {
@@ -46,33 +46,33 @@ document.getElementById('how-to').style.display="none"
     
 // pause the game
 document.getElementById('pausegame').addEventListener('click', function (evt) {
-  if ( evt.target.innerHTML === 'Pause Game') { 
+  if ( evt.target.innerHTML === 'Pause') { 
     GAME_PAUSED=true
     PLAY_GAME = false;
-    evt.target.innerHTML = 'Resume Game'
+    evt.target.innerHTML = 'Resume'
   }
   else {
     GAME_PAUSED= false
     PLAY_GAME = true;
-    evt.target.innerHTML = 'Pause Game'
+    evt.target.innerHTML = 'Pause'
   }
 })
 
 // mute sound
 document.getElementById('mute').addEventListener('click', function (evt) {
-  if ( evt.target.innerHTML === 'Mute Sounds') { 
+  if ( evt.target.innerHTML === 'Mute') { 
     SOUND_MUTE=true
-    evt.target.innerHTML = 'Unmute Sounds'
+    evt.target.innerHTML = 'Unmute'
   }
   else {
     SOUND_MUTE=false
-    evt.target.innerHTML = 'Mute Sounds'
+    evt.target.innerHTML = 'Mute'
   }
 })
 
-/*Fix for stretching/squeezing 
+/* Fix for stretching/squeezing 
 it is not true responsive but the canvas will adapt to what ever device
-the game is loadet on
+the game is loaded on. For example, on mobile devices, switching between landscape and portrait may cause a bit of a distortiom. A browser refresh resolves this.
 */
 
 /** @type {HTMLCanvasElement} */
@@ -407,16 +407,13 @@ function update() {
     // music tick
     music.tick();
 
-    // draw space moved to CSS file
+    // space background
     let spacebg=document.getElementById("asteroid-canvas");
     spacebg.style.background = "url('assets/images/galaxy_image.jpg')";
     spacebg.style.backgroundSize = "cover";
-    
 
     ctx.clearRect(0, 0, canv.width, canv.height);
-    /*ctx.fillStyle = "black";
-    ctx.fillRect(0, 0, canv.width, canv.height);*/
-
+    
     // thrust the ship
     if (ship.thrusting && !ship.dead) {
         

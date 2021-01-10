@@ -119,11 +119,26 @@ Asteroids will be floating around the screen in different colours
 
 The spaceship, I'm aiming to build something a bit better than the plain triangular spaceship version of the orginal game. I'll achieve my spaceship by using the Canvas feature of JavaScript.
 
+The colour palette I chose were to represent a futuristic sci-fi world. The bright neon colours against the black background of the nav bar and against the galaxy setting makes these colours standout and achieve their desired effect.
+
+### Fonts
+- Arial, Helvetica, sans-serif: Used for Menu
+
+- Impact: Used for in-game text (Note: This appears as a plain serif on mobile devices)
+
+### Nav and Menu Buttons:
+- Text colour: White
+
+- Background colour: #1f1f1f - Charcoal colour
+- Active state: 6px, solid, magenta
+- Hover state: 6px, solid, yellow
+- Visited state: 6px, solid, cyan
+
 ### Spaceship Colour:
 - Magenta 
 
 ### Asteroid Colour:
-- #15F00A - Neon green
+- #15aF00A - Neon green
 
 ### Thruster Colours:
 - #15F00A - Neon green
@@ -177,6 +192,8 @@ The spaceship, I'm aiming to build something a bit better than the plain triangu
 - [Rough wireframe sketch](wireframes/rough_wireframe.jpg)
 
 [^ Back To Contents ^](#contents)
+
+The only deviation from my wireframes is I deciced to drop the Bootstrap menu and went for a more simplistic approach, as I felt that having a collapasable menu along with the added styles of a Bootstrap navvbar would only get in the way just for a couple of menu items.
 
 ---
 
@@ -261,7 +278,7 @@ Ensure when ship hits an asteroid with laser, a hit FX is played. | When ship hi
 Ensure when ship collides with an asteroid an explode FX is played. | When ship collides with an asteroid an explode FX is played. | Pass
 Ensure when UP arrow is pressed thrust FX is played and when UP arrow is released, thrust FX stops. | When UP arrow is pressed thrust FX is played and when UP arrow is released, thrust FX stops. | Pass
 Ensure whem asteroids are destroyed the music tempo increases. | Whem asteroids are destroyed the music tempo increases. | Pass
-Ensure how-to-play instructions are easily located. | How-to-play instructions are easily located in the bottom left hand corner. <br> [Game controls](wireframes/game_controls.png) | Pass
+Ensure how-to-play instructions are easily located. | How-to-play instructions are easily seen when a user visits the website. <br> [Game controls](wireframes/game_controls.png) | Pass
 
 ## Web Development Testing
 
@@ -274,11 +291,8 @@ Ensure when Pause Game is pressed, the game pauses and when resumed, game starts
 Enuse when Mute Sounds is pressed, all sounds and music is muted. | When Mute Sounds is pressed, all sounds and music is muted. | Pass
 Ensure Buttons work on all major browsers. | Buttons were tested on Chrome, Safari, Firefox and Edge on laptop and mobile devices. No known issues. | Pass
 Enuse music and FX sounds work on all major browsers. | Music and FX sounds were tested on Chrome, Safari, Firefox and Edge on laptop and mobile devices. No known issues on laptop, however on mobile devices, including tablets, music and FX sounds don't work. | Fail
-Test responsiveness of website on all screen sizes on Chrome browser       | Outcome | Pass/Fail
-Test responsiveness of website on all screen sizes on Safari browser       | Outcome | Pass/Fail
-Test responsiveness of website on all screen sizes on Firefox browse       | Outcome | Pass/Fail
-Test responsiveness of website on all screen sizes on Edge browser         | Outcome | Pass/Fail
-Ensure header and menu are fixed to top of screens                         | Outcome | Pass/Fail
+Test responsiveness of website on all screen sizes on all major browsers. | Responsiveness has been tested on Chrome browser for MacBook, on PC, iPhone, Samsung and iPad. Responds well to different screen sizes, however when landscape to portrait mode is change a distortion sometimes occurs with the game. To resolve this, if it occurs is a simple browser refresh. | PASS
+
 Ensure the website contains instructions on how to interact with the game, win the game and lose the game                                             | Outcome | Pass/Fail
 Ensure there's an about section, containing a brief history on the game    | Outcome | Pass/Fail
 Ensure the contact form is fully functional                                | Outcome | Pass/Fail
