@@ -1,16 +1,16 @@
 //Asteroids game code
-
+// explanation on line 85 (*window.devicePixelRatio)
 const GAME_LIVES = 3; // starting number of lives
 const FPS = 30; // frames per second
 const LASER_MAX = 10; // maximun number of lasers on screen at once
 const LASER_EXPLODE_DUR = 0.1; // duration of lasers' explosion in seconds
 const LASER_DIST = 0.6; // laser distance in fractions
 const LASER_SPD = 500; // speed of lasers in pixels per second
-const SHIP_SIZE = 25; // ship height in pixels
+const SHIP_SIZE = 25*window.devicePixelRatio;; // ship height in pixels
 const ROIDS_PTS_LGE = 20; // points scored for large asteroid
 const ROIDS_PTS_MED = 50; // points scored for medium asteroid
 const ROIDS_PTS_SML = 100; // points scored for small asteroid
-const ROIDS_SIZE = 100; // starting size of asteroids
+const ROIDS_SIZE = 100*window.devicePixelRatio; // starting size of asteroids
 const ROIDS_SPD = 50; // starting speed of asteroids
 const ROIDS_VERT = 10; // average number of vertices on asteroids
 const ROIDS_NUM = 3; // starting number of asteroids
@@ -23,25 +23,37 @@ const SHOW_BOUNDING = false; // show or hide collision bounding
 const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
 const SOUND_ON = true; // 
 const TEXT_FADE_TIME = 2.5; // text fade time in seconds
-const TEXT_SIZE = 90; // text font size in pixels
-const SCORE_SIZE = 30; // score size in pixels
+const TEXT_SIZE = 90*window.devicePixelRatio; // text font size in pixels
+const SCORE_SIZE = 30*window.devicePixelRatio; // score size in pixels
 const SAVE_KEY_SCORE = "highscore"; // save key for local storage of highscores
 
 let SOUND_MUTE = false; // mutes the sounds and FX
 let GAME_PAUSED = false; // pauses the game
 
-let screenWidth;
-let screenHeight;
+//Are we playing the game? not yet
+let PLAY_GAME = false;
+
+
+//play the game 
+document.getElementById('playgame').addEventListener('click', function (evt) {
+//now we are playing the game
+PLAY_GAME = true;
+GAME_PAUSED = false;
+//hide the how-to
+document.getElementById('how-to').style.display="none"
+})
 
     
 // pause the game
 document.getElementById('pausegame').addEventListener('click', function (evt) {
   if ( evt.target.innerHTML === 'Pause Game') { 
     GAME_PAUSED=true
+    PLAY_GAME = false;
     evt.target.innerHTML = 'Resume Game'
   }
   else {
     GAME_PAUSED= false
+    PLAY_GAME = true;
     evt.target.innerHTML = 'Pause Game'
   }
 })
@@ -58,9 +70,36 @@ document.getElementById('mute').addEventListener('click', function (evt) {
   }
 })
 
+/*Fix for stretching/squeezing 
+it is not true responsive but the canvas will adapt to what ever device
+the game is loadet on
+*/
+
 /** @type {HTMLCanvasElement} */
+//get canvas
 let canv = document.getElementById("asteroid-canvas");
+//get context
 let ctx = canv.getContext("2d");
+
+//get DPI
+let dpi = window.devicePixelRatio;
+//https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio
+
+
+function fix_dpi() {
+//get CSS height
+//the + prefix casts it to an integer
+//the slice method gets rid of "px"
+let style_height = +getComputedStyle(canv).getPropertyValue("height").slice(0, -2);
+//get CSS width
+let style_width = +getComputedStyle(canv).getPropertyValue("width").slice(0, -2);
+
+// set/scale the canvas
+canv.setAttribute('height', style_height * dpi);
+canv.setAttribute('width', style_width * dpi);
+}
+fix_dpi()
+
 
 // in-game sound fx
 let fxLaser = new Sound("assets/sounds/laser.mp3", 7, 0.5);
@@ -75,6 +114,7 @@ let roidsLeft, roidsTotal;
 // set up game paramaters
 let level, lives, roids, score, scoreHigh, ship, text, textAlpha;
 newGame();
+
 
 // set up event handlers
 document.addEventListener("keydown", keyDown);
@@ -145,7 +185,7 @@ function distanceBetweenPoints(x1, y1, x2, y2) {
 
 function drawShip(x, y, a, colour = "magenta") {
     ctx.strokeStyle = colour;
-    ctx.lineWidth = SHIP_SIZE / 5;
+    ctx.lineWidth = (SHIP_SIZE) / 5;
     ctx.beginPath();
     ctx.moveTo( // nose of the ship
         x + 4 / 3 * ship.r * Math.cos(a),
@@ -181,6 +221,8 @@ function keyDown(/** @type {KeyboardEvent} */ ev) {
     if (ship.dead) {
         return;
     }
+    //prevent window scrolling
+    ev.preventDefault();
 
     switch (ev.keyCode) {
         case 32: // spacebar (shoots the laser)
@@ -203,6 +245,9 @@ function keyUp(/** @type {KeyboardEvent} */ ev) {
     if (ship.dead) {
         return;
     }
+
+     //prevent window scrolling
+    ev.preventDefault();
 
     switch (ev.keyCode) {
         case 32: // spacebar (allow shooting again)
@@ -285,7 +330,7 @@ function shootLaser() {
             dist: 0,
             explodeTime: 0
         });
-        if(SOUND_MUTE==false){
+        if(SOUND_MUTE==false && PLAY_GAME ==true){
             fxLaser.play();
         }
     }
@@ -318,7 +363,8 @@ function Music(srcLow, srcHigh) {
 
     this.tick = function() {
         if (this.beatTime == 0) {
-             if(SOUND_MUTE==false){
+            // we do not want the bing/bong sound before we play the game
+             if(SOUND_MUTE==false && PLAY_GAME == true){
                 this.play();
              }
             this.beatTime = Math.ceil(this.tempo * FPS);
@@ -348,15 +394,25 @@ function Sound(src, maxStream = 1, vol = 1.0) {
 }
 
 function update() {
+
     if(GAME_PAUSED==false){
+    
+    //every time the game is updatet we update the dpi/pixel density of screen the 
+    //game is running on and scale the canvas acording 
+        fix_dpi() 
+    
     let blinkOn = ship.blinkNum % 2 == 0;
     let exploing = ship.explodeTime > 0;
 
     // music tick
     music.tick();
 
-    // draw space
-    document.getElementById("asteroid-canvas").style.background = "url('assets/images/galaxy_image.jpg')";
+    // draw space moved to CSS file
+    /*let spacebg=document.getElementById("asteroid-canvas");
+    spacebg.style.background = "url('assets/images/galaxy_image.jpg')";
+    spacebg.style.backgroundSize = "cover";
+    */
+
     ctx.clearRect(0, 0, canv.width, canv.height);
     /*ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canv.width, canv.height);*/
@@ -364,7 +420,7 @@ function update() {
     // thrust the ship
     if (ship.thrusting && !ship.dead) {
         
-        if(SOUND_MUTE==false ){
+        if(SOUND_MUTE==false){
             fxThrust.play();
         }
         ship.thrust.x += SHIP_THRUST * Math.cos(ship.a) / FPS;
@@ -672,5 +728,12 @@ function update() {
         }
     }
   }
-  
+  /*we need to draw the game to the canvas and then pause it!
+  so the game do not start before the play button is pressed
+  */
+  if(PLAY_GAME == false){
+    GAME_PAUSED=true
+  }
+
+ 
 }

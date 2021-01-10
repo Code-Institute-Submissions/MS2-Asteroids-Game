@@ -13,14 +13,16 @@
 <body>
     <header>
         <!--game controls-->
-        <nav>
+        <nav id="thenav">
             <a onclick="newGame()">Restart Game</a> <a id="pausegame">Pause Game</a> <a id="mute">Mute Sounds</a>
         </nav>
     </header>
+    
     <section>
         <!--game container + asteroid canvas-->
         <div id="game-container">
-            <canvas id="asteroid-canvas" width="1000" height="600"></canvas>
+            <!--removed hardcodet width height from canvas-->
+            <canvas id="asteroid-canvas"></canvas>
         </div>
         <div id="how-to">
             <h1>INSTRUCTIONS</h1>
@@ -34,18 +36,6 @@
 
     <!--scripts-->
     <script type="text/javascript" src="assets/script/asteroids.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"
-        integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"
-        integrity="sha512-qRj8N7fxOHxPkKjnQ9EJgLJ8Ng1OK7seBn1uk8wkqaXpa7OA13LO6txQ7+ajZonyc9Ts4K/ugXljevkFTUGBcw=="
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
