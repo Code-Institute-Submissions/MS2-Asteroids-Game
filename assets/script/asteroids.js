@@ -408,10 +408,10 @@ function update() {
     music.tick();
 
     // draw space moved to CSS file
-    /*let spacebg=document.getElementById("asteroid-canvas");
+    let spacebg=document.getElementById("asteroid-canvas");
     spacebg.style.background = "url('assets/images/galaxy_image.jpg')";
     spacebg.style.backgroundSize = "cover";
-    */
+    
 
     ctx.clearRect(0, 0, canv.width, canv.height);
     /*ctx.fillStyle = "black";
