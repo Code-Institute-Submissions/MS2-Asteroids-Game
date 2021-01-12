@@ -115,6 +115,70 @@ let roidsLeft, roidsTotal;
 let level, lives, roids, score, scoreHigh, ship, text, textAlpha;
 newGame();
 
+// set up touch events
+document.addEventListener('touchstart', process_touchstart, false);
+document.addEventListener('touchmove', process_touchmove, false);
+document.addEventListener('touchcancel', process_touchcancel, false);
+document.addEventListener('touchend', process_touchend, false);
+
+// touch event handlers
+function process_touchstart(ev) {
+  // Use the event's data to call out to the appropriate gesture handlers
+  switch (ev.touches.length) {
+    case 1: handle_one_touch(ev); break;
+    case 2: handle_two_touches(ev); break;
+    case 3: handle_three_touches(ev); break;
+    default: gesture_not_supported(ev); break;
+  }
+}
+
+function process_touchmove(ev) {
+  // Use the event's data to call out to the appropriate gesture handlers
+  switch (ev.touches.length) {
+    case 1: handle_one_touch(ev); break;
+    case 2: handle_two_touches(ev); break;
+    case 3: handle_three_touches(ev); break;
+    default: gesture_not_supported(ev); break;
+  }
+}
+
+function process_touchcancel(ev) {
+  // Use the event's data to call out to the appropriate gesture handlers
+  switch (ev.touches.length) {
+    case 1: handle_one_touch(ev); break;
+    case 2: handle_two_touches(ev); break;
+    case 3: handle_three_touches(ev); break;
+    default: gesture_not_supported(ev); break;
+  }
+}
+
+function process_touchend(ev) {
+  // Use the event's data to call out to the appropriate gesture handlers
+  switch (ev.touches.length) {
+    case 1: handle_one_touch(ev); break;
+    case 2: handle_two_touches(ev); break;
+    case 3: handle_three_touches(ev); break;
+    default: gesture_not_supported(ev); break;
+  }
+}
+
+// Create touchstart handler
+document.addEventListener('touchstart', function(ev) {
+  // Iterate through the touch points that were activated
+  // for this element and process each event 'target'
+  for (var i=0; i < ev.targetTouches.length; i++) {
+    process_target(ev.targetTouches[i].target);
+  }
+}, false);
+
+// touchmove handler. Prevent the browser from processing emulated mouse events.
+function process_touchmove(ev) {
+  // Set call preventDefault()
+  ev.preventDefault();
+}
+
+// set up event handlers
+document.addEventListener("keydown", keyDown,);
 
 // set up event handlers
 document.addEventListener("keydown", keyDown);
