@@ -218,17 +218,17 @@ function gameOver() {
 }
 
 // touch control functions
-let onScreenKeys = document.querySelectorAll('.Arrow');
+let onScreenKeys = document.querySelectorAll('.Arrows');
 document.addEventListener('keydown', logKey);
 
-for (var i = 0; i < onScreenKeys.length; i++) {
+for (let i = 0; i < onScreenKeys.length; i++) {
 
     onScreenKeys[i].addEventListener('mousedown', function (evt) {
         let thepressedkey = evt.target.getAttribute('data-key')
 
         switch (thepressedkey) {
             case 32: // spacebar (shoots the laser)
-                shootLaser();
+                ship.shootLaser();
                 break;
             case 37: // left arrow (rotate ship left)
                 ship.rot = TURN_SPEED / 180 * Math.PI / FPS;
@@ -264,7 +264,6 @@ for (var i = 0; i < onScreenKeys.length; i++) {
 }
 
 function logKey(e) {
-    console.log(e.code)
 }
 
 
@@ -707,11 +706,16 @@ function update() {
             }
         }
 
-        // handle edge of screen 
+        // handle edge of screen
         if (ship.x < 0 - ship.r) {
             ship.x = canv.width + ship.r;
-        } else if (ship > canv.width + ship.r) {
-            ship.x = 0 - ship.r
+        } else if (ship.x > canv.width + ship.r) {
+            ship.x = 0 - ship.r;
+        }
+        if (ship.y < 0 - ship.r) {
+            ship.y = canv.height + ship.r;
+        } else if (ship.y > canv.height + ship.r) {
+            ship.y = 0 - ship.r;
         }
 
         // move the lasers
