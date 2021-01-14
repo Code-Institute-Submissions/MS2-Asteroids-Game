@@ -1,4 +1,5 @@
 ![Asteroids promotional image](wireframes/asteroids.jpg)
+<small>Orginal Asteroid's promotional graphic design.</small>
 
 # Asteroids!
 
@@ -16,11 +17,21 @@ For ages 6+
 - [The Scope Plane](#the-scope-plane)
 - [The Structure Plane](#the-structure-plane)
 - [The Skeleton Plane](#the-skeleton-plane)
+- [User Experience](#user-experience)
 - [Design](#design)
 - [Wireframes](#wireframes)
 - [User Stories](#user-stories)
 - [User Testing](#user-testing)
+- [Web Development Testing](#web-development-testing)
+- [Frameworks Libraries and Programs Used](#frameworks-libraries-and-programs-used)
+- [Bugs](#bugs)
+- [Learning Resources](#learning-resources)
+- [Credits](#credits)
 - [Technology Used](#technologies-used)
+- [Deployment](#deployment)
+- [Acknowledgments](#acknowledgments)
+
+---
 
 # A Bit Of Info On The Game 
 
@@ -34,11 +45,11 @@ Asteroids was conceived during a meeting between Logg and Rains, who decided to 
 
 The above text is taken from [Wikipedia](https://en.wikipedia.org/wiki/Asteroids_(video_game)).
 
+[^ Back To Contents ^](#contents)
+
 ___
 
 # The Strategy Plane
-
-[^ Back To Contents ^](#contents)
 
 What I'm aiming to achieve by building a game (my first!) is that it will give me a better insight into my currant knowledge of JavaScript. And what better way than to dive straight in and tackle this classic game, Asteroids!
 
@@ -49,9 +60,11 @@ The game is for:
 * Me, the developer to expand my knowledge of JavaScript.
 * The retro gamer, to rekindle their love of Asteroids.
 
-# The Scope Plane
-
 [^ Back To Contents ^](#contents)
+
+---
+
+# The Scope Plane
 
 The features I plan to include in my design are:
 
@@ -67,21 +80,29 @@ The features I plan to include in my design are:
 * Levels
 * Lives 
 
+[^ Back To Contents ^](#contents)
+
+---
+
 # The Structure Plane
 
 [^ Back To Contents ^](#contents)
 
 The information or in this case the game will be structured with an ease-of-use interface with all menu items easily accessible for the user. The game will be presented around a fun and enjoyable gameplay with the user wanting to come back for more with the aim of beating their previous high score.
 
-# The Skeleton Plane
-
 [^ Back To Contents ^](#contents)
+
+---
+
+# The Skeleton Plane
 
 ## Gameplay
 
 The main objective of Asteroids is to blast the oncoming asteroids and flying saucers that will occassionally appear. The player controls a triangular ship that can rotate left and right, fire shots straight forward, and thrust forward. Once the ship begins moving in a direction, it will continue in that direction for a time without player intervention unless the player applies thrust in a different direction. The ship eventually comes to a stop when not thrusting. The player can also send the ship into hyperspace, causing it to disappear and reappear in a random location on the screen, at the risk of self-destructing or appearing on top of an asteroid.
 
 Each level starts with a few large asteroids drifting in various directions on the screen. Objects wrap around screen edges – for instance, an asteroid that drifts off the top edge of the screen reappears at the bottom and continues moving in the same direction. As the player shoots asteroids, they break into smaller asteroids that move faster and are more difficult to hit. Smaller asteroids are also worth more points. Two flying saucers appear periodically on the screen; the "big saucer" shoots randomly and poorly, while the "small saucer" fires frequently at the ship. After reaching a score of 40,000, only the small saucer appears. As the player's score increases, the angle range of the shots from the small saucer diminishes until the saucer fires extremely accurately. Once the screen has been cleared of all asteroids and flying saucers, a new set of large asteroids appears, thus starting the next level. The player starts with 3 lives when the player loses all their lives, the game ends.
+
+[^ Back To Contents ^](#contents)
 
 ---
 
@@ -99,6 +120,8 @@ Each level starts with a few large asteroids drifting in various directions on t
 
 - As part of the UX, when the player loses a life, the life flashes a different colour (Cyan) and then disappears.
 
+[^ Back To Contents ^](#contents)
+
 ---
 
 # Design
@@ -109,15 +132,15 @@ As you can see from this orginal Asteroids in-game design, the developers at the
 
 ![Orginal Asteroids in-game design](wireframes/og_asteroids.jpeg)
 
-With my version of Asteroids, the gameplay will largely be the same but with the advances in web technologies such as JavaScript, I aim to add more artistic flare to the game design and features. 
+With my version of Asteroids, the gameplay will largely be the same but with the advances in web technologies such as JavaScript, I aim to add more artistic flare to the game design and features. Also, it will be fully responsive and will be playable on mobile devices.
 
-Fonts will be in keeping with the style of the retro game so while it's not yet deciced, they'll be in line of [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono).
+Fonts will be in keeping with the style of the retro game so while it's not yet deciced, they'll be in line of [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono). I deciced to go against applying a retro type of font as it didn't look as well as I hoped. Helvetica works much better than I thought so I stayed away from adding in any unnecessary fonts and just kept that part simple.
 
-I aim to have an image of some far-away galaxy as the background image. Such as this: ![Galaxy background](wireframes/galaxy_bg.jpeg)
+I aim to have an image of some far-away galaxy as the background image. Such as this: 
+
+![Galaxy background](wireframes/galaxy_bg.jpeg)
 
 Asteroids will be floating around the screen in different colours
-
-The spaceship, I'm aiming to build something a bit better than the plain triangular spaceship version of the orginal game. I'll achieve my spaceship by using the Canvas feature of JavaScript.
 
 The colour palette I chose were to represent a futuristic sci-fi world. The bright neon colours against the black background of the nav bar and against the galaxy setting makes these colours standout and achieve their desired effect.
 
@@ -167,6 +190,8 @@ The colour palette I chose were to represent a futuristic sci-fi world. The brig
 - Magenta 
 - Flashes Cyan when player loses a life
 
+[^ Back To Contents ^](#contents)
+
 ---
 
 # Wireframes
@@ -191,9 +216,11 @@ The colour palette I chose were to represent a futuristic sci-fi world. The brig
 
 - [Rough wireframe sketch](wireframes/rough_wireframe.jpg)
 
-[^ Back To Contents ^](#contents)
+
 
 The only deviation from my wireframes is I deciced to drop the Bootstrap menu and went for a more simplistic approach, as I felt that having a collapasable menu along with the added styles of a Bootstrap navvbar would only get in the way just for a couple of menu items.
+
+[^ Back To Contents ^](#contents)
 
 ---
 
@@ -208,17 +235,33 @@ The only deviation from my wireframes is I deciced to drop the Bootstrap menu an
 * As a new gamer I expect, want or to see: to be excited to play 
 * As a new gamer I expect, want or to see: to have fun 
 * As a new gamer I expect, want or to see: to be intrigued 
-* As a new gamer I expect, want or to see: to find the navigation ease to use 
-* As a new gamer I expect, want or to see: there to be gameplay instructions 
+* As a new gamer I expect, want or to see: to find the navigation ease to use
+    - Game is controlled with the arrow-keys and spacebar shoots the laser
+* As a new gamer I expect, want or to see: there to be gameplay instructions
+    
+    ![Gameplay instructions](wireframes/ages_for.png) 
 * As a new gamer I expect, want or to see: the game to be easily playable
+    - The game is really a pick-up and play type of game. As soon you realise the simplicity of the game, you're hooked!
 * As a new gamer I expect, want or to see: the game to work on all devices
-* As a new gamer I expect, want or to see: the controls to be easily accessible 
+    - The responds well on all devices
+* As a new gamer I expect, want or to see: the controls to be easily accessible
+    - To control the game, use the arrow-keys or on mobile devices you can use the arrow-Buttons
+
+    ![Mobile functions](wireframes/mobile_controls.png)
 * As a new gamer I expect, want or to see: there to be a scoring feature
+
+    ![Scoring feature](wireframes/scoring.png)
 * As a new gamer I expect, want or to see: my high score to be saved
+    - High score is saved, see above image
 * As a new gamer I expect, want or to see: the current level I'm on
+    - Users are notified of each level with a large on-screen text
+
+    ![Level text test](wireframes/level_test.png)
 * As a new gamer I expect, want or to see: how many lives I have
-* As a new gamer I expect, want or to see: there to be contact details
-* As a new gamer I expect, want or to see: there to be social network links 
+    - Game starts off with 3 lives. Lives are respresented by 3 ships located in the top left corner
+
+    ![Scoring feature](wireframes/scoring.png)
+ 
 
 ## User stories for a returning gamer
 
@@ -228,6 +271,9 @@ The only deviation from my wireframes is I deciced to drop the Bootstrap menu an
 * As a returning gamer I expect, want or to see: the design to be the same
 * As a returning gamer I expect, want or to see: my highscore to be still there
 * As a returning gamer I expect, want or to see: if the developer made any updates to the game, I expect this information to be easily located 
+
+
+[^ Back To Contents ^](#contents)
 
 ---
 
@@ -280,6 +326,9 @@ Ensure when UP arrow is pressed thrust FX is played and when UP arrow is release
 Ensure whem asteroids are destroyed the music tempo increases. | Whem asteroids are destroyed the music tempo increases. | Pass
 Ensure how-to-play instructions are easily located. | How-to-play instructions are easily seen when a user visits the website. <br> [Game controls](wireframes/game_controls.png) | Pass
 
+
+[^ Back To Contents ^](#contents)
+
 ## Web Development Testing
 
 TEST            | OUTCOME                          | PASS / FAIL  
@@ -292,28 +341,31 @@ Enuse when Mute Sounds is pressed, all sounds and music is muted. | When Mute So
 Ensure Buttons work on all major browsers. | Buttons were tested on Chrome, Safari, Firefox and Edge on laptop and mobile devices. No known issues. | Pass
 Enuse music and FX sounds work on all major browsers. | Music and FX sounds were tested on Chrome, Safari, Firefox and Edge on laptop and mobile devices. No known issues on laptop, however on mobile devices, including tablets, music and FX sounds don't work. | Fail
 Test responsiveness of website on all screen sizes on all major browsers. | Responsiveness has been tested on Chrome browser for MacBook, on PC, iPhone, Samsung and iPad. Responds well to different screen sizes, however when landscape to portrait mode is change a distortion sometimes occurs with the game. To resolve this, if it occurs is a simple browser refresh. | PASS
-
-Ensure the website contains instructions on how to interact with the game, win the game and lose the game                                             | Outcome | Pass/Fail
+Ensure the website contains instructions on how to interact with the game, win the game and lose the game. | Users are given clear instructions how to play the game before the game starts | Pass
 Ensure there's an about section, containing a brief history on the game    | Outcome | Pass/Fail
 Ensure the contact form is fully functional                                | Outcome | Pass/Fail
 Ensure there's a 404 error page                                            | Outcome | Pass/Fail
-Ensure design is consistant across all devices and browsers                | Outcome | Pass/Fail
-Ensure Play Again button is displayed when the game has ended and it starts a new game when clicked                                             | Outcome | Pass/Fail
+Ensure design is consistant across all devices and browsers. | Design is consistant across all major browsers and devices. | Pass
+Ensure Play button is displayed before each game starts | Play button is displayed before each game starts | Pass
+
+[^ Back To Contents ^](#contents)
 
 ---
 
-# Frameworks, Libraries & Programs Used
+# Frameworks Libraries and Programs Used
 
 - Used [Adobe Color Wheel](https://color.adobe.com/create/color-wheel) for website colours.
 
 - Used Google to get RGB values.
-- Used Preview on Mac to resize images.
+- Used Preview on Mac to resize and crop images.
 - Used [nekoCalc](https://nekocalc.com/px-to-em-converter) to convert pixels to ems.
-- [Bootstrap](https://getbootstrap.com) was used to assist with the responsiveness (i.e. On mobile devices menu collapses down to a square button) and styling of the website.
+- [Bootstrap](https://getbootstrap.com) was used to assist with the responsiveness (i.e. On mobile devices menu collapses down to a square button) and styling of the website. (Bootstrap was used during the early design phase but it was later dropped.)
 - [GitPod](https://gitpod.io/workspaces). Development environment used to build the project.
     - Git was used for version control.
 - [GitHub](https://github.com) is used to store the projects code after being saved from GitPod and then Pushed from the terminal using Git commands.
 - Used [Techsini](http://techsini.com/multi-mockup/index.php) to generate the mockup up image.
+
+[^ Back To Contents ^](#contents)
 
 ---
 
@@ -356,7 +408,7 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
 
 - When I remove the inline style for the CANVAS element size to make the CANVAS responsive, the game disappears completely.
 
-    - Yet to be resolved.
+    - Fixed this issue by stripping the code right back and basically rebuilt the index page, assigned styles to the CANVAS element and also through JavaScript.
 
 - In-game text is different on mobile devices, should be Impact, but on iPhone and iPad it's a plain serif font.
 
@@ -366,9 +418,19 @@ Ensure Play Again button is displayed when the game has ended and it starts a ne
 
     - Yet to be resolved.
 
+## Date: Wednesday, 13th  January, 2021
+
+- Through game testing, it was pointed out to me that the ship got lost if went off the side of the screen.
+
+    - This was quickly amended by adding code to the JavaScript file that handles the edge of the screen.
+
+[^ Back To Contents ^](#contents)
+
 ---
 
 # Learning Resources
+
+Pretty much got all of problem solving done with [MDN web docs](https://developer.mozilla.org/en-US/) and [W3Schools](https://www.w3schools.com/).
 
 In order to figure out how to make the CANVAS fully responsive, I found this video to be quite useful. https://www.youtube.com/watch?v=hm7py_lZkL8&t=98s
 
@@ -376,12 +438,26 @@ Another great video I watched for debugging, which was recommended by CI's tutor
 
 Used [Stack Overflow](https://stackoverflow.com/) to figure out how to place a background image into a canvas element.
 
+Watched [Derek Banas's](https://www.youtube.com/watch?v=HWuU5ly0taA&t=529s) Asteroid tutorial video on YouTube.
+
+Also watched [The Coding Train's](https://www.youtube.com/watch?v=hacZU523FyM&t=32s) Asteroid tutorial video on YouTube.
+
 Read this tutorial to learn how to pause the game. https://atomicrobotdesign.com/blog/web-development/pause-your-html5-canvas-game/
 
+[^ Back To Contents ^](#contents)
+
+---
 
 # Credits
 
-Thanks to [Nathan Anderson](https://unsplash.com/@nathananderson) for the use of his image of space that was uploaded to [Unsplash](https://unsplash.com/)
+I followed [freeCodeCamp's](https://www.freecodecamp.org/) Asteroid game tutorial on [YouTube](https://www.youtube.com/watch?v=H9CSWMxJx84&t=2025s). It has to be noted that I followed this tutorial to the T.
+
+Thanks to [Nathan Anderson](https://unsplash.com/@nathananderson) for the use of his image of space that was uploaded to [Unsplash](https://unsplash.com/).
+
+[^ Back To Contents ^](#contents)
+
+---
+
 
 # Technologies Used
 
@@ -396,5 +472,18 @@ Thanks to [Nathan Anderson](https://unsplash.com/@nathananderson) for the use of
 
 ---
 
+# Deployment
+
+
+[^ Back To Contents ^](#contents)
+
+---
+
 # Acknowledgments
 
+Thanks to my mentor, Brian Macharia for his guidence and valuable feedback.
+To fellow Code Institute student, Kristian Andersen for all of his assistance, really appreciated, Kristian! To the guys on Slack, Ed B and the excellent support given to me by the tutoring team as this was a quite difficult project for me to undertake. Perhaps building a game wasn't my brightest idea!
+
+[^ Back To Contents ^](#contents)
+
+---

@@ -147,6 +147,15 @@ section {
 }
 
 /* game instructions styles */
+.agesFor {
+    color: cyan;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
 #how-to {
 	color: #FFF;
 	font-family: Arial, Helvetica, sans-serif;
@@ -194,7 +203,7 @@ section {
         width: 100%;
         left: 0%;
         right: 0;
-        /* top: 22%; */
+        top: 22%;
         padding: 1em;
         border: 3px solid cyan;
         background: rgba(0, 0, 0, 0.6);
