@@ -407,6 +407,8 @@ Ensure Play button is displayed before each game starts | Play button is display
 
     - Fixed this simply by removing the footer in index.html and removed width 100vh and changed it to % in #game-container.
 
+        - Also added ev.preventDefault(); within the JavaScript file
+
 ## Date: Wednesday, 6th January, 2021
 
 - When I remove the inline style for the CANVAS element size to make the CANVAS responsive, the game disappears completely.

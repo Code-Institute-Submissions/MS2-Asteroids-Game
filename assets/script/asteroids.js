@@ -218,62 +218,30 @@ function gameOver() {
 }
 
 // touch control functions
-let onScreenKeys = document.querySelectorAll('.Arrows');
-document.addEventListener('keydown', logKey);
-
-for (let i = 0; i < onScreenKeys.length; i++) {
-
-    onScreenKeys[i].addEventListener('mousedown', function (evt) {
-        let thepressedkey = evt.target.getAttribute('data-key')
-
-        switch (thepressedkey) {
-            case 32: // spacebar (shoots the laser)
-                ship.shootLaser();
-                break;
-            case 37: // left arrow (rotate ship left)
-                ship.rot = TURN_SPEED / 180 * Math.PI / FPS;
-                break;
-            case 38: // up arrow (thrust the ship forward)
-                ship.thrusting = true;
-                break;
-            case 39: // right arrow (rotate ship right)
-                ship.rot = -TURN_SPEED / 180 * Math.PI / FPS;
-                break;
-        }
-    });
-
-    onScreenKeys[i].addEventListener('mouseup', function (evt) {
-        let thepressedkey = evt.target.getAttribute('data-key')
-
-        switch (thepressedkey) {
-            case 32: // spacebar (allow shooting again)
-                ship.canShoot = true;
-                break;
-            case 37: // left arrow (stop rotating left)
-                ship.rot = 0;
-                break;
-            case 38: // up arrow (stop thrusting)
-                ship.thrusting = false;
-                break;
-            case 39: // right arrow (stop rotating right)
-                ship.rot = 0;
-                break;
-        }
-
-    });
+let myGameArea = {
+  canv : document.createElement("asteroid-canvas"),
+  start : function() {
+    this.canv.width;
+    this.canv.height;
+    this.ctx = this.canv.getContext("2d");
+    document.body.insertBefore(this.canv, document.body.childNodes[0]);
+    this.interval = setInterval(updateGameArea, 20);
+    window.addEventListener('touchmove', function (e) {
+      myGameArea.x = e.touches[0].screenX;
+      myGameArea.y = e.touches[0].screenY;
+    })
+  },
+  clear : function(){
+    this.ctx.clearRect(0, 0, this.canv.width, this.canv.height);
+  }
 }
-
-function logKey(e) {
-}
-
-
-
 
 function keyDown(/** @type {KeyboardEvent} */ ev) {
 
     if (ship.dead) {
         return;
     }
+    
     //prevent window scrolling
     ev.preventDefault();
 
@@ -789,6 +757,4 @@ function update() {
     if (PLAY_GAME == false) {
         GAME_PAUSED = true
     }
-
-
 }
