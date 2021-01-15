@@ -489,9 +489,13 @@ To make the website live using GitHub Pages, I followed these steps:
 
 1. I clicked on the settings icon.
 
+![GitHub settings icon](wireframes/github_settings.png)
+
 2. Scrolled down to the GitHub Pages section (At the very bottom).
 
 3. I then clicked on the Branch tab, selected Master and then Save.
+
+![Master branch](wireframes/master_branch.png)
 
 4. I copied the generated link and pasted it into the About section.
 
