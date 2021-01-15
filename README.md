@@ -479,6 +479,21 @@ Thanks to [Nathan Anderson](https://unsplash.com/@nathananderson) for the use of
 
 # Deployment
 
+This site is hosted using GitHub Pages, deployed directly from the master branch. The deployed site will update automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, the landing page must be named index.html.
+
+To run locally, you can clone this repository directly into the editor of your choice by pasting git clone https://github.com/mickmccann/MS2-Asteroids-Game.git into your terminal. To cut ties with this GitHub repository, type git remote rm origin into the terminal.
+
+## GitHub Pages
+
+To make the website live using GitHub Pages, I followed these steps:
+
+1. I clicked on the settings icon.
+
+2. Scrolled down to the GitHub Pages section (At the very bottom).
+
+3. I then clicked on the Branch tab, selected Master and then Save.
+
+4. I copied the generated link and pasted it into the About section.
 
 [^ Back To Contents ^](#contents)
 
