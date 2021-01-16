@@ -217,25 +217,6 @@ function gameOver() {
     textAlpha = 1.0;
 }
 
-// touch control functions
-let myGameArea = {
-  canv : document.createElement("asteroid-canvas"),
-  start : function() {
-    this.canv.width;
-    this.canv.height;
-    this.ctx = this.canv.getContext("2d");
-    document.body.insertBefore(this.canv, document.body.childNodes[0]);
-    this.interval = setInterval(updateGameArea, 20);
-    window.addEventListener('touchmove', function (e) {
-      myGameArea.x = e.touches[0].screenX;
-      myGameArea.y = e.touches[0].screenY;
-    })
-  },
-  clear : function(){
-    this.ctx.clearRect(0, 0, this.canv.width, this.canv.height);
-  }
-}
-
 function keyDown(/** @type {KeyboardEvent} */ ev) {
 
     if (ship.dead) {
@@ -283,6 +264,55 @@ function keyUp(/** @type {KeyboardEvent} */ ev) {
         case 39: // right arrow (stop rotating right)
             ship.rot = 0;
             break;
+
+// touch control functions
+let fakekeys = document.querySelectorAll('.key');
+document.addEventListener('click', logKey);
+
+for (let i = 0; i < fakekeys.length; i++) {
+    
+ fakekeys[i].addEventListener('mousedown', function(ev) {
+   let thepressedkey=ev.target.getAttribute('data-key')
+   
+       switch (thepressedkey) {
+        case 32: // spacebar (shoots the laser)
+            shootLaser();
+            break;
+        case 37: // left arrow (rotate ship left)
+            ship.rot = TURN_SPEED / 180 * Math.PI / FPS;
+            break;
+        case 38: // up arrow (thrust the ship forward)
+            ship.thrusting = true;
+            break;
+        case 39: // right arrow (rotate ship right)
+            ship.rot = -TURN_SPEED / 180 * Math.PI / FPS;
+            break;
+    }
+  });
+ 
+  fakekeys[i].addEventListener('mouseup', function(ev) {
+      let thepressedkey=ev.target.getAttribute('data-key')
+
+ switch (thepressedkey) {
+        case 32: // spacebar (allow shooting again)
+            ship.canShoot = true;
+            break;
+        case 37: // left arrow (stop rotating left)
+            ship.rot = 0;
+            break;
+        case 38: // up arrow (stop thrusting)
+            ship.thrusting = false;
+            break;
+        case 39: // right arrow (stop rotating right)
+            ship.rot = 0;
+            break;
+    }  
+  });
+}
+
+function logKey(e) {
+  console.log( e.code)
+}
     }
 }
 
