@@ -205,3 +205,7 @@ section {
         background: rgba(0, 0, 0, 0.6);
     }
 }
+
+.fas{
+    pointer-events:none;
+}
