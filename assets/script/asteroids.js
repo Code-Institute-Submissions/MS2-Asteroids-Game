@@ -69,6 +69,9 @@ document.getElementById('mute').addEventListener('click', function (evt) {
     }
 })
 
+
+
+
 /* Fix for stretching/squeezing 
 it is not true responsive but the canvas will adapt to what ever device
 the game is loaded on. For example, on mobile devices, switching between landscape and portrait may cause a bit of a distortiom. A browser refresh resolves this.
@@ -265,57 +268,58 @@ function keyUp(/** @type {KeyboardEvent} */ ev) {
             ship.rot = 0;
             break;
 
-// touch control functions
-let fakekeys = document.querySelectorAll('.key');
-document.addEventListener('click', logKey);
 
+
+    }
+}
+
+/**=================================================================== */
+/** Fake arrow keys */
+/**=================================================================== */
+let fakekeys = document.querySelectorAll('.key');
 for (let i = 0; i < fakekeys.length; i++) {
     
  fakekeys[i].addEventListener('mousedown', function(ev) {
    let thepressedkey=ev.target.getAttribute('data-key')
    
+  
+
        switch (thepressedkey) {
-        case 32: // spacebar (shoots the laser)
+        case "shoot": // spacebar (shoots the laser)
             shootLaser();
             break;
-        case 37: // left arrow (rotate ship left)
+        case "left": // left arrow (rotate ship left)
             ship.rot = TURN_SPEED / 180 * Math.PI / FPS;
             break;
-        case 38: // up arrow (thrust the ship forward)
+        case "up": // up arrow (thrust the ship forward)
             ship.thrusting = true;
             break;
-        case 39: // right arrow (rotate ship right)
+        case "right": // right arrow (rotate ship right)
             ship.rot = -TURN_SPEED / 180 * Math.PI / FPS;
             break;
     }
   });
  
   fakekeys[i].addEventListener('mouseup', function(ev) {
-      let thepressedkey=ev.target.getAttribute('data-key')
+  let thepressedkey=ev.target.getAttribute('data-key')
 
  switch (thepressedkey) {
-        case 32: // spacebar (allow shooting again)
+        case "shoot": // spacebar (allow shooting again)
             ship.canShoot = true;
             break;
-        case 37: // left arrow (stop rotating left)
+        case "left": // left arrow (stop rotating left)
             ship.rot = 0;
             break;
-        case 38: // up arrow (stop thrusting)
+        case "up": // up arrow (stop thrusting)
             ship.thrusting = false;
             break;
-        case 39: // right arrow (stop rotating right)
+        case "right": // right arrow (stop rotating right)
             ship.rot = 0;
             break;
     }  
   });
 }
-
-function logKey(e) {
-  console.log( e.code)
-}
-    }
-}
-
+/**=================================================================== */
 function newAsteroid(x, y, r) {
     let lvlMult = 1 + 0.1 * level;
     let roid = {
@@ -788,3 +792,4 @@ function update() {
         GAME_PAUSED = true
     }
 }
+
