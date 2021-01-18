@@ -345,9 +345,10 @@ Ensure Buttons work on all major browsers. | Buttons were tested on Chrome, Safa
 Enuse music and FX sounds work on all major browsers. | Music and FX sounds were tested on Chrome, Safari, Firefox and Edge on laptop and mobile devices. No known issues on laptop, however on mobile devices, including tablets, music and FX sounds don't work. | Fail
 Test responsiveness of website on all screen sizes on all major browsers. | Responsiveness has been tested on Chrome browser for MacBook, on PC, iPhone, Samsung and iPad. Responds well to different screen sizes, however when landscape to portrait mode is change a distortion sometimes occurs with the game. To resolve this, if it occurs is a simple browser refresh. | PASS
 Ensure the website contains instructions on how to interact with the game, win the game and lose the game. | Users are given clear instructions how to play the game before the game starts | Pass
-Ensure there's an about section, containing a brief history on the game    | Outcome | Pass/Fail
-Ensure the contact form is fully functional                                | Outcome | Pass/Fail
-Ensure there's a 404 error page                                            | Outcome | Pass/Fail
+Ensure left arrow button rotates ship to the left. | Left arrow rotates ship to the left. | Pass
+Ensure right arrow button rotates ship to the right. | Right arrow rotates ship to the right. | Pass
+Ensure up arrow thrusts the ship forward. | Up arrow thrusts the ship forward. | Pass
+Ensure shoot button shoots the lasers. | Shoot button shoots the lasers. | Pass
 Ensure design is consistant across all devices and browsers. | Design is consistant across all major browsers and devices. | Pass
 Ensure Play button is displayed before each game starts | Play button is displayed before each game starts | Pass
 
@@ -421,13 +422,19 @@ Ensure Play button is displayed before each game starts | Play button is display
 
 - No sound on mobile devices.
 
-    - Yet to be resolved.
+    - Sound is now working. I'm honestly not sure how, but while I was trying to get the onscreen buttons to work, I think I altered something. Answers on a postcard!
 
 ## Date: Wednesday, 13th  January, 2021
 
 - Through game testing, it was pointed out to me that the ship got lost if went off the side of the screen.
 
     - This was quickly amended by adding code to the JavaScript file that handles the edge of the screen.
+
+## Date: Monday, 18th January, 2021
+
+- Through game testing, that although the onscreen buttons that were designed for mobile devices, they only work on browsers. The shoot button however, does work on mobile.
+
+    - Yet to be resolved
 
 [^ Back To Contents ^](#contents)
 
@@ -462,7 +469,6 @@ Thanks to [Nathan Anderson](https://unsplash.com/@nathananderson) for the use of
 [^ Back To Contents ^](#contents)
 
 ---
-
 
 # Technologies Used
 
