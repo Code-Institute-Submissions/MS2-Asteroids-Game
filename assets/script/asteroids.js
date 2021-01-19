@@ -1,5 +1,5 @@
 /**=================================================================== */
-/** A S T E R O I D   G A M E   C O D E */
+/** A S T E R O I D   G A M E   C O D E   S T A R T */
 /**=================================================================== */
 
 /**=================================================================== */
@@ -16,7 +16,7 @@ const SHIP_SIZE = 25 * window.devicePixelRatio;; // ship height in pixels
 const ROIDS_PTS_LGE = 20; // points scored for large asteroid
 const ROIDS_PTS_MED = 50; // points scored for medium asteroid
 const ROIDS_PTS_SML = 100; // points scored for small asteroid
-const ROIDS_SIZE = 100 * window.devicePixelRatio; // starting size of asteroids
+const ROIDS_SIZE = 125 * window.devicePixelRatio; // starting size of asteroids
 const ROIDS_SPD = 50; // starting speed of asteroids
 const ROIDS_VERT = 10; // average number of vertices on asteroids
 const ROIDS_NUM = 3; // starting number of asteroids
@@ -30,15 +30,14 @@ const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of 
 const SOUND_ON = true; // 
 const TEXT_FADE_TIME = 2.5; // text fade time in seconds
 const TEXT_SIZE = 90 * window.devicePixelRatio; // text font size in pixels
-const SCORE_SIZE = 23 * window.devicePixelRatio; // score size in pixels
+const SCORE_SIZE = 150 * window.devicePixelRatio; // score size in pixels
 const SAVE_KEY_SCORE = "highscore"; // save key for local storage of highscores
 
 let SOUND_MUTE = false; // mutes the sounds and FX
 let GAME_PAUSED = false; // pauses the game
 
-//Are we playing the game? not yet
-let PLAY_GAME = false;
-
+let PLAY_GAME = false; //Are we playing the game? not yet
+/**=================================================================== */
 
 
 //play the game 
@@ -318,8 +317,8 @@ for (let i = 0; i < fakekeys.length; i++) {
     }  
   });
 }
-
 /**=================================================================== */
+
 function newAsteroid(x, y, r) {
     let lvlMult = 1 + 0.1 * level;
     let roid = {
@@ -619,7 +618,7 @@ function update() {
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
             ctx.fillStyle = "rgba(247, 243, 15, " + textAlpha + ")"; // 247, 243, 15 = Yellow colour
-            ctx.font = "small-caps " + TEXT_SIZE + "px impact";
+            ctx.font = "small-caps " + TEXT_SIZE + "px Arial, Helvetica, sans-serif";
             ctx.fillText(text, canv.width / 2, canv.height * 0.75);
             textAlpha -= (1.0 / TEXT_FADE_TIME / FPS);
         } else if (ship.dead) {
@@ -637,14 +636,14 @@ function update() {
         ctx.textAlign = "right";
         ctx.textBaseline = "middle";
         ctx.fillStyle = "white";
-        ctx.font = SCORE_SIZE + "px impact";
+        ctx.font = SCORE_SIZE + "% Arial, Helvetica, sans-serif";
         ctx.fillText("Score: " + score, canv.width - SHIP_SIZE / 2, SHIP_SIZE);
 
         // draw the high score
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillStyle = "white";
-        ctx.font = SCORE_SIZE + "px impact";
+        ctx.font = SCORE_SIZE + "% Arial, Helvetica, sans-serif";
         ctx.fillText("High: " + scoreHigh, canv.width / 2, SHIP_SIZE);
 
         // detect laser hits asteroid
@@ -793,3 +792,6 @@ function update() {
     }
 }
 
+/**=================================================================== */
+/** A S T E R O I D   G A M E   C O D E   E N D */
+/**=================================================================== */
