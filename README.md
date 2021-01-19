@@ -438,6 +438,12 @@ Ensure Play button is displayed before each game starts | Play button is display
 
 [^ Back To Contents ^](#contents)
 
+## Date: Tuesday, 19th January, 2021
+
+- Through game testing, I noticed that the lasers would sometimes pass through the side of the asteroids.
+
+    - Fix this issue by increasing the size of the asteroids and reducing the thickness of the stroke.
+
 ---
 
 # Learning Resources
