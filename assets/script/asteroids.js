@@ -40,20 +40,23 @@ let PLAY_GAME = false; //Are we playing the game? not yet
 /**=================================================================== */
 
 
+/**=================================================================== */
+/** The below code is used to: Restart, Pause and Mute Sounds */
+/**=================================================================== */
 //play the game 
 document.getElementById('playgame').addEventListener('click', function (evt) {
     //now we are playing the game
     PLAY_GAME = true;
     GAME_PAUSED = false;
-    //hide the how-to
+    //hides the how-to game instructions
     document.getElementById('how-to').style.display = "none"
 })
 
 // pause the game
 document.getElementById('pausegame').addEventListener('click', function (evt) {
     if (evt.target.innerHTML === 'Pause') {
-        GAME_PAUSED = true
-        PLAY_GAME = false;
+        GAME_PAUSED = true; // pauses the gameplay
+        PLAY_GAME = false; // resumes the game from its frozen state
         evt.target.innerHTML = 'Resume'
     }
     else {
@@ -67,13 +70,14 @@ document.getElementById('pausegame').addEventListener('click', function (evt) {
 document.getElementById('mute').addEventListener('click', function (evt) {
     if (evt.target.innerHTML === 'Mute') {
         SOUND_MUTE = true
-        evt.target.innerHTML = 'Unmute'
+        evt.target.innerHTML = 'Unmute' // unmutes the sound FX and bong-bong music
     }
     else {
         SOUND_MUTE = false
-        evt.target.innerHTML = 'Mute'
+        evt.target.innerHTML = 'Mute' // mutes the sound FX and bong-bong music
     }
 })
+/**=================================================================== */
 
 /* Fix for stretching/squeezing 
 it is not true responsive but the canvas will adapt to what ever device
@@ -86,10 +90,12 @@ let canv = document.getElementById("asteroid-canvas");
 //get context
 let ctx = canv.getContext("2d");
 
+/**=================================================================== */
+/** The below code is used to: deal with the difference between rendering on a standard display versus a HiDPI or Retina display, which use more screen pixels to draw the same objects, resulting in a sharper image.  */
+/**=================================================================== */
 //get DPI
 let dpi = window.devicePixelRatio;
 //https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio
-
 
 function fix_dpi() {
     //get CSS height
@@ -104,8 +110,11 @@ function fix_dpi() {
     canv.setAttribute('width', style_width * dpi);
 }
 fix_dpi()
+/**=================================================================== */
 
-
+/**=================================================================== */
+/** The below code is used to: set up the sounds */
+/**=================================================================== */
 // in-game sound fx
 let fxLaser = new Sound("assets/sounds/laser.mp3", 7, 0.5);
 let fxExplode = new Sound("assets/sounds/explode.m4a");
@@ -115,6 +124,7 @@ let fxThrust = new Sound("assets/sounds/thrust.m4a");
 // set up the in-game music
 let music = new Music("assets/sounds/music-high.m4a", "assets/sounds/music-low.m4a");
 let roidsLeft, roidsTotal;
+/**=================================================================== */
 
 // set up game paramaters
 let level, lives, roids, score, scoreHigh, ship, text, textAlpha;
@@ -127,9 +137,12 @@ document.addEventListener("keydown", keyDown);
 document.addEventListener("keydown", keyDown);
 document.addEventListener("keyup", keyUp);
 
-// set up the game loop
+/**=================================================================== */
+/** The below code is used to: Set up the game loop
+/**=================================================================== */
 setInterval(update, 1000 / FPS);
 
+//this function creates a new asteroid belt with each level. With each level you beat the amount of asteroids increases. Their location on the canvas is random by using the function Math.random().
 function createAsteroidBelt() {
     roids = [];
     roidsTotal = (ROIDS_NUM + level) * 7;
@@ -144,6 +157,7 @@ function createAsteroidBelt() {
     }
 }
 
+// destroy asteroids. Takes in the x and y value of the asteroids and r takes in the radius.
 function destroyAsteroid(index) {
     let x = roids[index].x;
     let y = roids[index].y;
@@ -174,7 +188,6 @@ function destroyAsteroid(index) {
         fxHit.play();
     }
 
-
     // remaining asteroids to determine music tempo
     roidsLeft--;
     music.setAsteroidRatio(roidsLeft == 0 ? 1 : roidsLeft / roidsTotal);
@@ -190,6 +203,9 @@ function distanceBetweenPoints(x1, y1, x2, y2) {
     return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 }
 
+/**=================================================================== */
+/** The below function is used to create the triangular ship */
+/**=================================================================== */
 function drawShip(x, y, a, colour = "magenta") {
     ctx.strokeStyle = colour;
     ctx.lineWidth = (SHIP_SIZE) / 5;
@@ -210,6 +226,11 @@ function drawShip(x, y, a, colour = "magenta") {
     ctx.stroke();
 };
 
+/**=================================================================== */
+/** The function explodeShip sets the explode time and the duration of 
+the actual explosion in frames per second.
+*/
+/**=================================================================== */
 function explodeShip() {
     ship.explodeTime = Math.ceil(SHIP_EXPLODE_DUR * FPS);
     if (SOUND_MUTE == false) {
@@ -217,19 +238,23 @@ function explodeShip() {
     }
 }
 
+//Writes "Game Over" to the screen when all 3 lives are lost
 function gameOver() {
     ship.dead = true;
     text = "Game Over!";
     textAlpha = 1.0;
 }
 
+/**=================================================================== */
+/** The function for the key down events */
+/**=================================================================== */
 function keyDown(/** @type {KeyboardEvent} */ ev) {
 
     if (ship.dead) {
         return;
     }
     
-    //prevent window scrolling
+    //There's a tiny bit of vertical scrolling which when the spacebar was being pressed to shoot, the page would jump, the below code prevents window scrolling
     ev.preventDefault();
 
     switch (ev.keyCode) {
@@ -248,6 +273,9 @@ function keyDown(/** @type {KeyboardEvent} */ ev) {
     }
 }
 
+/**=================================================================== */
+/** The function for the key up events */
+/**=================================================================== */
 function keyUp(/** @type {KeyboardEvent} */ ev) {
 
     if (ship.dead) {
@@ -274,12 +302,12 @@ function keyUp(/** @type {KeyboardEvent} */ ev) {
 }
 
 /**=================================================================== */
-/** Fake arrow keys */
+/** The event listeners for the Fake Arrow Keys used to control the game with mobile devices.
 /**=================================================================== */
 let fakekeys = document.querySelectorAll('.key');
 for (let i = 0; i < fakekeys.length; i++) {
     
- fakekeys[i].addEventListener('onmousedown', function(ev) {
+ fakekeys[i].addEventListener('mousedown', function(ev) {
    let thepressedkey=ev.target.getAttribute('data-key')
    
        switch (thepressedkey) {
@@ -319,6 +347,9 @@ for (let i = 0; i < fakekeys.length; i++) {
 }
 /**=================================================================== */
 
+/**=================================================================== */
+/** The function newAsteroid increases the amount of asteroids with each level that you get past. It also makes the asteroids appear in random locations with a gradual increase in the speed at which the asteroids move. */
+/**=================================================================== */
 function newAsteroid(x, y, r) {
     let lvlMult = 1 + 0.1 * level;
     let roid = {
@@ -333,6 +364,9 @@ function newAsteroid(x, y, r) {
     return roid;
 }
 
+/**=================================================================== */
+/** The function for newGame includes Game Lives, the score, level and ship. Each new game starts off with 3 lives, score of zero and on level 1. Within this function we also store the highscore in the local storage on the web browser */
+/**=================================================================== */
 function newGame() {
     lives = GAME_LIVES;
     score = 0;
@@ -349,12 +383,14 @@ function newGame() {
     newLevel();
 }
 
+//Creates a new level with a new asteroid belt when all asteroids on screen have been destroyed
 function newLevel() {
     text = "Level " + (level + 1);
     textAlpha = 1.0;
     createAsteroidBelt();
 }
 
+//When a life is lost or at the start of a game the function newShip puts a new ship directly in the centre of the screen. It also blinks for a few seconds giving the ship some invincibility. This gives the user a bit of breathing room incase an asteroid appears on top of the ship, without the brief invincibilty period, with a restart, should an asteroid appear on top of the ship, a life would instantly be lost.
 function newShip() {
     return {
         x: canv.width / 2,
@@ -373,6 +409,7 @@ function newShip() {
     }
 }
 
+// The shootLaser function defines the distance and length of the lasers. It also controls where we want the lasers to shoot from. 
 function shootLaser() {
     // create the laser object
     if (ship.canShoot && ship.lasers.length < LASER_MAX) {
