@@ -1,5 +1,10 @@
-//Asteroids game code
+/**=================================================================== */
+/** A S T E R O I D   G A M E   C O D E */
+/**=================================================================== */
 
+/**=================================================================== */
+/** Variables */
+/**=================================================================== */
 // explanation on line 85 (*window.devicePixelRatio)
 const GAME_LIVES = 3; // starting number of lives
 const FPS = 30; // frames per second
@@ -25,7 +30,7 @@ const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of 
 const SOUND_ON = true; // 
 const TEXT_FADE_TIME = 2.5; // text fade time in seconds
 const TEXT_SIZE = 90 * window.devicePixelRatio; // text font size in pixels
-const SCORE_SIZE = 30 * window.devicePixelRatio; // score size in pixels
+const SCORE_SIZE = 23 * window.devicePixelRatio; // score size in pixels
 const SAVE_KEY_SCORE = "highscore"; // save key for local storage of highscores
 
 let SOUND_MUTE = false; // mutes the sounds and FX
@@ -33,6 +38,8 @@ let GAME_PAUSED = false; // pauses the game
 
 //Are we playing the game? not yet
 let PLAY_GAME = false;
+
+
 
 //play the game 
 document.getElementById('playgame').addEventListener('click', function (evt) {
@@ -68,9 +75,6 @@ document.getElementById('mute').addEventListener('click', function (evt) {
         evt.target.innerHTML = 'Mute'
     }
 })
-
-
-
 
 /* Fix for stretching/squeezing 
 it is not true responsive but the canvas will adapt to what ever device
@@ -267,9 +271,6 @@ function keyUp(/** @type {KeyboardEvent} */ ev) {
         case 39: // right arrow (stop rotating right)
             ship.rot = 0;
             break;
-
-
-
     }
 }
 
@@ -279,11 +280,9 @@ function keyUp(/** @type {KeyboardEvent} */ ev) {
 let fakekeys = document.querySelectorAll('.key');
 for (let i = 0; i < fakekeys.length; i++) {
     
- fakekeys[i].addEventListener('mousedown', function(ev) {
+ fakekeys[i].addEventListener('onmousedown', function(ev) {
    let thepressedkey=ev.target.getAttribute('data-key')
    
-  
-
        switch (thepressedkey) {
         case "shoot": // spacebar (shoots the laser)
             shootLaser();
@@ -319,6 +318,7 @@ for (let i = 0; i < fakekeys.length; i++) {
     }  
   });
 }
+
 /**=================================================================== */
 function newAsteroid(x, y, r) {
     let lvlMult = 1 + 0.1 * level;
@@ -637,14 +637,14 @@ function update() {
         ctx.textAlign = "right";
         ctx.textBaseline = "middle";
         ctx.fillStyle = "white";
-        ctx.font = SCORE_SIZE + "px Impact";
+        ctx.font = SCORE_SIZE + "px impact";
         ctx.fillText("Score: " + score, canv.width - SHIP_SIZE / 2, SHIP_SIZE);
 
         // draw the high score
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillStyle = "white";
-        ctx.font = SCORE_SIZE + "px Impact";
+        ctx.font = SCORE_SIZE + "px impact";
         ctx.fillText("High: " + scoreHigh, canv.width / 2, SHIP_SIZE);
 
         // detect laser hits asteroid
