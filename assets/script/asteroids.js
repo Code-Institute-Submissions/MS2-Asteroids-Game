@@ -656,7 +656,7 @@ function update() {
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
             ctx.fillStyle = "rgba(247, 243, 15, " + textAlpha + ")"; // 247, 243, 15 = Yellow colour
-            ctx.font = "small-caps " + TEXT_SIZE + "px Arial, Helvetica, sans-serif";
+            ctx.font = "small-caps " + TEXT_SIZE + "px Impact, Arial, Helvetica, sans-serif";
             ctx.fillText(text, canv.width / 2, canv.height * 0.75);
             textAlpha -= (1.0 / TEXT_FADE_TIME / FPS);
         } else if (ship.dead) {

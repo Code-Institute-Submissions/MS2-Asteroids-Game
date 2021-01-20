@@ -162,6 +162,7 @@ section {
     font-size: 0.9em;
 }
 
+/* Media queries */
 @media only screen and (max-width: 600px) {
     #how-to {
         color: #FFF;
@@ -175,7 +176,9 @@ section {
         border: 3px solid cyan;
         background: rgba(0, 0, 0, 0.6);
     }
+}
 
+@media only screen and (max-width: 1366px) {
     /* keys for mobile input */
     .keys {
         position: absolute;
