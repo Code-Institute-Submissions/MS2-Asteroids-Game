@@ -12,7 +12,7 @@ const LASER_MAX = 10; // maximun number of lasers on screen at once
 const LASER_EXPLODE_DUR = 0.1; // duration of lasers' explosion in seconds
 const LASER_DIST = 0.6; // laser distance in fractions
 const LASER_SPD = 500; // speed of lasers in pixels per second
-const SHIP_SIZE = 25 * window.devicePixelRatio;; // ship height in pixels
+const SHIP_SIZE = 25 * window.devicePixelRatio; // ship height in pixels
 const ROIDS_PTS_LGE = 20; // points scored for large asteroid
 const ROIDS_PTS_MED = 50; // points scored for medium asteroid
 const ROIDS_PTS_SML = 100; // points scored for small asteroid
@@ -49,32 +49,32 @@ document.getElementById('playgame').addEventListener('click', function(evt) {
     PLAY_GAME = true;
     GAME_PAUSED = false;
     //hides the how-to game instructions
-    document.getElementById('how-to').style.display = "none"
-})
+    document.getElementById('how-to').style.display = "none";
+});
 
 // pause the game
 document.getElementById('pausegame').addEventListener('click', function(evt) {
     if (evt.target.innerHTML === 'Pause') {
         GAME_PAUSED = true; // pauses the gameplay
         PLAY_GAME = false; // resumes the game from its frozen state
-        evt.target.innerHTML = 'Resume'
+        evt.target.innerHTML = 'Resume';
     } else {
-        GAME_PAUSED = false
+        GAME_PAUSED = false;
         PLAY_GAME = true;
-        evt.target.innerHTML = 'Pause'
+        evt.target.innerHTML = 'Pause';
     }
-})
+});
 
 // mute sound
 document.getElementById('mute').addEventListener('click', function(evt) {
     if (evt.target.innerHTML === 'Mute') {
-        SOUND_MUTE = true
-        evt.target.innerHTML = 'Unmute' // unmutes the sound FX and bong-bong music
+        SOUND_MUTE = true;
+        evt.target.innerHTML = 'Unmute'; // unmutes the sound FX and bong-bong music
     } else {
-        SOUND_MUTE = false
-        evt.target.innerHTML = 'Mute' // mutes the sound FX and bong-bong music
+        SOUND_MUTE = false;
+        evt.target.innerHTML = 'Mute'; // mutes the sound FX and bong-bong music
     }
-})
+});
 /**=================================================================== */
 
 /* Fix for stretching/squeezing 
@@ -107,7 +107,7 @@ function fix_dpi() {
     canv.setAttribute('height', style_height * dpi);
     canv.setAttribute('width', style_width * dpi);
 }
-fix_dpi()
+fix_dpi();
 /**=================================================================== */
 
 /**=================================================================== */
@@ -222,7 +222,7 @@ function drawShip(x, y, a, colour = "magenta") {
     );
     ctx.closePath();
     ctx.stroke();
-};
+}
 
 /**=================================================================== */
 /** The function explodeShip sets the explode time and the duration of 
@@ -306,7 +306,7 @@ let fakekeys = document.querySelectorAll('.key');
 for (let i = 0; i < fakekeys.length; i++) {
 
     fakekeys[i].addEventListener('touchstart', function(ev) {
-        let thepressedkey = ev.target.getAttribute('data-key')
+        let thepressedkey = ev.target.getAttribute('data-key');
 
         switch (thepressedkey) {
             case "shoot": // spacebar (shoots the laser)
@@ -325,7 +325,7 @@ for (let i = 0; i < fakekeys.length; i++) {
     });
 
     fakekeys[i].addEventListener('touchend', function(ev) {
-        let thepressedkey = ev.target.getAttribute('data-key')
+        let thepressedkey = ev.target.getAttribute('data-key');
 
         switch (thepressedkey) {
             case "shoot": // spacebar (allow shooting again)
@@ -407,7 +407,7 @@ function newShip() {
             x: 0,
             y: 0
         }
-    }
+    };
 }
 
 // The shootLaser function defines the distance and length of the lasers. It also controls where we want the lasers to shoot from. 
@@ -448,10 +448,10 @@ function Music(srcLow, srcHigh) {
         }
         this.low = !this.low;
 
-    }
+    };
     this.setAsteroidRatio = function(ratio) {
         this.tempo = 1.0 - 0.75 * (1.0 - ratio);
-    }
+    };
 
     this.tick = function() {
         if (this.beatTime == 0) {
@@ -463,14 +463,14 @@ function Music(srcLow, srcHigh) {
         } else {
             this.beatTime--;
         }
-    }
+    };
 }
 
 function Sound(src, maxStream = 1, vol = 1.0) {
     this.streamNum = 0;
     this.streams = [];
     for (let i = 0; i < maxStream; i++) {
-        this.streams.push(new Audio(src))
+        this.streams.push(new Audio(src));
         this.streams[i].volume = vol;
     }
     this.play = function() {
@@ -478,11 +478,11 @@ function Sound(src, maxStream = 1, vol = 1.0) {
             this.streamNum = (this.streamNum + 1) % maxStream;
             this.streams[this.streamNum].play();
         }
-    }
+    };
     this.stop = function() {
         this.streams[this.streamNum].pause();
         this.streams[this.streamNum].currentTime = 0;
-    }
+    };
 }
 
 function update() {
@@ -491,7 +491,7 @@ function update() {
 
         //every time the game is updatet we update the dpi/pixel density of screen the 
         //game is running on and scale the canvas acording 
-        fix_dpi()
+        fix_dpi();
 
         let blinkOn = ship.blinkNum % 2 == 0;
         let exploing = ship.explodeTime > 0;
@@ -579,7 +579,7 @@ function update() {
                 ctx.arc(x, y, r, 0, Math.PI * 2, false);
                 ctx.stroke();
             }
-        };
+        }
 
         // draw the triangular ship
         if (!exploing) {
@@ -632,21 +632,21 @@ function update() {
             if (ship.lasers[i].explodeTime == 0) {
                 ctx.fillStyle = "#F6FF38"; // yellow colour
                 ctx.beginPath();
-                ctx.arc(ship.lasers[i].x, ship.lasers[i].y, SHIP_SIZE / 15, 0, Math.PI * 2, false)
+                ctx.arc(ship.lasers[i].x, ship.lasers[i].y, SHIP_SIZE / 15, 0, Math.PI * 2, false);
                 ctx.fill();
             } else {
                 // draw the explosion
                 ctx.fillStyle = "#F70A49"; // red colour
                 ctx.beginPath();
-                ctx.arc(ship.lasers[i].x, ship.lasers[i].y, ship.r * 0.75, 0, Math.PI * 2, false)
+                ctx.arc(ship.lasers[i].x, ship.lasers[i].y, ship.r * 0.75, 0, Math.PI * 2, false);
                 ctx.fill();
                 ctx.fillStyle = "#F77349"; // orange colour
                 ctx.beginPath();
-                ctx.arc(ship.lasers[i].x, ship.lasers[i].y, ship.r * 0.5, 0, Math.PI * 2, false)
+                ctx.arc(ship.lasers[i].x, ship.lasers[i].y, ship.r * 0.5, 0, Math.PI * 2, false);
                 ctx.fill();
                 ctx.fillStyle = "#F7CA49"; // yellow colour
                 ctx.beginPath();
-                ctx.arc(ship.lasers[i].x, ship.lasers[i].y, ship.r * 0.25, 0, Math.PI * 2, false)
+                ctx.arc(ship.lasers[i].x, ship.lasers[i].y, ship.r * 0.25, 0, Math.PI * 2, false);
                 ctx.fill();
             }
         }
@@ -787,12 +787,12 @@ function update() {
 
             // handle edge of screen for lasers
             if (ship.lasers[i].x < 0) {
-                ship.lasers[i].x = canv.width
+                ship.lasers[i].x = canv.width;
             } else if (ship.lasers[i].x > canv.width) {
                 ship.lasers[i].x = 0;
             }
             if (ship.lasers[i].y < 0) {
-                ship.lasers[i].y = canv.height
+                ship.lasers[i].y = canv.height;
             } else if (ship.lasers[i].y > canv.height) {
                 ship.lasers[i].y = 0;
             }
@@ -807,18 +807,18 @@ function update() {
             if (roids[i].x < 0 - roids[i].r) {
                 roids[i].x = canv.width + roids[i].r;
             } else if (roids[i].x > canv.width + roids[i].r) {
-                roids[i].x = 0 - roids[i].r
+                roids[i].x = 0 - roids[i].r;
             }
             if (roids[i].y < 0 - roids[i].r) {
                 roids[i].y = canv.height + roids[i].r;
             } else if (roids[i].y > canv.height + roids[i].r) {
-                roids[i].y = 0 - roids[i].r
+                roids[i].y = 0 - roids[i].r;
             }
 
             if (ship.y < 0 - ship.r) {
                 ship.y = canv.height + ship.r;
             } else if (ship > canv.height + ship.r) {
-                ship.y = 0 - ship.r
+                ship.y = 0 - ship.r;
             }
         }
     }
@@ -826,7 +826,7 @@ function update() {
     so the game do not start before the play button is pressed
     */
     if (PLAY_GAME == false) {
-        GAME_PAUSED = true
+        GAME_PAUSED = true;
     }
 }
 
