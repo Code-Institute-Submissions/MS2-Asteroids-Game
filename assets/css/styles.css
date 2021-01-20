@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
-   -moz-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -18,8 +18,8 @@ body {
     display: grid;
 }
 
-body{
- background:#333
+body {
+    background: #333
 }
 
 /* navbar styles */
@@ -54,7 +54,7 @@ nav a:visited {
 }
 
 /*addet width height for game-container div*/
-#game-container{
+#game-container {
     display: block;
     position: relative;
     width: 100vw;
@@ -72,7 +72,7 @@ nav a:visited {
     -o-transform: translate(-50%, 0);
     -ms-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
- 
+
     /*background-color: transparent;
     background-image: url("assets/images/galaxy_image.jpg");
     background-repeat: no-repeat;
@@ -124,22 +124,22 @@ section {
 }
 
 #how-to {
-	color: #FFF;
-	font-family: Arial, Helvetica, sans-serif;
+    color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
     position: absolute;
     top: 20%;
     left: 25%;
     right: 25%;
     padding: 0.5em;
     border: 3px solid cyan;
-	background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 #how-to h1 {
     color: magenta;
     margin-bottom: .4em;
     text-align: center;
-	font-size: 1.3em;
+    font-size: 1.3em;
 }
 
 #how-to a {
@@ -159,11 +159,11 @@ section {
 #how-to p {
     line-height: 1.5em;
     text-align: center;
-	font-size: 0.9em;
+    font-size: 0.9em;
 }
 
 @media only screen and (max-width: 600px) {
-  #how-to {
+    #how-to {
         color: #FFF;
         font-family: Arial, Helvetica, sans-serif;
         position: fixed;
@@ -186,11 +186,11 @@ section {
         width: 20em;
         margin-left: -8.7em;
     }
-    
+
     .keys:hover .key {
         background-color: rgba(255, 255, 255, 0.3);
     }
-    
+
     .keys .key {
         margin: 0 0.4em;
         display: inline-block;
@@ -199,12 +199,13 @@ section {
         border-radius: 0.4em;
         background-color: rgba(255, 255, 255, 0.15);
     }
-    
+
     .keys .key.up {
         margin: 0 5em 0.8em;
     }
-    
-    .keys .key:hover, .keys .key.is-down {
+
+    .keys .key:hover,
+    .keys .key.is-down {
         background-color: rgba(39, 212, 156, 0.7);
         color: white;
     }
@@ -212,6 +213,6 @@ section {
 
 }
 
-.fas{
-    pointer-events:none;
+.fas {
+    pointer-events: none;
 }

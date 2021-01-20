@@ -44,7 +44,7 @@ let PLAY_GAME = false; //Are we playing the game? not yet
 /** The below code is used to: Restart, Pause and Mute Sounds */
 /**=================================================================== */
 //play the game 
-document.getElementById('playgame').addEventListener('click', function (evt) {
+document.getElementById('playgame').addEventListener('click', function(evt) {
     //now we are playing the game
     PLAY_GAME = true;
     GAME_PAUSED = false;
@@ -53,13 +53,12 @@ document.getElementById('playgame').addEventListener('click', function (evt) {
 })
 
 // pause the game
-document.getElementById('pausegame').addEventListener('click', function (evt) {
+document.getElementById('pausegame').addEventListener('click', function(evt) {
     if (evt.target.innerHTML === 'Pause') {
         GAME_PAUSED = true; // pauses the gameplay
         PLAY_GAME = false; // resumes the game from its frozen state
         evt.target.innerHTML = 'Resume'
-    }
-    else {
+    } else {
         GAME_PAUSED = false
         PLAY_GAME = true;
         evt.target.innerHTML = 'Pause'
@@ -67,12 +66,11 @@ document.getElementById('pausegame').addEventListener('click', function (evt) {
 })
 
 // mute sound
-document.getElementById('mute').addEventListener('click', function (evt) {
+document.getElementById('mute').addEventListener('click', function(evt) {
     if (evt.target.innerHTML === 'Mute') {
         SOUND_MUTE = true
         evt.target.innerHTML = 'Unmute' // unmutes the sound FX and bong-bong music
-    }
-    else {
+    } else {
         SOUND_MUTE = false
         evt.target.innerHTML = 'Mute' // mutes the sound FX and bong-bong music
     }
@@ -248,12 +246,12 @@ function gameOver() {
 /**=================================================================== */
 /** The function for the key down events */
 /**=================================================================== */
-function keyDown(/** @type {KeyboardEvent} */ ev) {
+function keyDown( /** @type {KeyboardEvent} */ ev) {
 
     if (ship.dead) {
         return;
     }
-    
+
     //There's a tiny bit of vertical scrolling which when the spacebar was being pressed to shoot, the page would jump, the below code prevents window scrolling
     ev.preventDefault();
 
@@ -276,7 +274,7 @@ function keyDown(/** @type {KeyboardEvent} */ ev) {
 /**=================================================================== */
 /** The function for the key up events */
 /**=================================================================== */
-function keyUp(/** @type {KeyboardEvent} */ ev) {
+function keyUp( /** @type {KeyboardEvent} */ ev) {
 
     if (ship.dead) {
         return;
@@ -306,44 +304,44 @@ function keyUp(/** @type {KeyboardEvent} */ ev) {
 /**=================================================================== */
 let fakekeys = document.querySelectorAll('.key');
 for (let i = 0; i < fakekeys.length; i++) {
-    
- fakekeys[i].addEventListener('mousedown', function(ev) {
-   let thepressedkey=ev.target.getAttribute('data-key')
-   
-       switch (thepressedkey) {
-        case "shoot": // spacebar (shoots the laser)
-            shootLaser();
-            break;
-        case "left": // left arrow (rotate ship left)
-            ship.rot = TURN_SPEED / 180 * Math.PI / FPS;
-            break;
-        case "up": // up arrow (thrust the ship forward)
-            ship.thrusting = true;
-            break;
-        case "right": // right arrow (rotate ship right)
-            ship.rot = -TURN_SPEED / 180 * Math.PI / FPS;
-            break;
-    }
-  });
- 
-  fakekeys[i].addEventListener('mouseup', function(ev) {
-  let thepressedkey=ev.target.getAttribute('data-key')
 
- switch (thepressedkey) {
-        case "shoot": // spacebar (allow shooting again)
-            ship.canShoot = true;
-            break;
-        case "left": // left arrow (stop rotating left)
-            ship.rot = 0;
-            break;
-        case "up": // up arrow (stop thrusting)
-            ship.thrusting = false;
-            break;
-        case "right": // right arrow (stop rotating right)
-            ship.rot = 0;
-            break;
-    }  
-  });
+    fakekeys[i].addEventListener('touchstart', function(ev) {
+        let thepressedkey = ev.target.getAttribute('data-key')
+
+        switch (thepressedkey) {
+            case "shoot": // spacebar (shoots the laser)
+                shootLaser();
+                break;
+            case "left": // left arrow (rotate ship left)
+                ship.rot = TURN_SPEED / 180 * Math.PI / FPS;
+                break;
+            case "up": // up arrow (thrust the ship forward)
+                ship.thrusting = true;
+                break;
+            case "right": // right arrow (rotate ship right)
+                ship.rot = -TURN_SPEED / 180 * Math.PI / FPS;
+                break;
+        }
+    });
+
+    fakekeys[i].addEventListener('touchend', function(ev) {
+        let thepressedkey = ev.target.getAttribute('data-key')
+
+        switch (thepressedkey) {
+            case "shoot": // spacebar (allow shooting again)
+                ship.canShoot = true;
+                break;
+            case "left": // left arrow (stop rotating left)
+                ship.rot = 0;
+                break;
+            case "up": // up arrow (stop thrusting)
+                ship.thrusting = false;
+                break;
+            case "right": // right arrow (stop rotating right)
+                ship.rot = 0;
+                break;
+        }
+    });
 }
 /**=================================================================== */
 
@@ -405,7 +403,10 @@ function newShip() {
         lasers: [],
         rot: 0,
         thrusting: false,
-        thrust: { x: 0, y: 0 }
+        thrust: {
+            x: 0,
+            y: 0
+        }
     }
 }
 
@@ -417,7 +418,7 @@ function shootLaser() {
             x: ship.x + 4 / 3 * ship.r * Math.cos(ship.a),
             y: ship.y - 4 / 3 * ship.r * Math.sin(ship.a),
             xv: LASER_SPD * Math.cos(ship.a) / FPS,
-            yv: - LASER_SPD * Math.sin(ship.a) / FPS,
+            yv: -LASER_SPD * Math.sin(ship.a) / FPS,
             dist: 0,
             explodeTime: 0
         });
@@ -438,7 +439,7 @@ function Music(srcLow, srcHigh) {
     this.beatTime = 0; // frames until next beat
 
 
-    this.play = function () {
+    this.play = function() {
 
         if (this.low) {
             this.soundLow.play();
@@ -448,11 +449,11 @@ function Music(srcLow, srcHigh) {
         this.low = !this.low;
 
     }
-    this.setAsteroidRatio = function (ratio) {
+    this.setAsteroidRatio = function(ratio) {
         this.tempo = 1.0 - 0.75 * (1.0 - ratio);
     }
 
-    this.tick = function () {
+    this.tick = function() {
         if (this.beatTime == 0) {
             // we do not want the bing/bong sound before we play the game
             if (SOUND_MUTE == false && PLAY_GAME == true) {
@@ -472,13 +473,13 @@ function Sound(src, maxStream = 1, vol = 1.0) {
         this.streams.push(new Audio(src))
         this.streams[i].volume = vol;
     }
-    this.play = function () {
+    this.play = function() {
         if (SOUND_ON) {
             this.streamNum = (this.streamNum + 1) % maxStream;
             this.streams[this.streamNum].play();
         }
     }
-    this.stop = function () {
+    this.stop = function() {
         this.streams[this.streamNum].pause();
         this.streams[this.streamNum].currentTime = 0;
     }
