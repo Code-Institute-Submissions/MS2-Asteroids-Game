@@ -26,6 +26,7 @@ For ages 6+
 - [User Stories](#user-stories)
 - [User Testing](#user-testing)
 - [Web Development Testing](#web-development-testing)
+- [Validators](#validators)
 - [Frameworks Libraries and Programs Used](#frameworks-libraries-and-programs-used)
 - [Bugs](#bugs)
 - [Learning Resources](#learning-resources)
@@ -356,6 +357,29 @@ Ensure Play button is displayed before each game starts | Play button is display
 
 ---
 
+# Validators
+
+## HTML
+I used the [W3C HTML Validator](https://validator.w3.org/) to validate my HTML.
+- Passed with no errors or warnings found.
+
+## CSS
+I used the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate my CSS.
+- Passed with no errors or warnings found.
+
+## JavaScript
+I used [JS Hint](https://jshint.com/) to validate my JavaScript.
+- Passed with no errors and 2 warnings found.
+
+        Two warnings
+        308	Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (shootLaser, ship)
+        
+        327	Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (ship)
+
+[^ Back To Contents ^](#contents)
+
+---
+
 # Frameworks Libraries and Programs Used
 
 - Used [Adobe Color Wheel](https://color.adobe.com/create/color-wheel) for website colours.
@@ -368,6 +392,7 @@ Ensure Play button is displayed before each game starts | Play button is display
     - Git was used for version control.
 - [GitHub](https://github.com) is used to store the projects code after being saved from GitPod and then Pushed from the terminal using Git commands.
 - Used [Techsini](http://techsini.com/multi-mockup/index.php) to generate the mockup up image.
+-  Used [Beautifier](https://beautifier.io/) to beautify the code for HTML, CSS and JavaScript.
 
 [^ Back To Contents ^](#contents)
 
@@ -418,7 +443,7 @@ Ensure Play button is displayed before each game starts | Play button is display
 
 - In-game text is different on mobile devices, should be Impact, but on iPhone and iPad it's a plain serif font.
 
-    - Yet to be resolved.
+    - This seemed to resolved itself. I think by using % instead of px in the code worked.
 
 - No sound on mobile devices.
 
@@ -434,7 +459,7 @@ Ensure Play button is displayed before each game starts | Play button is display
 
 - Through game testing, that although the onscreen buttons that were designed for mobile devices, they only work on browsers. The shoot button however, does work on mobile.
 
-    - Yet to be resolved
+    - This was ammended by using "touchstart" and "touchend".
 
 [^ Back To Contents ^](#contents)
 
@@ -518,7 +543,7 @@ To make the website live using GitHub Pages, I followed these steps:
 # Acknowledgments
 
 Thanks to my mentor, Brian Macharia for his guidence and valuable feedback.
-To fellow Code Institute student, Kristian Andersen for all of his assistance, really appreciated, Kristian! To the guys on Slack, Ed B and the excellent support given to me by the tutoring team as this was a quite difficult project for me to undertake. Perhaps building a game wasn't my brightest idea!
+To fellow Code Institute student, Kristian Andersen for all of his assistance, really appreciated, Kristian! To the guys on Slack, Ed B, Eamonn and the excellent support given to me by the tutoring team as this was a quite difficult project for me to undertake. Perhaps building a game wasn't my brightest idea!
 
 [^ Back To Contents ^](#contents)
 
