@@ -1,3 +1,8 @@
+/*https://stackoverflow.com/questions/10614481/disable-double-tap-zoom-option-in-browser-on-touch-devices*/
+.disable-dbl-tap-zoom {
+        touch-action: manipulation;
+    }
+
 * {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -164,6 +169,7 @@ section {
 
 /* Media queries */
 @media only screen and (max-width: 600px) {
+    
     #how-to {
         color: #FFF;
         font-family: Arial, Helvetica, sans-serif;
