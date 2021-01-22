@@ -27,7 +27,7 @@ const TURN_SPEED = 360; // turn speed in degrees per second
 const SHIP_THRUST = 5; // ship acceleration speed
 const SHOW_BOUNDING = false; // show or hide collision bounding
 const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
-const SOUND_ON = true; // 
+const SOUND_ON = true; // game starts off with the sound playing
 const TEXT_FADE_TIME = 2.5; // text fade time in seconds
 const TEXT_SIZE = 90 * window.devicePixelRatio; // text font size in pixels
 const SCORE_SIZE = 150 * window.devicePixelRatio; // score size in pixels
@@ -43,6 +43,7 @@ let PLAY_GAME = false; //Are we playing the game? not yet
 /**=================================================================== */
 /** The below code is used to: Restart, Pause and Mute Sounds */
 /**=================================================================== */
+
 //play the game 
 document.getElementById('playgame').addEventListener('click', function(evt) {
     //now we are playing the game
@@ -370,6 +371,7 @@ function newGame() {
     score = 0;
     level = 0;
     ship = newShip();
+    PLAY_GAME = false;
 
     // retreive the highscore from local storage 
     let scoreStr = localStorage.getItem(SAVE_KEY_SCORE);
@@ -378,6 +380,8 @@ function newGame() {
     } else {
         scoreHigh = parseInt(scoreStr);
     }
+    //shows the how-to game instructions
+    document.getElementById('how-to').style.display = "block";
     newLevel();
 }
 
