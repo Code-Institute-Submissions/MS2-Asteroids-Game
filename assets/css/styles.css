@@ -9,7 +9,7 @@
 html {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
     min-height: 100%;
     width: 100%;
     display: grid;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* navbar styles */
