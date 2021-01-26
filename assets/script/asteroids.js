@@ -26,7 +26,7 @@ const SHIP_INV_DUR = 3.0; // duration of the ship's invisibility in seconds
 const TURN_SPEED = 360; // turn speed in degrees per second
 const SHIP_THRUST = 5; // ship acceleration speed
 const SHOW_BOUNDING = false; // show or hide collision bounding
-const FRICTION = 0.7; // friction control for ship (0 = no friction 1 = lots of friction)
+const FRICTION = 0.4; // friction control for ship (0 = no friction 1 = lots of friction)
 const SOUND_ON = true; // game starts off with the sound playing
 const TEXT_FADE_TIME = 2.5; // text fade time in seconds
 const TEXT_SIZE = 90 * window.devicePixelRatio; // text font size in pixels
@@ -141,7 +141,9 @@ document.addEventListener("keyup", keyUp);
 /**=================================================================== */
 setInterval(update, 1000 / FPS);
 
-//this function creates a new asteroid belt with each level. With each level you beat the amount of asteroids increases. Their location on the canvas is random by using the function Math.random().
+// This function creates a new asteroid belt with each level. 
+// With each level you beat the amount of asteroids increases. 
+// Their location on the canvas is random by using the function Math.random().
 function createAsteroidBelt() {
     roids = [];
     roidsTotal = (ROIDS_NUM + level) * 7;
@@ -156,7 +158,8 @@ function createAsteroidBelt() {
     }
 }
 
-// destroy asteroids. Takes in the x and y value of the asteroids and r takes in the radius.
+// Destroy asteroids. 
+// Takes in the x and y value of the asteroids and r takes in the radius.
 function destroyAsteroid(index) {
     let x = roids[index].x;
     let y = roids[index].y;
@@ -227,8 +230,7 @@ function drawShip(x, y, a, colour = "magenta") {
 
 /**=================================================================== */
 /** The function explodeShip sets the explode time and the duration of 
-the actual explosion in frames per second.
-*/
+the actual explosion in frames per second.*/
 /**=================================================================== */
 function explodeShip() {
     ship.explodeTime = Math.ceil(SHIP_EXPLODE_DUR * FPS);
@@ -253,7 +255,7 @@ function keyDown( /** @type {KeyboardEvent} */ ev) {
         return;
     }
 
-    //There's a tiny bit of vertical scrolling which when the spacebar was being pressed to shoot, the page would jump, the below code prevents window scrolling
+    //The below code prevents window scrolling
     ev.preventDefault();
 
     switch (ev.keyCode) {
@@ -347,7 +349,7 @@ for (let i = 0; i < fakekeys.length; i++) {
 /**=================================================================== */
 
 /**=================================================================== */
-/** The function newAsteroid increases the amount of asteroids with each level that you get past. It also makes the asteroids appear in random locations with a gradual increase in the speed at which the asteroids move. */
+/** The function newAsteroid increases the amount of asteroids with each level that you get past. It also makes the asteroids appear in random locations. */
 /**=================================================================== */
 function newAsteroid(x, y, r) {
     let lvlMult = 1 + 0.1 * level;
@@ -392,7 +394,7 @@ function newLevel() {
     createAsteroidBelt();
 }
 
-//When a life is lost or at the start of a game the function newShip puts a new ship directly in the centre of the screen. It also blinks for a few seconds giving the ship some invincibility. This gives the user a bit of breathing room incase an asteroid appears on top of the ship, without the brief invincibilty period, with a restart, should an asteroid appear on top of the ship, a life would instantly be lost.
+//When a life is lost or at the start of a game the function newShip puts a new ship directly in the centre of the screen. Ship blinks for a few seconds giving the ship some invincibility.
 function newShip() {
     return {
         x: canv.width / 2,

@@ -59,6 +59,7 @@ nav a:visited {
     height: 100vh;
 }
 
+/* asteroid canvas styles */
 #asteroid-canvas {
     border: 3px cyan solid;
     position: relative;
@@ -70,12 +71,6 @@ nav a:visited {
     -o-transform: translate(-50%, 0);
     -ms-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
-
-    /*background-color: transparent;
-    background-image: url("assets/images/galaxy_image.jpg");
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-position: center;*/
 
     width: 100vw;
     height: 100vh;

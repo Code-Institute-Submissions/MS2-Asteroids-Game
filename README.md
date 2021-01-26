@@ -464,6 +464,12 @@ I used [JS Hint](https://jshint.com/) to validate my JavaScript.
 
     - Fix this issue by increasing the size of the asteroids and reducing the thickness of the stroke.
 
+## Date: Tuesday, 26th January, 2021
+
+- On mobile and tablet devices, when using the controls, it seems to want to select text as the game is played.
+
+    - Couldn't find a fix to this due to time restrictions.
+
 ---
 
 # Learning Resources
